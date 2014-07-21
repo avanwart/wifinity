@@ -133,13 +133,26 @@ footer
 	color: #999
 	font-size: 14px
 
-form
+form, .form-horizontal
 	legend
 		text-align: center
 		border: none
 		margin-bottom: 30px
 	label
 		font-weight: normal
+		text-align: left
+		display: block
+	.checkbox
+		margin-bottom: 15px
+	.btn-primary
+		margin-bottom: 10px
+		width: 200px
+	.disclaimer
+		font-size: 13px
+		white-space: nowrap
+
+.text-left
+	text-align: left!important
 
 #portal
 	h1
@@ -152,8 +165,18 @@ form
 			padding-left: 60px
 			padding-right: 60px
 
+.steps
+	padding: 2em 0
+	text-align: center
+	h2
+		font-size: 18px
+		margin-bottom: 60px
+		margin: 0
+		padding: 0
+
 #create
 	text-align: center
+	min-height: 440px
 	h2
 		font-size: 18px
 		margin-bottom: 60px
@@ -163,11 +186,30 @@ form
 	form
 		display: inline-block
 		width: 460px
-		label
-			text-align: right
 	.text-left
 		text-align: left
-		
+
+
+#payment
+	text-align: center
+	form
+		margin-top: 30px
+		display: inline-block
+		width: 360px
+	h3
+		margin-top: 0
+
+#daily
+	min-height: 540px
+	h1
+		font-weight: normal
+		font-size: 24px	
+		letter-spacing: 0
+		margin-bottom: 30px
+	.btn-primary
+		margin-top: 30px
+	form
+		display: inline-block
 
 // Responsive
 @media screen and (max-width: 1199px)

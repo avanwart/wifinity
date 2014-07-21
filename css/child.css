@@ -116,12 +116,25 @@ footer {
   color: #999999;
   font-size: 14px; }
 
-form legend {
+form legend, .form-horizontal legend {
   text-align: center;
   border: none;
   margin-bottom: 30px; }
-form label {
-  font-weight: normal; }
+form label, .form-horizontal label {
+  font-weight: normal;
+  text-align: left;
+  display: block; }
+form .checkbox, .form-horizontal .checkbox {
+  margin-bottom: 15px; }
+form .btn-primary, .form-horizontal .btn-primary {
+  margin-bottom: 10px;
+  width: 200px; }
+form .disclaimer, .form-horizontal .disclaimer {
+  font-size: 13px;
+  white-space: nowrap; }
+
+.text-left {
+  text-align: left !important; }
 
 #portal h1 {
   margin-bottom: 40px; }
@@ -133,8 +146,18 @@ form label {
     padding-left: 60px;
     padding-right: 60px; }
 
-#create {
+.steps {
+  padding: 2em 0;
   text-align: center; }
+  .steps h2 {
+    font-size: 18px;
+    margin-bottom: 60px;
+    margin: 0;
+    padding: 0; }
+
+#create {
+  text-align: center;
+  min-height: 440px; }
   #create h2 {
     font-size: 18px;
     margin-bottom: 60px; }
@@ -144,10 +167,29 @@ form label {
   #create form {
     display: inline-block;
     width: 460px; }
-    #create form label {
-      text-align: right; }
   #create .text-left {
     text-align: left; }
+
+#payment {
+  text-align: center; }
+  #payment form {
+    margin-top: 30px;
+    display: inline-block;
+    width: 360px; }
+  #payment h3 {
+    margin-top: 0; }
+
+#daily {
+  min-height: 540px; }
+  #daily h1 {
+    font-weight: normal;
+    font-size: 24px;
+    letter-spacing: 0;
+    margin-bottom: 30px; }
+  #daily .btn-primary {
+    margin-top: 30px; }
+  #daily form {
+    display: inline-block; }
 
 @media screen and (max-width: 1199px) {
   section .card h3 {

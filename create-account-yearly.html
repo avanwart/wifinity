@@ -27,11 +27,6 @@
 					<div class="container">
 						<!-- .navbar-toggle is used as the toggle for collapsed navbar content -->
 						<div class="navbar-header">
-							<!-- <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
-								<span class="icon-bar"></span>
-								<span class="icon-bar"></span>
-								<span class="icon-bar"></span>
-							</button> -->
 							<a class="navbar-brand" href="/" title="Wifinity Inc." rel="homepage">
 								<img src="img/wifinity-logo-2x.jpg" alt="Wifinity Inc.">
 							</a>
@@ -43,47 +38,49 @@
 				</div> 
 			</nav>
 		</header>
-    <section id="portal" class="ashy">
+		<section class="ashy steps">
+			<div class="container">
+				<div class="row">
+		    		<div class="col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
+		    			<div class="row">
+		    				<div class="col-sm-4 active text-center"><h2><strong>Step 1. Create your account</strong></h2></div>
+		    				<div class="col-sm-4 text-center"><h2>Step 2. Payment</h2></div>
+		    				<div class="col-sm-4 text-center"><h2>Step 3. Confirmation</h2></div>
+		    			</div>
+		    		</div>
+	    		</div>
+    		</div>
+			</div>
+		</section>
+    <section id="create">
     	<div class="container" id="truecontent">
    			<div class="capsule">
 	    		<div class="row">
-	    			<div class="col-sm-12">
-	    				<h1>Come here often?</h1>
-	    			</div>
-	    		</div>
-	    		<div class="row col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
-	    			<div class="row">
-	    				<div class="col-sm-6">
-	    					<div class="card">
-	    						<form action="#">
-	    							<legend>I'm new to Wifinity</legend>
-	    							<div class="form-group">
-		    							<label for="email">Email address</label>
-		    							<input type="email" name="email" id="email" class="form-control">
-		    						</div>
-		    						<a href="create-account.html" type="submit" class="btn btn-primary">Next <i class="glyphicon glyphicon-chevron-right"></i></a>
-	    						</form>
-	    					</div>
-	    				</div>
-	    				<div class="col-sm-6">
-	    					<div class="card">
-	    						<form action="">
-	    							<legend>I have a Wifinity account</legend>
+		    		<div class="col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
+		    			<div class="row">
+		    				<div class="col-sm-12">
+		    					<h3>To create your Wifinity account, please enter your details</h3>
+		    					<form action="" class="">
 										<div class="form-group">
-		    							<label for="email2">Email address</label>
-		    							<input type="email" id="email2" name="email" class="form-control">
+		    							<label for="password">Email address</label>
+		    							<input type="text" id="email" name="email" class="form-control">
+		    						</div>
+										<div class="form-group">
+		    							<label for="email2">First name</label>
+		    							<input type="text" id="firstname" name="firstname" class="form-control">
 		    						</div>
 	    							<div class="form-group">
-		    							<label for="password">Password</label>
-		    							<input type="password" id="password" name="password" class="form-control">
+		    							<label for="password">Surname</label>
+		    							<input type="text" id="surname" name="surname" class="form-control">
 		    						</div>
-	    							<a href="payment.html" class="btn btn-primary">Next <i class="glyphicon glyphicon-chevron-right"></i></button>
-	    							<a href="#"><small>Can't log in?</small></a>
+		    						<div class="form-group text-left">
+		    							<a href="payment-yearly.html" class="btn btn-primary">Next <i class="glyphicon glyphicon-chevron-right"></i></a>
+		    						</div>
 	    						</form>
-	    					</div>
-	    				</div>
-	    			</div>
-	    		</div>
+		    				</div>
+		    			</div>
+		    		</div>
+		    	</div>
 	    	</div>
     	</div>
     </section>
@@ -102,7 +99,20 @@
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
     <script>
-   //  $(document).ready(function(){
+    $(document).ready(function(){
+    	function getUrlVars()
+				{
+				    var vars = [], hash;
+				    var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+				    for(var i = 0; i < hashes.length; i++)
+				    {
+				        hash = hashes[i].split('=');
+				        vars.push(hash[0]);
+				        vars[hash[0]] = hash[1];
+				    }
+				    return vars;
+				}
+				console.log(vars);
    //  	$(function(){
 		 //    var windowH = $(window).height();
 		 //    var wrapperH = $('#hero').height();
@@ -121,7 +131,7 @@
 
 	  //   	})          
 			// });
-   //  });
+    });
     </script>
   </body>
 </html>
