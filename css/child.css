@@ -1,6 +1,5 @@
 body {
   font-size: 17px;
-  padding-top: 72px;
   font-family: "Open Sans", sans-serif;
   -webkit-font-smoothing: antialiased; }
 
@@ -36,7 +35,8 @@ a {
 
 .navbar {
   background: white;
-  border: none; }
+  border: none;
+  margin: 0; }
   .navbar .navbar-header {
     float: none;
     display: block; }
@@ -74,7 +74,8 @@ section {
     text-align: center;
     color: #212121;
     font-size: 1.35em;
-    margin: 0 0 30px; }
+    margin: 0 0 30px;
+    line-height: 1.5; }
   section .card {
     border-radius: 2px;
     background: white;
@@ -114,6 +115,39 @@ footer {
   padding: 1.5em 0;
   color: #999999;
   font-size: 14px; }
+
+form legend {
+  text-align: center;
+  border: none;
+  margin-bottom: 30px; }
+form label {
+  font-weight: normal; }
+
+#portal h1 {
+  margin-bottom: 40px; }
+#portal .card {
+  height: 310px;
+  margin-bottom: 100px; }
+  #portal .card .btn-primary {
+    margin-right: 10px;
+    padding-left: 60px;
+    padding-right: 60px; }
+
+#create {
+  text-align: center; }
+  #create h2 {
+    font-size: 18px;
+    margin-bottom: 60px; }
+  #create h3 {
+    font-size: 20px;
+    margin-bottom: 40px; }
+  #create form {
+    display: inline-block;
+    width: 460px; }
+    #create form label {
+      text-align: right; }
+  #create .text-left {
+    text-align: left; }
 
 @media screen and (max-width: 1199px) {
   section .card h3 {

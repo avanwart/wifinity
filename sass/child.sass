@@ -7,7 +7,7 @@ $green: #6fae23
 
 body
 	font-size: 17px
-	padding-top: $navbarHeight
+	// padding-top: $navbarHeight
 	font-family: 'Open Sans', sans-serif
 	-webkit-font-smoothing: antialiased
 
@@ -44,6 +44,7 @@ a
 .navbar
 	background: white
 	border: none
+	margin: 0
 	.navbar-header
 		float: none
 		display: block
@@ -91,6 +92,7 @@ section
 		color: $black
 		font-size: 1.35em
 		margin: 0 0 30px
+		line-height: 1.5
 	.card
 		border-radius: 2px
 		background: white
@@ -130,6 +132,42 @@ footer
 	padding: 1.5em 0
 	color: #999
 	font-size: 14px
+
+form
+	legend
+		text-align: center
+		border: none
+		margin-bottom: 30px
+	label
+		font-weight: normal
+
+#portal
+	h1
+		margin-bottom: 40px
+	.card
+		height: 310px
+		margin-bottom: 100px
+		.btn-primary
+			margin-right: 10px
+			padding-left: 60px
+			padding-right: 60px
+
+#create
+	text-align: center
+	h2
+		font-size: 18px
+		margin-bottom: 60px
+	h3
+		font-size: 20px
+		margin-bottom: 40px
+	form
+		display: inline-block
+		width: 460px
+		label
+			text-align: right
+	.text-left
+		text-align: left
+		
 
 // Responsive
 @media screen and (max-width: 1199px)
