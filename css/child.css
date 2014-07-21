@@ -173,7 +173,7 @@ form .disclaimer, .form-horizontal .disclaimer {
 #payment {
   text-align: center; }
   #payment form {
-    margin-top: 30px;
+    margin-top: 10px;
     display: inline-block;
     width: 360px; }
   #payment h3 {
