@@ -38,13 +38,13 @@
 				</div> 
 			</nav>
 		</header>
-		<section class="ashy steps">
+    <section class="ashy steps">
 			<div class="container">
 				<div class="row">
 		    		<div class="col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
 		    			<div class="row">
-		    				<div class="col-sm-4 active text-center"><h2><strong>Step 1. Create your account</strong></h2></div>
-		    				<div class="col-sm-4 text-center"><h2>Step 2. Payment</h2></div>
+		    				<div class="col-sm-4 active text-center"><h2>Step 1. Create your account</h2></div>
+		    				<div class="col-sm-4 text-center"><h2><strong>Step 2. Payment</strong></h2></div>
 		    				<div class="col-sm-4 text-center"><h2>Step 3. Confirmation</h2></div>
 		    			</div>
 		    		</div>
@@ -52,35 +52,90 @@
     		</div>
 			</div>
 		</section>
-    <section id="create">
+    <section id="payment">
     	<div class="container" id="truecontent">
    			<div class="capsule">
 	    		<div class="row">
+	    			<div class="col-sm-12 col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2 text-center">
+	    				Your package: <strong>One month of WiFi for £13.25</strong>
+	    				<hr>
+	    			</div>
 		    		<div class="col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
 		    			<div class="row">
 		    				<div class="col-sm-12">
-		    					<h3>To create your Wifinity account, please enter your details</h3>
-		    					<form action="" class="">
+		    					<!-- <h3>To complete your purchase please enter your card details below</h3> -->
+		    					<form action="" class="form-horizontal">
 										<div class="form-group">
-		    							<label for="password">Email address</label>
-		    							<input type="text" id="email" name="email" class="form-control">
+		    							<label for="cardname">Name on card</label>
+		    							<input type="text" id="cardname" name="cardname" class="form-control">
 		    						</div>
 										<div class="form-group">
-		    							<label for="email2">First name</label>
-		    							<input type="text" id="firstname" name="firstname" class="form-control">
+		    							<label for="cardtype">Card type</label>
+	    								<select name="cardtype" id="cardtype" class="form-control">
+	    									<option value="">- Select -</option>
+	    									<option value="visa">Visa</option>
+	    									<option value="mastercard">Mastercard</option>
+	    									<option value="ax">American Express</option>
+	    									<option value="discover">Discover</option>
+	    								</select>
 		    						</div>
-	    							<div class="form-group">
-		    							<label for="password">Surname</label>
-		    							<input type="text" id="surname" name="surname" class="form-control">
+		  							<div class="form-group">
+		    							<label for="cardnumber">Card number</label>
+		    							<input type="text" id="cardnumber" name="cardnumber" class="form-control">
+		    						</div>
+		    						<div class="form-group">
+		    							<div class="row">
+		    								<label for="expirydatemonth" class="col-sm-12">Expiry date</label>
+		    							</div>
+		    							<div class="row">
+			    							<div class="col-sm-4">
+			    								<select id="expirydatemonth" name="expirydatemonth" class="form-control">
+			    									<option value="01">01</option>
+												    <option value="02">02</option>
+												    <option value="03">03</option>
+												    <option value="04">04</option>
+												    <option value="05">05</option>
+												    <option value="06">06</option>
+												    <option value="07">07</option>
+												    <option value="08">08</option>
+												    <option value="09">09</option>
+												    <option value="10">10</option>
+												    <option value="11">11</option>
+												    <option value="12">12</option>
+												  </select>
+			    							</div>
+			    							<div class="col-sm-4">
+			    								<select id="expirydateyear" name="expirydateyear" class="form-control">
+			    									<option value="2014">2014</option>
+												    <option value="2015">2015</option>
+												    <option value="2016">2016</option>
+												    <option value="2017">2017</option>
+												    <option value="2018">2018</option>
+												    <option value="2019">2019</option>
+												    <option value="2020">2020</option>
+												    <option value="2021">2021</option>
+												    <option value="2022">2022</option>
+												  </select>
+			    							</div>
+			    						</div>
 		    						</div>
 		    						<div class="form-group text-left">
-		    							<a href="payment.html" class="btn btn-primary">Next <i class="glyphicon glyphicon-chevron-right"></i></a>
+		    							<label for="issuenumber">Security code</label>
+		    							<input type="text" id="issuenumber" name="issuenumber" class="form-control" style="width: 100px; display: inline-block; margin-right: 10px"> <i class="glyphicon glyphicon-question-sign"></i>
 		    						</div>
-	    						</form>
+		    						<div class="form-group text-left">
+		    							<div class="checkbox">
+										    <label class="disclaimer">
+										      <input type="checkbox" id="accept"> By completing this purchase I accept Wifinity's <a href="#">Privacy Policy</a> and <a href="#">Terms of Use</a>
+										    </label>
+										  </div>
+	    								<a href="confirmation.html" class="btn btn-primary">Next <i class="glyphicon glyphicon-chevron-right"></i></a>
+		    						</div>
+		  						</form>
 		    				</div>
 		    			</div>
 		    		</div>
-		    	</div>
+	    		</div>
 	    	</div>
     	</div>
     </section>
@@ -99,20 +154,7 @@
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
     <script>
-    $(document).ready(function(){
-    	function getUrlVars()
-				{
-				    var vars = [], hash;
-				    var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
-				    for(var i = 0; i < hashes.length; i++)
-				    {
-				        hash = hashes[i].split('=');
-				        vars.push(hash[0]);
-				        vars[hash[0]] = hash[1];
-				    }
-				    return vars;
-				}
-				console.log(vars);
+   //  $(document).ready(function(){
    //  	$(function(){
 		 //    var windowH = $(window).height();
 		 //    var wrapperH = $('#hero').height();
@@ -131,7 +173,7 @@
 
 	  //   	})          
 			// });
-    });
+   //  });
     </script>
   </body>
 </html>
