@@ -179,17 +179,31 @@ form .disclaimer, .form-horizontal .disclaimer {
   #payment h3 {
     margin-top: 0; }
 
-#daily {
+#daily, #monthly {
   min-height: 540px; }
-  #daily h1 {
+  #daily h1, #monthly h1 {
     font-weight: normal;
     font-size: 24px;
     letter-spacing: 0;
     margin-bottom: 30px; }
-  #daily .btn-primary {
+  #daily .btn-primary, #monthly .btn-primary {
     margin-top: 30px; }
-  #daily form {
+  #daily form, #monthly form {
     display: inline-block; }
+    #daily form .card, #monthly form .card {
+      margin-top: 20px;
+      padding: 20px; }
+      #daily form .card em, #monthly form .card em {
+        text-align: center;
+        display: block;
+        font-weight: bold;
+        font-size: 28px;
+        font-style: normal;
+        margin-bottom: 10px; }
+      #daily form .card input[type="checkbox"], #monthly form .card input[type="checkbox"] {
+        display: none; }
+    #daily form .checkbox, #monthly form .checkbox {
+      margin: 0 !important; }
 
 @media screen and (max-width: 1199px) {
   section .card h3 {
