@@ -11,21 +11,17 @@ a {
     text-decoration: underline; }
 
 .btn-primary {
-  border: 1px solid rgba(0, 0, 0, 0.25);
+  border: none;
   border-radius: 5px;
-  border-top: 1px solid #f52fee;
-  border-bottom: 3px solid #561854;
-  background: -webkit-linear-gradient(top, #e62fe0 0%, #8e288a 100%);
+  background: #6fae23;
   height: 48px;
   font-size: 15px;
   line-height: 46px;
   font-weight: bold;
   text-transform: uppercase;
-  padding: 0 20px;
-  text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.4); }
+  padding: 0 20px; }
   .btn-primary:hover {
-    background: #ca18c4;
-    border-color: #ca18c4; }
+    background: #61991f; }
   .btn-primary i {
     font-size: 0.9em;
     top: 1px; }
@@ -36,11 +32,14 @@ a {
   padding: 5px; }
 
 .ashy {
-  background: #3e3e3e; }
+  background: #efefef; }
 
 .navbar {
   background: white;
   border: none; }
+  .navbar .navbar-header {
+    float: none;
+    display: block; }
   .navbar .navbar-brand {
     padding: 0 15px;
     height: 72px;
@@ -50,63 +49,121 @@ a {
     .navbar .navbar-brand img {
       width: 158px;
       height: 38px; }
-  .navbar .navbar-collapse .navbar-nav li a {
-    display: inline;
+  .navbar .navbar-nav li a {
+    display: inline-block;
     line-height: 72px;
     padding: 0 15px;
     color: #27a3ea; }
-    .navbar .navbar-collapse .navbar-nav li a:hover {
+    .navbar .navbar-nav li a:hover {
       text-decoration: underline; }
 
 section {
-  padding: 3em 0; }
+  padding: 2em 0 1em; }
+  section .container {
+    position: relative;
+    height: 100%; }
   section h1 {
     margin: 0 0 15px;
-    color: white;
+    color: #212121;
     font-weight: 800;
-    font-size: 3em;
+    font-size: 2.7em;
     text-align: center;
-    text-shadow: 1px 1px 0 black;
     letter-spacing: -1px; }
   section h2 {
     letter-spacing: -1px;
     text-align: center;
-    color: #bfbfbf;
-    font-size: 1.5em;
-    margin: 0 0 30px;
-    text-shadow: 1px 1px 0 black; }
+    color: #212121;
+    font-size: 1.35em;
+    margin: 0 0 30px; }
   section .card {
     border-radius: 2px;
     background: white;
     padding: 20px;
     position: relative;
-    margin-bottom: 30px; }
+    margin-bottom: 30px;
+    border: 1px solid #dadada; }
     section .card h3 {
       margin: 0 0 20px;
       padding: 0 0 10px;
-      border-bottom: 1px solid #efefef; }
+      border-bottom: 1px solid #efefef;
+      font-size: 22px; }
       section .card h3 small {
         float: right;
-        line-height: 26px; }
+        color: #212121;
+        font-size: 1em; }
     section .card p {
       text-align: center;
-      margin-bottom: 20px; }
+      margin-bottom: 20px;
+      font-size: 15px; }
   section.light {
-    background: #efefef;
-    padding: 3em 0; }
+    background: white; }
     section.light h1 {
       text-shadow: none;
       font-weight: normal;
-      font-size: 2em;
-      color: #3e3e3e;
-      margin-bottom: 1em; }
-    section.light ul li {
-      font-size: 19px;
-      margin-bottom: 15px;
-      white-space: nowrap; }
+      font-size: 1.7em;
+      margin: 10px 0 30px; }
+    section.light ul {
+      margin: 20px 0 0 0; }
+      section.light ul li {
+        font-size: 19px;
+        margin-bottom: 15px;
+        white-space: nowrap; }
 
 footer {
-  background: #3e3e3e;
+  background: #efefef;
   padding: 1.5em 0;
   color: #999999;
   font-size: 14px; }
+
+@media screen and (max-width: 1199px) {
+  section .card h3 {
+    font-size: 18px; } }
+@media screen and (max-width: 992px) {
+  section .card h3 {
+    font-size: 18px; }
+  section.light ul li {
+    font-size: 17px; } }
+@media screen and (max-width: 767px) {
+  body {
+    padding: 0; }
+
+  .navbar {
+    position: relative;
+    margin: 0; }
+    .navbar .navbar-header {
+      text-align: center; }
+      .navbar .navbar-header .navbar-brand {
+        display: inline-block;
+        width: 100%;
+        height: 60px; }
+      .navbar .navbar-header .navbar-nav {
+        float: none !important;
+        clear: both;
+        display: block; }
+        .navbar .navbar-header .navbar-nav li {
+          padding: 10px 0;
+          line-height: 1em;
+          font-size: 15px; }
+          .navbar .navbar-header .navbar-nav li a {
+            line-height: 1em;
+            padding: 0;
+            font-size: 15px; }
+
+  #hero {
+    padding: 20px 0; }
+    #hero h1 {
+      font-size: 20px;
+      letter-spacing: 0; }
+    #hero h2 {
+      font-size: 16px;
+      line-height: 1.4;
+      letter-spacing: 0; }
+    #hero .card {
+      margin-bottom: 10px; }
+
+  section.light ul li {
+    font-size: 15px;
+    white-space: normal; }
+
+  footer {
+    font-size: 12px; } }
