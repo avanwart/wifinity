@@ -38,49 +38,59 @@
 				</div> 
 			</nav>
 		</header>
-		<section class="ashy steps">
+    <section class="ashy steps">
 			<div class="container">
 				<div class="row">
 		    		<div class="col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
 		    			<div class="row">
-		    				<div class="col-sm-4 active text-center"><h2><strong>Step 1. Create your account</strong></h2></div>
+		    				<div class="col-sm-4 active text-center"><h2>Step 1. Create your account</h2></div>
 		    				<div class="col-sm-4 text-center"><h2>Step 2. Payment</h2></div>
-		    				<div class="col-sm-4 text-center"><h2>Step 3. Confirmation</h2></div>
+		    				<div class="col-sm-4 text-center"><h2><strong>Step 3. Confirmation</strong></h2></div>
 		    			</div>
 		    		</div>
 	    		</div>
     		</div>
 			</div>
 		</section>
-    <section id="create">
+    <section id="payment">
     	<div class="container" id="truecontent">
    			<div class="capsule">
 	    		<div class="row">
+	    			<div class="col-sm-12 col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2 text-center">
+	    				<span style="display: none" id="daily">Thank you!  You just purchased: <strong>1 day contract, £1.99</strong></span>
+	    				<span style="display: none" id="weekly">Thank you!  You just purchased: <strong>1 week contract, £7.99</strong></span>
+	    				<span style="display: none" id="monthly">Thank you!  You just purchased: <strong>1 month contract, £13.25</strong></span>
+	    				<span style="display: none" id="yearly">Thank you!  You just purchased: <strong>12 month contract, £8.75 per month</strong></span>
+	    				<hr>
+	    			</div>
 		    		<div class="col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
 		    			<div class="row">
 		    				<div class="col-sm-12">
-		    					<h3>To create your Wifinity account, please enter your details</h3>
-		    					<form action="" class="">
+		    					<h3>To proceed to high-speed WiFi, finalize your account:</h3>
+		    					<form action="" class="form-horizontal" style="margin-top: 30px">
 										<div class="form-group">
-		    							<label for="password">Email address</label>
-		    							<input type="text" id="email" name="email" class="form-control">
+		    							<label for="email">Email address</label>
+		    							<input type="text" id="email" name="email" class="form-control" value="george@roiworks.com" disabled>
 		    						</div>
 										<div class="form-group">
-		    							<label for="email2">First name</label>
-		    							<input type="text" id="firstname" name="firstname" class="form-control">
+		    							<label for="password">Create password</label>
+	    								<input type="password" id="password" name="password" class="form-control">
 		    						</div>
-	    							<div class="form-group">
-		    							<label for="password">Surname</label>
-		    							<input type="text" id="surname" name="surname" class="form-control">
+		  							<div class="form-group">
+		    							<label for="mobile">Mobile number</label>
+		    							<input type="text" id="mobile" name="mobile" class="form-control">
+		    						</div>
+		    						<div class="form-group">
+		    							<div class="disclaimer">If you forget your username or password, we can text them to you.</div>
 		    						</div>
 		    						<div class="form-group text-left">
-		    							<a href="payment-yearly.html" class="btn btn-primary">Next <i class="glyphicon glyphicon-chevron-right"></i></a>
+	    								<a href="http://google.com/" class="btn btn-primary">Get me online <i class="glyphicon glyphicon-chevron-right"></i></a>
 		    						</div>
-	    						</form>
+		  						</form>
 		    				</div>
 		    			</div>
 		    		</div>
-		    	</div>
+	    		</div>
 	    	</div>
     	</div>
     </section>
@@ -100,37 +110,23 @@
     <script src="js/bootstrap.min.js"></script>
     <script>
     $(document).ready(function(){
-    	function getUrlVars()
-				{
-				    var vars = [], hash;
-				    var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
-				    for(var i = 0; i < hashes.length; i++)
-				    {
-				        hash = hashes[i].split('=');
-				        vars.push(hash[0]);
-				        vars[hash[0]] = hash[1];
-				    }
-				    return vars;
-				}
-				console.log(vars);
-   //  	$(function(){
-		 //    var windowH = $(window).height();
-		 //    var wrapperH = $('#hero').height();
-		 //    if(windowH > wrapperH) {                            
-		 //        $('#hero').css({'height':($(window).height())+'px'});
-		 //    }                                                                               
-		 //    $(window).resize(function(){
-	  //       var windowH = $(window).height();
-	  //       var wrapperH = $('#hero').height();
-	  //       var differenceH = windowH - wrapperH;
-	  //       var newH = wrapperH + differenceH;
-	  //       var truecontentH = $('#truecontent').height();
-	  //       if(windowH > truecontentH) {
-	  //           $('#hero').css('height', (newH)+'px');
-	  //       }
 
-	  //   	})          
-			// });
+    	// Query Parameter Functionality
+    	var myParam = location.search.split('plan=')[1]
+    	console.log(myParam);
+
+   		if(myParam == "daily"){
+   			$('#daily').fadeIn();
+   		}
+   		if(myParam == "weekly"){
+   			$('#weekly').fadeIn();
+   		}
+   		if(myParam == "monthly"){
+   			$('#monthly').fadeIn();
+   		}
+   		if(myParam == "yearly"){
+   			$('#yearly').fadeIn();
+   		}
     });
     </script>
   </body>

@@ -184,25 +184,28 @@ form .disclaimer, .form-horizontal .disclaimer {
   #daily h1, #monthly h1 {
     font-weight: normal;
     font-size: 24px;
+    line-height: 1.5;
     letter-spacing: 0;
     margin-bottom: 30px; }
   #daily .btn-primary, #monthly .btn-primary {
     margin-top: 30px; }
-  #daily form, #monthly form {
+  #daily .row, #monthly .row {
     display: inline-block; }
-    #daily form .card, #monthly form .card {
+    #daily .row .card, #monthly .row .card {
       margin-top: 20px;
       padding: 20px; }
-      #daily form .card em, #monthly form .card em {
+      #daily .row .card em, #monthly .row .card em {
         text-align: center;
         display: block;
         font-weight: bold;
         font-size: 28px;
         font-style: normal;
         margin-bottom: 10px; }
-      #daily form .card input[type="checkbox"], #monthly form .card input[type="checkbox"] {
+      #daily .row .card input[type="checkbox"], #monthly .row .card input[type="checkbox"] {
         display: none; }
-    #daily form .checkbox, #monthly form .checkbox {
+      #daily .row .card .btn-primary, #monthly .row .card .btn-primary {
+        clear: both; }
+    #daily .row .checkbox, #monthly .row .checkbox {
       margin: 0 !important; }
 
 @media screen and (max-width: 1199px) {

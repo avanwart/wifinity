@@ -57,7 +57,10 @@
    			<div class="capsule">
 	    		<div class="row">
 	    			<div class="col-sm-12 col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2 text-center">
-	    				Your package: <strong>One month of WiFi for £13.25</strong>
+	    				<span style="display: none" id="daily">Your package: <strong>One day of WiFi for £1.99</strong></span>
+	    				<span style="display: none" id="weekly">Your package: <strong>One week of WiFi for £7.99</strong></span>
+	    				<span style="display: none" id="monthly">Your package: <strong>One month of WiFi for £13.25</strong></span>
+	    				<span style="display: none" id="yearly">Your package: <strong>12 month contract, £8.75 per month</strong></span>
 	    				<hr>
 	    			</div>
 		    		<div class="col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
@@ -129,7 +132,7 @@
 										      <input type="checkbox" id="accept"> By completing this purchase I accept Wifinity's <a href="#">Privacy Policy</a> and <a href="#">Terms of Use</a>
 										    </label>
 										  </div>
-	    								<a href="confirmation-monthly.html" class="btn btn-primary">Next <i class="glyphicon glyphicon-chevron-right"></i></a>
+	    								<a href="confirmation.html" class="btn btn-primary">Next <i class="glyphicon glyphicon-chevron-right"></i></a>
 		    						</div>
 		  						</form>
 		    				</div>
@@ -154,26 +157,29 @@
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
     <script>
-   //  $(document).ready(function(){
-   //  	$(function(){
-		 //    var windowH = $(window).height();
-		 //    var wrapperH = $('#hero').height();
-		 //    if(windowH > wrapperH) {                            
-		 //        $('#hero').css({'height':($(window).height())+'px'});
-		 //    }                                                                               
-		 //    $(window).resize(function(){
-	  //       var windowH = $(window).height();
-	  //       var wrapperH = $('#hero').height();
-	  //       var differenceH = windowH - wrapperH;
-	  //       var newH = wrapperH + differenceH;
-	  //       var truecontentH = $('#truecontent').height();
-	  //       if(windowH > truecontentH) {
-	  //           $('#hero').css('height', (newH)+'px');
-	  //       }
+   	$(document).ready(function(){
 
-	  //   	})          
-			// });
-   //  });
+    	// Query Parameter Functionality
+    	var myParam = location.search.split('plan=')[1]
+    	console.log(myParam);
+
+   		if(myParam == "daily"){
+   			$('#daily').fadeIn();
+   			$('.btn-primary').attr('href', 'confirmation.html?plan=daily')
+   		}
+   		if(myParam == "weekly"){
+   			$('#weekly').fadeIn();
+   			$('.btn-primary').attr('href', 'confirmation.html?plan=weekly')
+   		}
+   		if(myParam == "monthly"){
+   			$('#monthly').fadeIn();
+   			$('.btn-primary').attr('href', 'confirmation.html?plan=monthly')
+   		}
+   		if(myParam == "yearly"){
+   			$('#yearly').fadeIn();
+   			$('.btn-primary').attr('href', 'confirmation.html?plan=yearly')
+   		}
+    });
     </script>
   </body>
 </html>
