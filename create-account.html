@@ -55,26 +55,35 @@
     <section id="create">
     	<div class="container" id="truecontent">
    			<div class="capsule">
+   			<div class="row">
+	    			<div class="col-sm-12 col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2 text-center">
+	    				<span style="display: none" id="daily">Your package: <strong>One day of WiFi for £1.99</strong></span>
+	    				<span style="display: none" id="weekly">Your package: <strong>One week of WiFi for £7.99</strong></span>
+	    				<span style="display: none" id="monthly">Your package: <strong>One month of WiFi for £13.25</strong></span>
+	    				<span style="display: none" id="yearly">Your package: <strong>12 month contract, £8.75 per month</strong></span>
+	    				<hr>
+	    			</div>
+	    		</div>
 	    		<div class="row">
 		    		<div class="col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
 		    			<div class="row">
 		    				<div class="col-sm-12">
 		    					<h3>To create your Wifinity account, please enter your details</h3>
-		    					<form action="" class="">
+		    					<form action="" class="" id="create-account">
 										<div class="form-group">
 		    							<label for="password">Email address</label>
-		    							<input type="text" id="email" name="email" class="form-control">
+		    							<input type="email" id="email" name="email" class="form-control" required="">
 		    						</div>
 										<div class="form-group">
 		    							<label for="email2">First name</label>
-		    							<input type="text" id="firstname" name="firstname" class="form-control">
+		    							<input type="text" id="firstname" name="firstname" class="form-control" required="">
 		    						</div>
 	    							<div class="form-group">
 		    							<label for="password">Surname</label>
-		    							<input type="text" id="surname" name="surname" class="form-control">
+		    							<input type="text" id="surname" name="surname" class="form-control" required="">
 		    						</div>
 		    						<div class="form-group text-left">
-		    							<a href="payment-yearly.html" class="btn btn-primary">Next <i class="glyphicon glyphicon-chevron-right"></i></a>
+		    							<button type="submit" class="btn btn-primary">Next <i class="glyphicon glyphicon-chevron-right"></i></button>
 		    						</div>
 	    						</form>
 		    				</div>
@@ -98,6 +107,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.validate.min.js"></script>
     <script>
     $(document).ready(function(){
 
@@ -106,21 +116,29 @@
     	console.log(myParam);
 
    		if(myParam == "daily"){
-   			alert('daily')
-   			$('.btn-primary').attr('href', 'payment.html?plan=daily');
+   			$('#daily').fadeIn();
+   			// $('.btn-primary').attr('href', 'confirmation.html?plan=daily')
    		}
    		if(myParam == "weekly"){
-   			alert('weekly')
-   			$('.btn-primary').attr('href', 'payment.html?plan=weekly');
+   			$('#weekly').fadeIn();
+   			// $('.btn-primary').attr('href', 'confirmation.html?plan=weekly')
    		}
    		if(myParam == "monthly"){
-   			alert('monthly')
-   			$('.btn-primary').attr('href', 'payment.html?plan=monthly');
+   			$('#monthly').fadeIn();
+   			// $('.btn-primary').attr('href', 'confirmation.html?plan=monthly')
    		}
    		if(myParam == "yearly"){
-   			alert('yearly')
-   			$('.btn-primary').attr('href', 'payment.html?plan=yearly');
+   			$('#yearly').fadeIn();
+   			// $('.btn-primary').attr('href', 'confirmation.html?plan=yearly')
    		}
+
+   		// Form functionality
+    	$('#create-account').validate({
+    		submitHandler: function(form) {
+    			window.location = 'payment.html?plan='+myParam;
+    		}
+    	});
+
     });
     </script>
   </body>

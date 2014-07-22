@@ -67,24 +67,24 @@
 		    			<div class="row">
 		    				<div class="col-sm-12">
 		    					<h3>To proceed to high-speed WiFi, finalize your account:</h3>
-		    					<form action="" class="form-horizontal" style="margin-top: 30px">
+		    					<form action="" style="margin-top: 30px" id="finalize">
 										<div class="form-group">
 		    							<label for="email">Email address</label>
 		    							<input type="text" id="email" name="email" class="form-control" value="george@roiworks.com" disabled>
 		    						</div>
 										<div class="form-group">
 		    							<label for="password">Create password</label>
-	    								<input type="password" id="password" name="password" class="form-control">
+	    								<input type="password" id="password" name="password" class="form-control" required minlength="8">
 		    						</div>
 		  							<div class="form-group">
 		    							<label for="mobile">Mobile number</label>
-		    							<input type="text" id="mobile" name="mobile" class="form-control">
+		    							<input type="text" id="mobile" name="mobile" class="form-control" required minlength="12">
 		    						</div>
 		    						<div class="form-group">
 		    							<div class="disclaimer">If you forget your username or password, we can text them to you.</div>
 		    						</div>
 		    						<div class="form-group text-left">
-	    								<a href="http://google.com/" class="btn btn-primary">Get me online <i class="glyphicon glyphicon-chevron-right"></i></a>
+	    								<input type="submit" class="btn btn-primary" value="Get me online">
 		    						</div>
 		  						</form>
 		    				</div>
@@ -108,8 +108,25 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.validate.min.js"></script>
+    <script src="js/jquery.maskedinput.min.js"></script>
     <script>
     $(document).ready(function(){
+
+    	// Form functionality
+    	$('#finalize').validate({
+    		submitHandler: function(form) {
+          // ajax method
+          // $.ajax({
+          //     url: action, // determined from click handler above
+          //     // ajax options
+          // }); 
+          // Redirect
+          window.location = "http://www.google.com/";     
+        }
+    	});
+
+    	$('#mobile').mask("999 999 9999",{placeholder:" "});
 
     	// Query Parameter Functionality
     	var myParam = location.search.split('plan=')[1]
