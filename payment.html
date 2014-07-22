@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <title>Wifinity</title>
 		<meta name="robots" content="noindex, nofollow">
     <link rel="icon" href="favicon.png">
@@ -30,9 +30,6 @@
 							<a class="navbar-brand" href="/wifinity" title="Wifinity Inc." rel="homepage">
 								<img src="img/wifinity-logo-2x.jpg" alt="Wifinity Inc.">
 							</a>
-							<ul id="menu-top-nav" class="nav navbar-nav pull-right">
-								<li>Already have an account?  <a href="#">Login now &raquo;</a></li>
-							</ul>	
 						</div>							
 					</div>
 				</div> 
@@ -57,18 +54,28 @@
    			<div class="capsule">
 	    		<div class="row">
 	    			<div class="col-sm-12 col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2 text-center">
-	    				<span style="display: none" id="daily">Your package: <strong>One day of WiFi for £1.99</strong></span>
-	    				<span style="display: none" id="weekly">Your package: <strong>One week of WiFi for £7.99</strong></span>
-	    				<span style="display: none" id="monthly">Your package: <strong>One month of WiFi for £13.25</strong></span>
-	    				<span style="display: none" id="yearly">Your package: <strong>12 month contract, £8.75 per month</strong></span>
-	    				<hr>
+	    				<div class="alert alert-success fade in" role="alert" id="free" style="display: none">
+					      Your package: <strong>15 minutes of FREE WiFi</strong>
+					    </div>
+					    <div class="alert alert-success fade in" role="alert" id="daily" style="display: none">
+					      Your package: <strong>One day of WiFi for £1.99</strong>
+					    </div>
+					    <div class="alert alert-success fade in" role="alert" id="weekly" style="display: none">
+					      Your package: <strong>One week of WiFi for £7.99</strong>
+					    </div>
+					    <div class="alert alert-success fade in" role="alert" id="monthly" style="display: none">
+					      Your package: <strong>One month of WiFi for £13.25</strong>
+					    </div>
+					    <div class="alert alert-success fade in" role="alert" id="yearly" style="display: none">
+					      Your package: <strong>12 month contract, £8.75 per month</strong>
+					    </div>
 	    			</div>
 	    		</div>
-	    		<div class="row"
+	    		<div class="row">
 		    		<div class="col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
 		    			<div class="row">
 		    				<div class="col-sm-12">
-		    					<!-- <h3>To complete your purchase please enter your card details below</h3> -->
+		    					<h3 id="paid">To complete your purchase please enter your card details below</h3>
 		    					<form action="" class="" id="payments">
 										<div class="form-group">
 		    							<label for="cardname">Name on card</label>
@@ -88,52 +95,50 @@
 		    							<label for="cardnumber">Card number</label>
 		    							<input type="text" id="cardnumber" name="cardnumber" class="form-control" required>
 		    						</div>
-		    						<div class="form-group">
+		    						<div class="form-group expiry">
 		    							<div class="row">
 		    								<label for="expirydatemonth" class="col-sm-12">Expiry date</label>
 		    							</div>
 		    							<div class="row">
-		    								<div class="form-group">
-				    							<div class="col-sm-4">
-				    								<select id="expirydatemonth" name="expirydatemonth" class="form-control" required>
-				    									<option value="01">01</option>
-													    <option value="02">02</option>
-													    <option value="03">03</option>
-													    <option value="04">04</option>
-													    <option value="05">05</option>
-													    <option value="06">06</option>
-													    <option value="07">07</option>
-													    <option value="08">08</option>
-													    <option value="09">09</option>
-													    <option value="10">10</option>
-													    <option value="11">11</option>
-													    <option value="12">12</option>
-													  </select>
-				    							</div>
-				    							<div class="col-sm-4">
-				    								<select id="expirydateyear" name="expirydateyear" class="form-control" required>
-				    									<option value="2014">2014</option>
-													    <option value="2015">2015</option>
-													    <option value="2016">2016</option>
-													    <option value="2017">2017</option>
-													    <option value="2018">2018</option>
-													    <option value="2019">2019</option>
-													    <option value="2020">2020</option>
-													    <option value="2021">2021</option>
-													    <option value="2022">2022</option>
-													  </select>
-				    							</div>
+			    							<div class="col-sm-4">
+			    								<select id="expirydatemonth" name="expirydatemonth" class="form-control" required>
+			    									<option value="01">01</option>
+												    <option value="02">02</option>
+												    <option value="03">03</option>
+												    <option value="04">04</option>
+												    <option value="05">05</option>
+												    <option value="06">06</option>
+												    <option value="07">07</option>
+												    <option value="08">08</option>
+												    <option value="09">09</option>
+												    <option value="10">10</option>
+												    <option value="11">11</option>
+												    <option value="12">12</option>
+												  </select>
+			    							</div>
+			    							<div class="col-sm-4">
+			    								<select id="expirydateyear" name="expirydateyear" class="form-control" required>
+			    									<option value="2014">2014</option>
+												    <option value="2015">2015</option>
+												    <option value="2016">2016</option>
+												    <option value="2017">2017</option>
+												    <option value="2018">2018</option>
+												    <option value="2019">2019</option>
+												    <option value="2020">2020</option>
+												    <option value="2021">2021</option>
+												    <option value="2022">2022</option>
+												  </select>
 			    							</div>
 			    						</div>
 		    						</div>
-		    						<div class="form-group text-left">
+		    						<div class="form-group text-left security">
 		    							<label for="issuenumber">Security code</label>
-		    							<input type="text" id="securitycode" name="securitycode" class="form-control" style="width: 100px; display: inline-block; margin-right: 10px" required> <i class="glyphicon glyphicon-question-sign"></i>
+		    							<input type="text" id="securitycode" name="securitycode" class="form-control" style="width: 100px; display: inline-block; margin-right: 10px" required maxlength="3"> <i class="glyphicon glyphicon-question-sign"></i>
 		    						</div>
-		    						<div class="form-group text-left">
+		    						<div class="form-group text-left accept">
 		    							<div class="checkbox">
 										    <label class="disclaimer">
-										      <input type="checkbox" id="accept" name="accept"> By completing this purchase I accept Wifinity's <a href="#">Privacy Policy</a> and <a href="#">Terms of Use</a>
+										      <input type="checkbox" id="accept" name="accept" required> <span id="accept-text">By completing this purchase I accept Wifinity's <a href="#">Privacy Policy</a> and <a href="#">Terms of Use</a></span>
 										    </label>
 										  </div>
 	    								<button type="submit" class="btn btn-primary">Next <i class="glyphicon glyphicon-chevron-right"></i></button>
@@ -168,6 +173,10 @@
     	var myParam = location.search.split('plan=')[1]
     	console.log(myParam);
 
+   		if(myParam == "free"){
+   			$('#free').fadeIn();
+   			// $('.btn-primary').attr('href', 'confirmation.html?plan=daily')
+   		}
    		if(myParam == "daily"){
    			$('#daily').fadeIn();
    			// $('.btn-primary').attr('href', 'confirmation.html?plan=daily')
@@ -187,6 +196,13 @@
 
    		// Form functionality
  			$('#payments').validate({
+ 				errorPlacement: function(error, element) {
+			    if (element.attr("name") == "accept" || element.attr("name") == "lname" ) {
+			      error.insertAfter("#accept-text");
+			    } else {
+			      error.insertAfter(element);
+			    }
+			  },
     		submitHandler: function(form) {
     			window.location = 'confirmation.html?plan='+myParam;
     		}

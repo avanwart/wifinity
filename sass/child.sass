@@ -113,6 +113,10 @@ section
 			text-align: center
 			margin-bottom: 20px
 			font-size: 15px
+	.alert
+		border-radius: 0 0 4px 4px
+		border: none
+
 	&.light
 		background: white
 		h1
@@ -198,6 +202,7 @@ form, .form-horizontal
 		padding: 0
 
 #create
+	padding-top: 0
 	text-align: center
 	min-height: 440px
 	h2
@@ -214,6 +219,7 @@ form, .form-horizontal
 
 
 #payment
+	padding-top: 0
 	text-align: center
 	form
 		margin-top: 10px
@@ -233,7 +239,7 @@ form, .form-horizontal
 	.btn-primary
 		margin-top: 30px
 	.row
-		display: inline-block
+		// display: inline-block
 		.card
 			margin-top: 20px
 			padding: 20px
@@ -311,3 +317,49 @@ form, .form-horizontal
 					white-space: normal
 	footer
 		font-size: 12px
+
+@media screen and (max-width: 640px)
+	section
+		padding: 1em 0
+		&.steps
+			padding: 1em 0
+			h2
+				font-size: 16px
+				letter-spacing: 0
+		.alert
+			border-radius: 0
+			margin: 0 -15px
+			font-size: 14px
+		&#create, &#payment
+			h3
+				margin: 20px 0 40px
+				font-size: 16px
+				line-height: 1.5
+			form
+				margin-top: 20px
+				display: block
+				width: auto
+				.btn-primary
+					width: 100%
+				.expiry
+					#expirydatemonth
+						margin-bottom: 10px
+				.disclaimer
+					white-space: normal
+				.security
+					i
+						position: absolute
+						left: 110px
+						top: 36px
+				label.error
+					padding: 4px 0
+					position: relative
+					top: auto
+					bottom: auto
+					left: auto
+					right: auto
+					background: none
+					color: red
+					text-align: left
+					&:after, &:before
+						display: none

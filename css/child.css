@@ -96,6 +96,9 @@ section {
       text-align: center;
       margin-bottom: 20px;
       font-size: 15px; }
+  section .alert {
+    border-radius: 0 0 4px 4px;
+    border: none; }
   section.light {
     background: white; }
     section.light h1 {
@@ -178,6 +181,7 @@ form .disclaimer, .form-horizontal .disclaimer {
     padding: 0; }
 
 #create {
+  padding-top: 0;
   text-align: center;
   min-height: 440px; }
   #create h2 {
@@ -193,6 +197,7 @@ form .disclaimer, .form-horizontal .disclaimer {
     text-align: left; }
 
 #payment {
+  padding-top: 0;
   text-align: center; }
   #payment form {
     margin-top: 10px;
@@ -211,24 +216,22 @@ form .disclaimer, .form-horizontal .disclaimer {
     margin-bottom: 30px; }
   #daily .btn-primary, #monthly .btn-primary {
     margin-top: 30px; }
-  #daily .row, #monthly .row {
-    display: inline-block; }
-    #daily .row .card, #monthly .row .card {
-      margin-top: 20px;
-      padding: 20px; }
-      #daily .row .card em, #monthly .row .card em {
-        text-align: center;
-        display: block;
-        font-weight: bold;
-        font-size: 28px;
-        font-style: normal;
-        margin-bottom: 10px; }
-      #daily .row .card input[type="checkbox"], #monthly .row .card input[type="checkbox"] {
-        display: none; }
-      #daily .row .card .btn-primary, #monthly .row .card .btn-primary {
-        clear: both; }
-    #daily .row .checkbox, #monthly .row .checkbox {
-      margin: 0 !important; }
+  #daily .row .card, #monthly .row .card {
+    margin-top: 20px;
+    padding: 20px; }
+    #daily .row .card em, #monthly .row .card em {
+      text-align: center;
+      display: block;
+      font-weight: bold;
+      font-size: 28px;
+      font-style: normal;
+      margin-bottom: 10px; }
+    #daily .row .card input[type="checkbox"], #monthly .row .card input[type="checkbox"] {
+      display: none; }
+    #daily .row .card .btn-primary, #monthly .row .card .btn-primary {
+      clear: both; }
+  #daily .row .checkbox, #monthly .row .checkbox {
+    margin: 0 !important; }
 
 @media screen and (max-width: 1199px) {
   section .card h3 {
@@ -282,3 +285,45 @@ form .disclaimer, .form-horizontal .disclaimer {
 
   footer {
     font-size: 12px; } }
+@media screen and (max-width: 640px) {
+  section {
+    padding: 1em 0; }
+    section.steps {
+      padding: 1em 0; }
+      section.steps h2 {
+        font-size: 16px;
+        letter-spacing: 0; }
+    section .alert {
+      border-radius: 0;
+      margin: 0 -15px;
+      font-size: 14px; }
+    section#create h3, section#payment h3 {
+      margin: 20px 0 40px;
+      font-size: 16px;
+      line-height: 1.5; }
+    section#create form, section#payment form {
+      margin-top: 20px;
+      display: block;
+      width: auto; }
+      section#create form .btn-primary, section#payment form .btn-primary {
+        width: 100%; }
+      section#create form .expiry #expirydatemonth, section#payment form .expiry #expirydatemonth {
+        margin-bottom: 10px; }
+      section#create form .disclaimer, section#payment form .disclaimer {
+        white-space: normal; }
+      section#create form .security i, section#payment form .security i {
+        position: absolute;
+        left: 110px;
+        top: 36px; }
+      section#create form label.error, section#payment form label.error {
+        padding: 4px 0;
+        position: relative;
+        top: auto;
+        bottom: auto;
+        left: auto;
+        right: auto;
+        background: none;
+        color: red;
+        text-align: left; }
+        section#create form label.error:after, section#create form label.error:before, section#payment form label.error:after, section#payment form label.error:before {
+          display: none; } }
