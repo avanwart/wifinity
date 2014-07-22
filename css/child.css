@@ -8,6 +8,11 @@ a {
   font-weight: bold; }
   a:hover {
     text-decoration: underline; }
+  a:focus, a:active {
+    outline: none; }
+
+.modal .modal-dialog {
+  width: 440px; }
 
 .btn-primary {
   border: none;
@@ -97,7 +102,7 @@ section {
       margin-bottom: 20px;
       font-size: 15px; }
   section .alert {
-    border-radius: 0 0 4px 4px;
+    border-radius: 0 0 8px 8px;
     border: none; }
   section.light {
     background: white; }
@@ -172,13 +177,14 @@ form .disclaimer, .form-horizontal .disclaimer {
     padding-right: 60px; }
 
 .steps {
-  padding: 2em 0;
+  padding: 1em 0;
   text-align: center; }
   .steps h2 {
-    font-size: 18px;
+    font-size: 16px;
     margin-bottom: 60px;
     margin: 0;
-    padding: 0; }
+    padding: 0;
+    letter-spacing: 0; }
 
 #create {
   padding-top: 0;
@@ -286,6 +292,12 @@ form .disclaimer, .form-horizontal .disclaimer {
   footer {
     font-size: 12px; } }
 @media screen and (max-width: 640px) {
+  .navbar .navbar-header .navbar-brand {
+    height: auto; }
+
+  .modal .modal-dialog {
+    width: auto; }
+
   section {
     padding: 1em 0; }
     section.steps {
@@ -326,4 +338,6 @@ form .disclaimer, .form-horizontal .disclaimer {
         color: red;
         text-align: left; }
         section#create form label.error:after, section#create form label.error:before, section#payment form label.error:after, section#payment form label.error:before {
-          display: none; } }
+          display: none; }
+      section#create form h4.modal-title, section#payment form h4.modal-title {
+        font-size: 17px; } }

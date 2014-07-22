@@ -133,7 +133,23 @@
 		    						</div>
 		    						<div class="form-group text-left security">
 		    							<label for="issuenumber">Security code</label>
-		    							<input type="text" id="securitycode" name="securitycode" class="form-control" style="width: 100px; display: inline-block; margin-right: 10px" required maxlength="3"> <i class="glyphicon glyphicon-question-sign"></i>
+		    							<input type="text" id="securitycode" name="securitycode" class="form-control" style="width: 100px; display: inline-block; margin-right: 10px" required maxlength="4"> <a href="#security-code-modal" data-toggle="modal" data-target="#security-code-modal"><i class="glyphicon glyphicon-question-sign"></i></a>
+		    							<div class="modal" id="security-code-modal">
+		    								<div class="modal-dialog">
+		    									<div class="modal-content">
+		    										<div class="modal-header">
+		    											<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+		    											<h4 class="modal-title">How to find your security code</h4>
+		    										</div>
+		    										<div class="modal-body text-center">
+		    											<img src="img/security_code_sample.jpg" alt="" class="img-responsive" style="display: inline-block">
+		    										</div>
+		    										<div class="modal-footer text-center">
+		    											<button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+		    										</div>
+		    									</div><!-- /.modal-content -->
+		    								</div><!-- /.modal-dialog -->
+		    							</div><!-- /.modal -->
 		    						</div>
 		    						<div class="form-group text-left accept">
 		    							<div class="checkbox">
@@ -208,6 +224,9 @@
     		}
     	});
 
+ 			$('.glyphicon-question-sign').popover({
+ 				html: true
+ 			});
     });
     </script>
   </body>

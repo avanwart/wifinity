@@ -16,7 +16,11 @@ a
 	font-weight: bold
 	&:hover
 		text-decoration: underline
-
+	&:focus, &:active
+		outline: none
+.modal
+	.modal-dialog
+		width: 440px
 .btn-primary
 	border: none
 	border-radius: 5px
@@ -114,7 +118,7 @@ section
 			margin-bottom: 20px
 			font-size: 15px
 	.alert
-		border-radius: 0 0 4px 4px
+		border-radius: 0 0 8px 8px
 		border: none
 
 	&.light
@@ -193,13 +197,14 @@ form, .form-horizontal
 			padding-right: 60px
 
 .steps
-	padding: 2em 0
+	padding: 1em 0
 	text-align: center
 	h2
-		font-size: 18px
+		font-size: 16px
 		margin-bottom: 60px
 		margin: 0
 		padding: 0
+		letter-spacing: 0
 
 #create
 	padding-top: 0
@@ -319,6 +324,13 @@ form, .form-horizontal
 		font-size: 12px
 
 @media screen and (max-width: 640px)
+	.navbar
+		.navbar-header
+			.navbar-brand
+				height: auto
+	.modal
+		.modal-dialog
+			width: auto
 	section
 		padding: 1em 0
 		&.steps
@@ -363,3 +375,5 @@ form, .form-horizontal
 					text-align: left
 					&:after, &:before
 						display: none
+				h4.modal-title
+					font-size: 17px
