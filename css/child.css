@@ -38,6 +38,9 @@ a {
 .ashy {
   background: #efefef; }
 
+header {
+  overflow-x: hidden; }
+
 .navbar {
   background: white;
   border: none;
