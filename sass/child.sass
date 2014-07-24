@@ -4,6 +4,7 @@ $ash: #efefef
 $blue: #27a3ea
 $black: #212121
 $green: #6fae23
+$purple: #653287
 
 body
 	font-size: 17px
@@ -21,6 +22,10 @@ a
 .modal
 	.modal-dialog
 		width: 440px
+		.modal-header
+		.modal-footer
+			text-align: center
+			border: none
 .btn-primary
 	border: none
 	border-radius: 5px
@@ -54,6 +59,37 @@ header
 	.navbar-header
 		float: none
 		display: block
+		ul.status
+			list-style-type: none
+			margin: 10px 0 0 25%
+			padding: 0
+			width: 50%
+			overflow: auto
+			background: url('../img/track.gif') 50% 15px no-repeat
+			li
+				float: left
+				width: 25%
+				text-align: center
+				font-size: 13px
+				color: #999
+				&.fill
+					color: $black
+					i
+						background: $purple
+						color: white
+				i
+					width: 30px
+					height: 30px
+					border-radius: 30px
+					background: $ash
+					text-align: center
+					line-height: 30px
+					color: lighten($black, 40%)
+					font-size: 14px
+					display: inline-block
+					font-style: normal
+					margin-bottom: 5px
+
 	.navbar-brand
 		padding: 0 15px
 		height: $navbarHeight
@@ -122,6 +158,10 @@ section
 	.alert
 		border-radius: 0 0 8px 8px
 		border: none
+		font-size: 15px
+		padding: 8px 32px
+		background: lighten($green, 52%)
+		color: darken($green, 22%)
 
 	&.light
 		background: white
@@ -233,7 +273,7 @@ form, .form-horizontal
 		display: inline-block
 		width: 360px
 	h3
-		margin-top: 0
+		margin: 10px 0 20px
 
 #daily, #monthly
 	min-height: 540px
@@ -325,57 +365,165 @@ form, .form-horizontal
 	footer
 		font-size: 12px
 
-@media screen and (max-width: 640px)
+@media screen and (max-width: 1200px)
+	.navbar
+		.navbar-header
+			ul.status
+				background-size: 328px 2px
+
+@media screen and (max-width: 991px)
+	.navbar
+		.navbar-header
+			ul.status
+				background-size: 246px 2px
+
+@media screen and (max-width: 767px)
 	.navbar
 		.navbar-header
 			.navbar-brand
-				height: auto
+				float: none
+			ul.status
+				margin-bottom: 20px
+
+@media screen and (max-width: 640px)
+	.navbar
+		height: 71px
+		.navbar-header
+			text-align: center
+			.menubar
+				background: url('../img/menubar-bg.gif') 50% 50% no-repeat
+				background-size: cover
+			ul.mobile-status
+				list-style: none
+				overflow: hidden
+				width: auto
+				margin: 0
+				padding: 0
+				display: inline-block!important
+			ul.mobile-status li
+				float: left
+				white-space: nowrap
+				&.step-1
+					a
+						padding-left: 15px
+				&.step-4
+					a
+						padding-right: 25px
+						&:after
+							border: none
+				&.fill
+					a
+						background: #333
+						&:after
+							border-left-color: #333
+			ul.mobile-status li a
+				color: white
+				text-decoration: none
+				padding: 3px 0 3px 56px
+				background: #999
+				position: relative
+				display: block
+				float: left
+				font-size: 13px
+				font-weight: normal
+			ul.mobile-status li a:after
+				content: " "
+				display: block
+				width: 0
+				height: 0
+				border-top: 50px solid transparent
+				border-bottom: 50px solid transparent
+				border-left: 30px solid #999
+				position: absolute
+				top: 50%
+				margin-top: -50px
+				left: 100%
+				z-index: 2 
+			ul.mobile-status li a:before
+				content: " "
+				display: block
+				width: 0
+				height: 0
+				border-top: 50px solid transparent     
+				border-bottom: 50px solid transparent
+				border-left: 30px solid white
+				position: absolute
+				top: 50%
+				margin-top: -50px
+				margin-left: 1px
+				left: 100%
+				z-index: 1
+			.navbar-brand
+				height: 42px
+				line-height: 42px
+				margin-bottom: 5px
+				img
+					width: 120px
+					height: auto
 	.modal
 		.modal-dialog
 			width: auto
-	section
-		padding: 1em 0
-		&.steps
-			padding: 1em 0
-			h2
-				font-size: 16px
-				letter-spacing: 0
-		.alert
-			border-radius: 0
-			margin: 0 -15px
-			font-size: 14px
-		&#create, &#payment
-			h3
-				margin: 20px 0 40px
-				font-size: 16px
-				line-height: 1.5
-			form
-				margin-top: 20px
-				display: block
-				width: auto
-				.btn-primary
-					width: 100%
-				.expiry
-					#expirydatemonth
-						margin-bottom: 10px
-				.disclaimer
-					white-space: normal
-				.security
-					i
-						position: absolute
-						left: 110px
-						top: 36px
-				label.error
-					padding: 4px 0
-					position: relative
-					top: auto
-					bottom: auto
-					left: auto
-					right: auto
-					background: none
-					color: red
-					text-align: left
-					&:after, &:before
-						display: none
-				h4.modal-title
-					font-size: 17px
+			.modal-footer
+				text-align: center
+	section#total
+		text-align: center
+		padding: 10px 0
+	section#customizer
+		padding: 10px 0
+		h2
+			font-size: 16px
+			letter-spacing: 0
+			margin-bottom: 10px
+			font-weight: bold
+		.duration
+			span
+				position: absolute
+				left: -6px
+				top: 5px
+				font-size: 14px
+				color: #777
+			em
+				font-size: 13px
+				font-weight: bold
+				color: $green
+			.checkbox
+				margin: 5px
+				&.active
+					color: #66afe9
+					small
+						color: $black
+
+	form
+		display: block
+		width: auto
+		.form-control.active
+			border-color: #66afe9
+			outline: 0
+			-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6)
+			box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6)
+		.btn-primary
+			width: 100%
+		.expiry
+			#expirydatemonth
+				margin-bottom: 10px
+		.disclaimer
+			white-space: normal
+		.security
+			i
+				position: absolute
+				left: 110px
+				top: 36px
+		label.error
+			padding: 4px 0
+			position: relative
+			top: auto
+			bottom: auto
+			left: auto
+			right: auto
+			background: none
+			color: red
+			text-align: left
+			&:after, &:before
+				display: none
+		h4.modal-title
+			font-size: 17px

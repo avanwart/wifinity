@@ -55,19 +55,19 @@
 	    		<div class="row">
 	    			<div class="col-sm-12 col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2 text-center">
 	    				<div class="alert alert-success fade in" role="alert" id="free" style="display: none">
-					      Your package: <strong>15 minutes of FREE WiFi</strong>
+					      Your package: <br class="visible-xs"/><strong>15 minutes of FREE WiFi</strong>
 					    </div>
 					    <div class="alert alert-success fade in" role="alert" id="daily" style="display: none">
-					      Your package: <strong>One day of WiFi for £1.99</strong>
+					      Your package: <br class="visible-xs"/><strong>One day of WiFi for £1.99</strong>
 					    </div>
 					    <div class="alert alert-success fade in" role="alert" id="weekly" style="display: none">
-					      Your package: <strong>One week of WiFi for £7.99</strong>
+					      Your package: <br class="visible-xs"/><strong>One week of WiFi for £7.99</strong>
 					    </div>
 					    <div class="alert alert-success fade in" role="alert" id="monthly" style="display: none">
-					      Your package: <strong>One month of WiFi for £13.25</strong>
+					      Your package: <br class="visible-xs"/><strong>One month of WiFi for £13.25</strong>
 					    </div>
 					    <div class="alert alert-success fade in" role="alert" id="yearly" style="display: none">
-					      Your package: <strong>12 month contract, £8.75 per month</strong>
+					      Your package: <br class="visible-xs"/><strong>12 month contract, £8.75 per month</strong>
 					    </div>
 	    			</div>
 	    		</div>
@@ -100,8 +100,9 @@
 		    								<label for="expirydatemonth" class="col-sm-12">Expiry date</label>
 		    							</div>
 		    							<div class="row">
-			    							<div class="col-sm-4">
+			    							<div class="col-sm-6">
 			    								<select id="expirydatemonth" name="expirydatemonth" class="form-control" required>
+			    									<option value="">Select Month</option>
 			    									<option value="01">01</option>
 												    <option value="02">02</option>
 												    <option value="03">03</option>
@@ -116,8 +117,9 @@
 												    <option value="12">12</option>
 												  </select>
 			    							</div>
-			    							<div class="col-sm-4">
+			    							<div class="col-sm-6">
 			    								<select id="expirydateyear" name="expirydateyear" class="form-control" required>
+			    									<option value="">Select Year</option>
 			    									<option value="2014">2014</option>
 												    <option value="2015">2015</option>
 												    <option value="2016">2016</option>
@@ -133,7 +135,9 @@
 		    						</div>
 		    						<div class="form-group text-left security">
 		    							<label for="issuenumber">Security code</label>
-		    							<input type="text" id="securitycode" name="securitycode" class="form-control" style="width: 100px; display: inline-block; margin-right: 10px" required maxlength="4"> <a href="#security-code-modal" data-toggle="modal" data-target="#security-code-modal"><i class="glyphicon glyphicon-question-sign"></i></a>
+		    							<input type="text" id="securitycode" name="securitycode" class="form-control" style="width: 100px; display: inline-block; margin-right: 10px" required maxlength="4"> 
+		    							<a href="#security-code-modal" data-toggle="modal" data-target="#security-code-modal"><i class="glyphicon glyphicon-question-sign"></i></a>
+		    							<a href="#" id="redeem-voucher">Redeem Voucher</a>
 		    							<div class="modal" id="security-code-modal">
 		    								<div class="modal-dialog">
 		    									<div class="modal-content">
@@ -214,7 +218,7 @@
  			$('#payments').validate({
  				errorPlacement: function(error, element) {
 			    if (element.attr("name") == "accept" || element.attr("name") == "lname" ) {
-			      error.insertAfter("#accept-text");
+			      error.insertAfter("#redeem-voucher");
 			    } else {
 			      error.insertAfter(element);
 			    }

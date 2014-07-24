@@ -13,6 +13,9 @@ a {
 
 .modal .modal-dialog {
   width: 440px; }
+  .modal .modal-dialog .modal-footer {
+    text-align: center;
+    border: none; }
 
 .btn-primary {
   border: none;
@@ -48,6 +51,36 @@ header {
   .navbar .navbar-header {
     float: none;
     display: block; }
+    .navbar .navbar-header ul.status {
+      list-style-type: none;
+      margin: 10px 0 0 25%;
+      padding: 0;
+      width: 50%;
+      overflow: auto;
+      background: url("../img/track.gif") 50% 15px no-repeat; }
+      .navbar .navbar-header ul.status li {
+        float: left;
+        width: 25%;
+        text-align: center;
+        font-size: 13px;
+        color: #999999; }
+        .navbar .navbar-header ul.status li.fill {
+          color: #212121; }
+          .navbar .navbar-header ul.status li.fill i {
+            background: #653287;
+            color: white; }
+        .navbar .navbar-header ul.status li i {
+          width: 30px;
+          height: 30px;
+          border-radius: 30px;
+          background: #efefef;
+          text-align: center;
+          line-height: 30px;
+          color: #878787;
+          font-size: 14px;
+          display: inline-block;
+          font-style: normal;
+          margin-bottom: 5px; }
   .navbar .navbar-brand {
     padding: 0 15px;
     height: 72px;
@@ -106,7 +139,11 @@ section {
       font-size: 15px; }
   section .alert {
     border-radius: 0 0 8px 8px;
-    border: none; }
+    border: none;
+    font-size: 15px;
+    padding: 8px 32px;
+    background: #eef9e1;
+    color: #335110; }
   section.light {
     background: white; }
     section.light h1 {
@@ -213,7 +250,7 @@ form .disclaimer, .form-horizontal .disclaimer {
     display: inline-block;
     width: 360px; }
   #payment h3 {
-    margin-top: 0; }
+    margin: 10px 0 20px; }
 
 #daily, #monthly {
   min-height: 540px; }
@@ -294,53 +331,152 @@ form .disclaimer, .form-horizontal .disclaimer {
 
   footer {
     font-size: 12px; } }
-@media screen and (max-width: 640px) {
+@media screen and (max-width: 1200px) {
+  .navbar .navbar-header ul.status {
+    background-size: 328px 2px; } }
+@media screen and (max-width: 991px) {
+  .navbar .navbar-header ul.status {
+    background-size: 246px 2px; } }
+@media screen and (max-width: 767px) {
   .navbar .navbar-header .navbar-brand {
-    height: auto; }
+    float: none; }
+  .navbar .navbar-header ul.status {
+    margin-bottom: 20px; } }
+@media screen and (max-width: 640px) {
+  .navbar {
+    height: 71px; }
+    .navbar .navbar-header {
+      text-align: center; }
+      .navbar .navbar-header .menubar {
+        background: url("../img/menubar-bg.gif") 50% 50% no-repeat;
+        background-size: cover; }
+      .navbar .navbar-header ul.mobile-status {
+        list-style: none;
+        overflow: hidden;
+        width: auto;
+        margin: 0;
+        padding: 0;
+        display: inline-block !important; }
+      .navbar .navbar-header ul.mobile-status li {
+        float: left;
+        white-space: nowrap; }
+        .navbar .navbar-header ul.mobile-status li.step-1 a {
+          padding-left: 15px; }
+        .navbar .navbar-header ul.mobile-status li.step-4 a {
+          padding-right: 25px; }
+          .navbar .navbar-header ul.mobile-status li.step-4 a:after {
+            border: none; }
+        .navbar .navbar-header ul.mobile-status li.fill a {
+          background: #333333; }
+          .navbar .navbar-header ul.mobile-status li.fill a:after {
+            border-left-color: #333333; }
+      .navbar .navbar-header ul.mobile-status li a {
+        color: white;
+        text-decoration: none;
+        padding: 3px 0 3px 56px;
+        background: #999999;
+        position: relative;
+        display: block;
+        float: left;
+        font-size: 13px;
+        font-weight: normal; }
+      .navbar .navbar-header ul.mobile-status li a:after {
+        content: " ";
+        display: block;
+        width: 0;
+        height: 0;
+        border-top: 50px solid transparent;
+        border-bottom: 50px solid transparent;
+        border-left: 30px solid #999999;
+        position: absolute;
+        top: 50%;
+        margin-top: -50px;
+        left: 100%;
+        z-index: 2; }
+      .navbar .navbar-header ul.mobile-status li a:before {
+        content: " ";
+        display: block;
+        width: 0;
+        height: 0;
+        border-top: 50px solid transparent;
+        border-bottom: 50px solid transparent;
+        border-left: 30px solid white;
+        position: absolute;
+        top: 50%;
+        margin-top: -50px;
+        margin-left: 1px;
+        left: 100%;
+        z-index: 1; }
+      .navbar .navbar-header .navbar-brand {
+        height: 42px;
+        line-height: 42px;
+        margin-bottom: 5px; }
+        .navbar .navbar-header .navbar-brand img {
+          width: 120px;
+          height: auto; }
 
   .modal .modal-dialog {
     width: auto; }
+    .modal .modal-dialog .modal-footer {
+      text-align: center; }
 
-  section {
-    padding: 1em 0; }
-    section.steps {
-      padding: 1em 0; }
-      section.steps h2 {
-        font-size: 16px;
-        letter-spacing: 0; }
-    section .alert {
-      border-radius: 0;
-      margin: 0 -15px;
-      font-size: 14px; }
-    section#create h3, section#payment h3 {
-      margin: 20px 0 40px;
+  section#total {
+    text-align: center;
+    padding: 10px 0; }
+
+  section#customizer {
+    padding: 10px 0; }
+    section#customizer h2 {
       font-size: 16px;
-      line-height: 1.5; }
-    section#create form, section#payment form {
-      margin-top: 20px;
-      display: block;
-      width: auto; }
-      section#create form .btn-primary, section#payment form .btn-primary {
-        width: 100%; }
-      section#create form .expiry #expirydatemonth, section#payment form .expiry #expirydatemonth {
-        margin-bottom: 10px; }
-      section#create form .disclaimer, section#payment form .disclaimer {
-        white-space: normal; }
-      section#create form .security i, section#payment form .security i {
-        position: absolute;
-        left: 110px;
-        top: 36px; }
-      section#create form label.error, section#payment form label.error {
-        padding: 4px 0;
-        position: relative;
-        top: auto;
-        bottom: auto;
-        left: auto;
-        right: auto;
-        background: none;
-        color: red;
-        text-align: left; }
-        section#create form label.error:after, section#create form label.error:before, section#payment form label.error:after, section#payment form label.error:before {
-          display: none; }
-      section#create form h4.modal-title, section#payment form h4.modal-title {
-        font-size: 17px; } }
+      letter-spacing: 0;
+      margin-bottom: 10px;
+      font-weight: bold; }
+    section#customizer .duration span {
+      position: absolute;
+      left: -6px;
+      top: 5px;
+      font-size: 14px;
+      color: #777777; }
+    section#customizer .duration em {
+      font-size: 13px;
+      font-weight: bold;
+      color: #6fae23; }
+    section#customizer .duration .checkbox {
+      margin: 5px; }
+      section#customizer .duration .checkbox.active {
+        color: #66afe9; }
+        section#customizer .duration .checkbox.active small {
+          color: #212121; }
+
+  form {
+    display: block;
+    width: auto; }
+    form .form-control.active {
+      border-color: #66afe9;
+      outline: 0;
+      -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
+      box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6); }
+    form .btn-primary {
+      width: 100%; }
+    form .expiry #expirydatemonth {
+      margin-bottom: 10px; }
+    form .disclaimer {
+      white-space: normal; }
+    form .security i {
+      position: absolute;
+      left: 110px;
+      top: 36px; }
+    form label.error {
+      padding: 4px 0;
+      position: relative;
+      top: auto;
+      bottom: auto;
+      left: auto;
+      right: auto;
+      background: none;
+      color: red;
+      text-align: left; }
+      form label.error:after, form label.error:before {
+        display: none; }
+    form h4.modal-title {
+      font-size: 17px; } }
