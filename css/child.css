@@ -440,12 +440,13 @@ form .disclaimer, .form-horizontal .disclaimer {
   section#customizer {
     padding: 0; }
     section#customizer .row {
-      padding: 10px 0; }
+      padding: 8px 0; }
     section#customizer h2 {
       font-size: 16px;
       letter-spacing: 0;
       margin-bottom: 10px;
-      font-weight: bold; }
+      font-weight: bold;
+      text-align: left; }
     section#customizer hr {
       margin: 10px 0; }
     section#customizer .duration, section#customizer .devices, section#customizer .bandwidth {
@@ -469,6 +470,7 @@ form .disclaimer, .form-horizontal .disclaimer {
       section#customizer .duration .col-xs-6.active small {
         color: #212121; }
     section#customizer .duration {
+      padding-bottom: 0;
       border-bottom: 1px dotted #d9d9d9; }
     section#customizer .devices {
       border-bottom: 1px dotted #d9d9d9; }
