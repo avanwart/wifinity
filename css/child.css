@@ -343,8 +343,16 @@ form .disclaimer, .form-horizontal .disclaimer {
   .navbar .navbar-header ul.status {
     margin-bottom: 20px; } }
 @media screen and (max-width: 640px) {
+  body {
+    padding-top: 115px; }
+
   .navbar {
-    height: 71px; }
+    height: 71px;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 10; }
     .navbar .navbar-header {
       text-align: center; }
       .navbar .navbar-header .menubar {
@@ -422,36 +430,55 @@ form .disclaimer, .form-horizontal .disclaimer {
 
   section#total {
     text-align: center;
-    padding: 10px 0; }
+    padding: 10px 0;
+    position: fixed;
+    z-index: 10;
+    top: 71px;
+    left: 0;
+    right: 0; }
 
   section#customizer {
-    padding: 10px 0; }
+    padding: 0; }
+    section#customizer .row {
+      padding: 10px 0; }
     section#customizer h2 {
       font-size: 16px;
       letter-spacing: 0;
       margin-bottom: 10px;
       font-weight: bold; }
+    section#customizer hr {
+      margin: 10px 0; }
+    section#customizer .duration, section#customizer .devices, section#customizer .bandwidth {
+      text-align: center; }
     section#customizer .duration span {
       position: absolute;
       left: -6px;
       top: 5px;
       font-size: 14px;
       color: #777777; }
+    section#customizer .duration small {
+      margin-left: -20px; }
     section#customizer .duration em {
       font-size: 13px;
       font-weight: bold;
-      color: #6fae23; }
+      color: #466e16; }
     section#customizer .duration .checkbox {
       margin: 5px; }
-      section#customizer .duration .checkbox.active {
-        color: #66afe9; }
-        section#customizer .duration .checkbox.active small {
-          color: #212121; }
+    section#customizer .duration .col-xs-6.active {
+      color: #66afe9; }
+      section#customizer .duration .col-xs-6.active small {
+        color: #212121; }
+    section#customizer .duration {
+      border-bottom: 1px dotted #d9d9d9; }
+    section#customizer .devices {
+      border-bottom: 1px dotted #d9d9d9; }
+    section#customizer .bandwidth {
+      background: white; }
 
   form {
     display: block;
     width: auto; }
-    form .form-control.active {
+    form .active .form-control {
       border-color: #66afe9;
       outline: 0;
       -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
@@ -479,4 +506,6 @@ form .disclaimer, .form-horizontal .disclaimer {
       form label.error:after, form label.error:before {
         display: none; }
     form h4.modal-title {
-      font-size: 17px; } }
+      font-size: 17px; }
+    form .btn-primary {
+      -webkit-font-smoothing: antialiased; } }

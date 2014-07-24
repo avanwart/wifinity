@@ -66,9 +66,9 @@
             <div class="row duration">
               <div class="col-sm-12">
                 <h2>Duration</h2>
-                <div class="row">
-                  <div class="col-xs-6">
-                    <select name="duration-days" id="duration-days" class="form-control active">
+                <div class="row" style="padding: 0">
+                  <div class="col-xs-6 active">
+                    <select name="duration-days" id="duration-days" class="form-control value">
                       <option value="1.99">1 day - £1.99</option>
                       <option value="3.98">2 days - £3.98</option>
                       <option value="5.97">3 days - £5.97</option>
@@ -81,17 +81,52 @@
                   <span>or</span>
                     <div class="checkbox">
                       <label>
-                        <input type="checkbox" id="one-week"> 1 week <br><small>£7.99</small> <em>Save 66%</em>
+                        <input type="checkbox" id="one-week" value="7.99" class="value"> 1 week <br><small>£7.99</small> <em>Save 66%</em>
                       </label>
                     </div>
                   </div>
                 </div>
               </div>
-              <script>
-              $(document).ready(function(){
-                
-              });
-              </script>
+            </div>
+            <div class="row devices">
+              <div class="col-sm-12">
+                <h2>Devices</h2>
+                <select name="devices" id="devices" class="form-control">
+                  <option value="0">1 device</option>
+                  <option value="1">2 devices</option>
+                  <option value="2">3 devices</option>
+                  <option value="3">4 devices</option>
+                  <option value="4">5 devices</option>
+                  <option value="5">6 devices</option>
+                  <option value="6">7 devices</option>
+                  <option value="7">8 devices</option>
+                  <option value="8">9 devices</option>
+                  <option value="9">10 devices</option>
+                </select>
+                <small>£1 per extra device</small>
+              </div>
+            </div>
+            <div class="row bandwidth">
+              <div class="col-sm-12">
+                <h2>Bandwidth</h2>
+                <select name="bandwidth" id="bandwidth" class="form-control">
+                  <option value="0">4 Mbps</option>
+                  <option value="1">6 Mbps</option>
+                  <option value="2">8 Mbps</option>
+                  <option value="3">10 Mbps</option>
+                  <option value="4">12 Mbps</option>
+                  <option value="5">14 Mbps</option>
+                  <option value="6">16 Mbps</option>
+                  <option value="7">18 Mbps</option>
+                  <option value="8">20 Mbps</option>
+                </select>
+                <small>£1 per 2 Mbps increment</small>
+              </div>
+            </div>
+            <div class="row submit">
+              <div class="col-sm-12">
+                <button class="btn btn-primary btn-block">Next &rarr;</button>
+              </div>
             </div>
           </form>
         </div>
@@ -116,16 +151,60 @@
       
       // Mobile form functionality
       $('#one-week').click(function(){
-        if(this.checked){
-          $('.checkbox').addClass('active');
-          $('#duration-days').removeClass('active');
-        } else {
-          $('.checkbox').removeClass('active');
-          $('#duration-days').addClass('active');
-        }
+        
       });
 
+      // Price calculator
+      var Devices = Number($('#devices').val());
+      var Bandwidth = Number($('#bandwidth').val());
+      var Duration = Number($('.active .value').val());
+      var Total = (Devices += Bandwidth += Duration);
+      console.log(Total);
+      $('#price').text(Total).hide().fadeIn();
 
+      $('select').change(function(){
+        var Devices = Number($('#devices').val());
+        var Bandwidth = Number($('#bandwidth').val());
+        var Duration = Number($('.active .value').val());
+        var Total = (Devices += Bandwidth += Duration);
+        console.log(Total);
+        $('#price').text(Total).hide().fadeIn();
+
+      });
+
+      // If they click the one week checkbox
+      $('#one-week').change(function(){
+        if(this.checked){
+          $('.checkbox').parent().addClass('active');
+          $('#duration-days').parent().removeClass('active');
+        } else {
+          $('.checkbox').parent().removeClass('active');
+          $('#duration-days').parent().addClass('active');
+        }
+        // Update the price
+        var Devices = Number($('#devices').val());
+        var Bandwidth = Number($('#bandwidth').val());
+        var Duration = Number($('.active .value').val());
+        var Total = (Devices += Bandwidth += Duration);
+        console.log(Total);
+        $('#price').text(Total).hide().fadeIn();
+
+      });
+
+      // If they switch to days after choosing one week
+      $('#duration-days').change(function(){
+        $('.checkbox').parent().removeClass('active');
+        $('#duration-days').parent().addClass('active');
+        var Devices = Number($('#devices').val());
+        var Bandwidth = Number($('#bandwidth').val());
+        var Duration = Number($('.active .value').val());
+        var Total = (Devices += Bandwidth += Duration);
+        console.log(Total);
+        $('#one-week').prop('checked', false)
+        $('#price').text(Total).hide().fadeIn();
+      });
+
+      // Determine next button destination
     	$('#one-day').click(function(){
     		$('.btn-primary').attr('href', 'create-account.html?daily')
     	});
