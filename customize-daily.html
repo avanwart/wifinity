@@ -29,12 +29,14 @@
 							<a class="navbar-brand" href="/wifinity" title="Wifinity Inc." rel="homepage">
 								<img src="img/wifinity-logo-2x.jpg" alt="Wifinity Inc.">
 							</a>
+              <!-- Nonmobile progress bar -->
               <ul class="status hidden-xs">
                 <li class="step-1 fill"><i>1</i><br/>Customize</li>
                 <li class="step-2"><i>2</i><br/>Create account</li>
                 <li class="step-3"><i>3</i><br/>Payment</li>
                 <li class="step-4"><i>4</i><br/>All done</li>
               </ul>
+              <!-- Mobile progress bar -->
               <div class="row menubar">
                 <div class="col-sm-12">
                   <ul class="mobile-status visible-xs">
@@ -50,7 +52,101 @@
 				</div> 
 			</nav>
 		</header>
-    <div class="visible-xs">
+    <!-- Nonmobile Customizer -->
+    <section id="nonmobile" class="ashy customizer">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+            <h1>Customize Your Plan</h1>
+          </div>
+          <div class="row">
+            <div class="col-md-10 col-md-offset-1 col-lg-6 col-lg-offset-3 col-sm-12">
+              <form id="nonmobile-customizer" action="" class="card">
+                <div class="row duration">
+                  <div class="col-sm-12">
+                    <div class="inner">
+                      <h2>Duration</h2>
+                      <div class="row">
+                        <div class="col-lg-6 col-lg-offset-0 active daily text-center">
+                          <div class="inner" style="padding-top: 0">
+                            <select name="duration-days" id="nonmobile-duration-days" class="form-control value">
+                              <option value="1.99">1 day</option>
+                              <option value="3.98">2 days</option>
+                              <option value="5.97">3 days</option>
+                              <option value="7.96">4 days</option>
+                              <option value="9.95">5 days</option>
+                              <option value="11.94">6 days</option>
+                            </select>
+                            £1.99/day
+                          </div>
+                        </div>
+                        <div class="col-lg-6 weekly text-center">
+                          <div class="inner" style="padding-top: 0">
+                            <span>or</span>
+                            <div class="checkbox">
+                              <label>
+                                <input type="checkbox" id="nonmobile-one-week" value="7.99" class="value"> 1 week 
+                                <div class="pricepoint">£7.99 <em>Save 66%</em></div>
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-sm-12">
+                          <hr>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-lg-5 col-lg-offset-1 text-center border-right">
+                    <h2>Devices</h2>
+                    <select name="devices" id="nonmobile-devices" class="form-control">
+                      <option value="0">1 device</option>
+                      <option value="1">2 devices</option>
+                      <option value="2">3 devices</option>
+                      <option value="3">4 devices</option>
+                      <option value="4">5 devices</option>
+                      <option value="5">6 devices</option>
+                      <option value="6">7 devices</option>
+                      <option value="7">8 devices</option>
+                      <option value="8">9 devices</option>
+                      <option value="9">10 devices</option>
+                    </select>
+                    <div class="clear">£1 per extra device</div>
+                  </div>
+                  <div class="col-lg-5 text-center">
+                    <h2>Speed</h2>
+                    <select name="bandwidth" id="nonmobile-bandwidth" class="form-control">
+                      <option value="0">4 Mbps</option>
+                      <option value="1">6 Mbps</option>
+                      <option value="2">8 Mbps</option>
+                      <option value="3">10 Mbps</option>
+                      <option value="4">12 Mbps</option>
+                      <option value="5">14 Mbps</option>
+                      <option value="6">16 Mbps</option>
+                      <option value="7">18 Mbps</option>
+                      <option value="8">20 Mbps</option>
+                    </select>
+                    <div class="clear">£1 per 2 Mbps increment</div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-lg-6 col-lg-offset-3 text-center checkout">
+                    Total: £<span id="total">1.99</span>
+                    <button class="btn btn-primary btn-block">Next &rarr;</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Mobile Customizer -->
+    <div id="mobile" class="visible-xs">
       <section id="total" class="ashy">
       	<div class="container">
   	    	<div class="row">
@@ -103,7 +199,6 @@
                   <option value="8">9 devices</option>
                   <option value="9">10 devices</option>
                 </select>
-                
               </div>
             </div>
             <div class="row bandwidth">
@@ -120,7 +215,6 @@
                   <option value="7">18 Mbps</option>
                   <option value="8">20 Mbps</option>
                 </select>
-                
               </div>
             </div>
             <div class="row submit">
@@ -149,10 +243,58 @@
     <script>
     $(document).ready(function(){
       
-      // Mobile form functionality
-      $('#one-week').click(function(){
-        
+    // Non mobile
+
+      // Price calculator
+      var nonmobileDevices = Number($('#nonmobile-devices').val());
+      var nonmobileBandwidth = Number($('#nonmobile-bandwidth').val());
+      var nonmobileDuration = Number($('.active .value').val());
+      var nonmobileTotal = (nonmobileDevices += nonmobileBandwidth += nonmobileDuration);
+      console.log(Total);
+      $('#total').text(Total).hide().fadeIn();
+
+      $('#nonmobile select').change(function(){
+        var nonmobileDevices = Number($('#nonmobile-devices').val());
+        var nonmobileBandwidth = Number($('#nonmobile-bandwidth').val());
+        var nonmobileDuration = Number($('.active .value').val());
+        var nonmobileTotal = (nonmobileDevices += nonmobileBandwidth += nonmobileDuration);
+        console.log(nonmobileTotal);
+        $('#total').text(nonmobileTotal).hide().fadeIn();
+
       });
+
+      // If they click the one week checkbox
+      $('#nonmobile-one-week').change(function(){
+        if(this.checked){
+          $('#nonmobile .checkbox').parent().parent().addClass('active');
+          $('#nonmobile-duration-days').parent().parent().removeClass('active');
+        } else {
+          $('#nonmobile .checkbox').parent().parent().removeClass('active');
+          $('#nonmobile-duration-days').parent().parent().addClass('active');
+        }
+        // Update the price
+        var nonmobileDevices = Number($('#nonmobile-devices').val());
+        var nonmobileBandwidth = Number($('#nonmobile-bandwidth').val());
+        var nonmobileDuration = Number($('.active .value').val());
+        var nonmobileTotal = (nonmobileDevices += nonmobileBandwidth += nonmobileDuration);
+        console.log(nonmobileTotal);
+        $('#total').text(nonmobileTotal).hide().fadeIn();
+      });
+
+      // If they switch to days after choosing one week
+      $('#nonmobile-duration-days').change(function(){
+        $('#nonmobile .checkbox').parent().parent().removeClass('active');
+        $('#nonmobile-duration-days').parent().parent().addClass('active');
+        var nonmobileDevices = Number($('#nonmobile-devices').val());
+        var nonmobileBandwidth = Number($('#nonmobile-bandwidth').val());
+        var nonmobileDuration = Number($('.active .value').val());
+        var nonmobileTotal = (nonmobileDevices += nonmobileBandwidth += nonmobileDuration);
+        console.log(nonmobileTotal);
+        $('#nonmobile-one-week').prop('checked', false)
+        $('#total').text(nonmobileTotal).hide().fadeIn();
+      });
+
+    // Mobile
 
       // Price calculator
       var Devices = Number($('#devices').val());
@@ -162,7 +304,7 @@
       console.log(Total);
       $('#price').text(Total).hide().fadeIn();
 
-      $('select').change(function(){
+      $('#mobile select').change(function(){
         var Devices = Number($('#devices').val());
         var Bandwidth = Number($('#bandwidth').val());
         var Duration = Number($('.active .value').val());
