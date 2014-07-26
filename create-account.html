@@ -25,84 +25,102 @@
 			<nav role="navigation">
 				<div class="navbar navbar-default">
 					<div class="container">
-						<!-- .navbar-toggle is used as the toggle for collapsed navbar content -->
 						<div class="navbar-header">
 							<a class="navbar-brand" href="/wifinity" title="Wifinity Inc." rel="homepage">
 								<img src="img/wifinity-logo-2x.jpg" alt="Wifinity Inc.">
 							</a>
-							<!-- <ul id="menu-top-nav" class="nav navbar-nav pull-right">
-								<li>Already have an account?  <a href="#">Login now &raquo;</a></li>
-							</ul>	 -->
+              <!-- Nonmobile progress bar -->
+              <ul class="status hidden-xs">
+                <li class="step-1 fill"><i>1</i><br/>Customize</li>
+                <li class="step-2 partial"><i>2</i><br/>Create account</li>
+                <li class="step-3"><i>3</i><br/>Payment</li>
+                <li class="step-4"><i>4</i><br/>All done</li>
+              </ul>
+              <!-- Mobile progress bar -->
+              <div class="row menubar">
+                <div class="col-sm-12">
+                  <ul class="mobile-status visible-xs">
+                    <li class="step-1 fill"><a href="#">1. Customize</a></li>
+                    <li class="step-2 fill"><a href="#">2.</a></li>
+                    <li class="step-3"><a href="#">3.</a></li>
+                    <li class="step-4"><a href="#">4.</a></li>
+                  </ul>
+                </div>
+              </div>
 						</div>							
 					</div>
 				</div> 
 			</nav>
 		</header>
-		<section class="ashy steps">
-			<div class="container">
-				<div class="row">
-		    		<div class="col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
-		    			<div class="row">
-		    				<div class="col-sm-4 active text-center"><h2><strong>Step 1. Create your account</strong></h2></div>
-		    				<div class="col-sm-4 text-center"><h2>Step 2. Payment</h2></div>
-		    				<div class="col-sm-4 text-center"><h2>Step 3. Confirmation</h2></div>
-		    			</div>
-		    		</div>
-	    		</div>
-    		</div>
-			</div>
-		</section>
-    <section id="create">
-    	<div class="container" id="truecontent">
-   			<div class="capsule">
-   			<div class="row">
-	    			<div class="col-sm-12 col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2 text-center">
-	    				<div class="alert alert-success fade in" role="alert" id="free" style="display: none">
-					      Your package: <br class="visible-xs"/><strong>15 minutes of FREE WiFi</strong>
+		<!-- Nonmobile -->
+    <section id="create" class="ashy hidden-xs">
+    	 <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+            <h1>Create your Wifinity Account</h1>
+          </div>
+          <div class="row">
+            <div class="col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3 col-sm-12 card">
+					    <div class="alert alert-success fade in" role="alert" id="plan-total" style="display: none">
+					      Your package: <br class="visible-xs"/><strong>One day of WiFi for £<span id="plan-price"></span></strong>
 					    </div>
-					    <div class="alert alert-success fade in" role="alert" id="daily" style="display: none">
-					      Your package: <br class="visible-xs"/><strong>One day of WiFi for £1.99</strong>
-					    </div>
-					    <div class="alert alert-success fade in" role="alert" id="weekly" style="display: none">
-					      Your package: <br class="visible-xs"/><strong>One week of WiFi for £7.99</strong>
-					    </div>
-					    <div class="alert alert-success fade in" role="alert" id="monthly" style="display: none">
-					      Your package: <br class="visible-xs"/><strong>One month of WiFi for £13.25</strong>
-					    </div>
-					    <div class="alert alert-success fade in" role="alert" id="yearly" style="display: none">
-					      Your package: <br class="visible-xs"/><strong>12 month contract, £8.75 per month</strong>
-					    </div>
-	    			</div>
-	    		</div>
-	    		<div class="row">
-		    		<div class="col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
-		    			<div class="row">
-		    				<div class="col-sm-12">
-		    					<h3>To proceed to high speed WiFi, <br class="visible-xs">please enter your details</h3>
-		    					<form action="" class="" id="create-account">
-										<div class="form-group">
-		    							<label for="password">Email address</label>
-		    							<input type="email" id="email" name="email" class="form-control" required="">
-		    						</div>
-										<div class="form-group">
-		    							<label for="email2">First name</label>
-		    							<input type="text" id="firstname" name="firstname" class="form-control" required="">
-		    						</div>
-	    							<div class="form-group">
-		    							<label for="password">Surname</label>
-		    							<input type="text" id="surname" name="surname" class="form-control" required="">
-		    						</div>
-		    						<div class="form-group text-left">
-		    							<button type="submit" class="btn btn-primary">Next <i class="glyphicon glyphicon-chevron-right"></i></button>
-		    						</div>
-	    						</form>
-		    				</div>
-		    			</div>
-		    		</div>
-		    	</div>
-	    	</div>
-    	</div>
+    					<form action="" class="" id="nonmobile-create-account">
+    						<legend>To proceed to high speed WiFi, please enter your details</legend>
+								<div class="form-group">
+    							<label for="password">Email address</label>
+    							<input type="email" id="email" name="email" class="form-control" required="">
+    						</div>
+								<div class="form-group">
+    							<label for="email2">First name</label>
+    							<input type="text" id="firstname" name="firstname" class="form-control" required="">
+    						</div>
+  							<div class="form-group">
+    							<label for="password">Surname</label>
+    							<input type="text" id="surname" name="surname" class="form-control" required="">
+    						</div>
+    						<div class="form-group text-left">
+    							<button type="submit" class="btn btn-primary">Next &rarr;</button>
+    						</div>
+  						</form>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
+    <!-- Mobile -->
+    <div id="mobile" class="visible-xs">
+      <section id="total" class="ashy">
+      	<div class="container">
+  	    	<div class="row">
+            <div class="col-sm-12">
+              <strong>Total: £<span id="price">1.99</span></strong>
+            </div>  
+          </div>
+      	</div>
+      </section>
+      <section id="customizer">
+        <div class="container">
+          <form action="" class="" id="mobile-create-account">
+          	<legend>Create your Wifinity account</legend>
+						<div class="form-group">
+							<label for="password">Email address</label>
+							<input type="email" id="email" name="email" class="form-control" required="">
+						</div>
+						<div class="form-group">
+							<label for="email2">First name</label>
+							<input type="text" id="firstname" name="firstname" class="form-control" required="">
+						</div>
+						<div class="form-group">
+							<label for="password">Surname</label>
+							<input type="text" id="surname" name="surname" class="form-control" required="">
+						</div>
+						<div class="form-group text-left">
+							<button type="submit" class="btn btn-primary">Next &rarr;</button>
+						</div>
+					</form>
+        </div>
+      </section>
+    </div>
     <footer>
     	<div class="container">
     		<div class="row">
@@ -122,34 +140,51 @@
     $(document).ready(function(){
 
     	// Query Parameter Functionality
-    	var myParam = location.search.split('plan=')[1]
-    	console.log(myParam);
+    	var vars = [], hash;
+	    var q = document.URL.split('?')[1];
+	    if(q != undefined){
+        q = q.split('&');
+        for(var i = 0; i < q.length; i++){
+          hash = q[i].split('=');
+          vars.push(hash[1]);
+          vars[hash[0]] = hash[1];
+        }
+			}
+			var myPlan = vars['plan'];
+			var myTotal = vars['total'];
 
-    	if(myParam == "free"){
-   			$('#free').fadeIn();
-   			// $('.btn-primary').attr('href', 'confirmation.html?plan=daily')
+			$('#plan-price').text(myTotal);
+
+
+    	if(myPlan == "free"){
+   			$('#plan-free').fadeIn();
    		}
-   		if(myParam == "daily"){
-   			$('#daily').fadeIn();
-   			// $('.btn-primary').attr('href', 'confirmation.html?plan=daily')
+   		if(myPlan == "daily"){
+   			$('#plan-daily').fadeIn();
    		}
-   		if(myParam == "weekly"){
-   			$('#weekly').fadeIn();
-   			// $('.btn-primary').attr('href', 'confirmation.html?plan=weekly')
+   		if(myPlan == "weekly"){
+   			$('#plan-weekly').fadeIn();
    		}
-   		if(myParam == "monthly"){
-   			$('#monthly').fadeIn();
-   			// $('.btn-primary').attr('href', 'confirmation.html?plan=monthly')
+   		if(myPlan == "monthly"){
+   			$('#plan-monthly').fadeIn();
    		}
-   		if(myParam == "yearly"){
-   			$('#yearly').fadeIn();
-   			// $('.btn-primary').attr('href', 'confirmation.html?plan=yearly')
+   		if(myPlan == "yearly"){
+   			$('#plan-yearly').fadeIn();
    		}
+
+   		$('#plan-total').fadeIn();
 
    		// Form functionality
-    	$('#create-account').validate({
+    	$('#mobile-create-account').validate({
     		submitHandler: function(form) {
     			window.location = 'payment.html?plan='+myParam;
+    		}
+    	});
+
+    	// Form functionality
+    	$('#nonmobile-create-account').validate({
+    		submitHandler: function(form) {
+    			window.location = 'payment.html?plan=daily&total=9.99';
     		}
     	});
 

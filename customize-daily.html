@@ -158,7 +158,7 @@
       </section>
       <section id="customizer">
         <div class="container">
-          <form action="">
+          <form action="" id="mobile-customizer">
             <div class="row duration">
               <div class="col-sm-12">
                 <h2>Duration</h2>
@@ -240,8 +240,26 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.validate.min.js"></script>
     <script>
     $(document).ready(function(){
+
+    // Form and Query Parameter Functionality
+
+      // Query Parameter Functionality
+      var myPlan = location.search.split('plan=')[1]
+      console.log(myPlan);
+
+      $('#nonmobile-customizer').validate({
+        submitHandler: function(form) {
+          var nonmobileDevices = Number($('#nonmobile-devices').val());
+          var nonmobileBandwidth = Number($('#nonmobile-bandwidth').val());
+          var nonmobileDuration = Number($('.active .value').val());
+          var nonmobileTotal = (nonmobileDevices += nonmobileBandwidth += nonmobileDuration);
+          
+          window.location = 'create-account.html?plan='+myPlan+'&devices='+nonmobileDevices+'&bandwidth='+nonmobileBandwidth+'&total='+nonmobileTotal;
+        }
+      });
       
     // Non mobile
 
@@ -251,17 +269,15 @@
       var nonmobileDuration = Number($('.active .value').val());
       var nonmobileTotal = (nonmobileDevices += nonmobileBandwidth += nonmobileDuration);
       console.log(Total);
-      $('#total').text(Total).hide().fadeIn();
+      $('#total').text(nonmobileTotal).hide().fadeIn();
 
       $('#nonmobile select').change(function(){
         var nonmobileDevices = Number($('#nonmobile-devices').val());
         var nonmobileBandwidth = Number($('#nonmobile-bandwidth').val());
         var nonmobileDuration = Number($('.active .value').val());
         var nonmobileTotal = (nonmobileDevices += nonmobileBandwidth += nonmobileDuration);
-        console.log(nonmobile
-          Total);
-        $('#total').text(nonmobile
-          Total).hide().fadeIn();
+        console.log(nonmobileTotal);
+        $('#total').text(nonmobileTotal).hide().fadeIn();
 
       });
 
@@ -356,22 +372,16 @@
     		$('.btn-primary').attr('href', 'create-account.html?monthly')
     	});
 
-    	// Query Parameter Functionality
-    	var myParam = location.search.split('plan=')[1]
-    	console.log(myParam);
-
-   		if(myParam == "daily"){
-   			alert('daily')
-   		}
-   		if(myParam == "weekly"){
-   			alert('weekly')
-   		}
-   		if(myParam == "monthly"){
-   			alert('monthly')
-   		}
-   		if(myParam == "yearly"){
-   			alert('yearly')
-   		}
+      $('#mobile-customizer').validate({
+        submitHandler: function(form) {
+          var Devices = Number($('#nonmobile-devices').val());
+          var Bandwidth = Number($('#nonmobile-bandwidth').val());
+          var Duration = Number($('.active .value').val());
+          var Total = (Devices += Bandwidth += Duration);
+          
+          window.location = 'create-account.html?plan='+myPlan+'&devices='+Devices+'&bandwidth='+Bandwidth+'&total='+Total;
+        }
+      });
 
     });
     </script>
