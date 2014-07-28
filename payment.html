@@ -41,9 +41,9 @@
               <div class="row menubar">
                 <div class="col-sm-12">
                   <ul class="mobile-status visible-xs">
-                    <li class="step-1 fill"><a href="#">1. Customize</a></li>
+                    <li class="step-1 fill"><a href="#">1.</a></li>
                     <li class="step-2 fill"><a href="#">2.</a></li>
-                    <li class="step-3 fill"><a href="#">3.</a></li>
+                    <li class="step-3 fill"><a href="#">3. Payment</a></li>
                     <li class="step-4"><a href="#">4.</a></li>
                   </ul>
                 </div>
@@ -63,9 +63,9 @@
           <div class="row">
             <div class="col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3 col-sm-12 card">
 					    <div class="alert alert-success fade in" role="alert" id="plan-total" style="display: none">
-					      Your package: <br class="visible-xs"/><strong>One day of WiFi for £<span id="plan-price"></span></strong>
+					      Your total: <br class="visible-xs"/><strong>£<span id="plan-price"></span></strong>
 					    </div>
-							<form action="" class="" id="payments">
+							<form action="" class="" id="nonmobile-payments">
 								<legend>To complete your purchase please enter your card details below</legend>
 								<div class="form-group">
 									<label for="cardname">Name on card</label>
@@ -132,11 +132,137 @@
 									</div>
 								</div>
 								<div class="form-group text-left security">
+									<div class="row">
+										<div class="col-sm-6">
+											<label for="issuenumber">Security code</label>
+											<input type="text" id="securitycode" name="securitycode" class="form-control" style="width: 130px; display: inline-block; margin-right: 10px" required maxlength="4"> 
+											<a href="#security-code-modal" data-toggle="modal" data-target="#security-code-modal"><i class="glyphicon glyphicon-question-sign"></i></a>
+											<div class="modal" id="security-code-modal">
+												<div class="modal-dialog">
+													<div class="modal-content">
+														<div class="modal-header">
+															<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+															<h4 class="modal-title">How to find your security code</h4>
+														</div>
+														<div class="modal-body text-center">
+															<img src="img/security_code_sample.jpg" alt="" class="img-responsive" style="display: inline-block">
+														</div>
+														<div class="modal-footer text-center">
+															<button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+														</div>
+													</div><!-- /.modal-content -->
+												</div><!-- /.modal-dialog -->
+											</div><!-- /.modal -->
+										</div>
+										<div class="col-sm-6">
+											<a href="#" id="redeem-voucher">Redeem Voucher</a>
+											<div style="display: none" id="voucher-field">
+												<label for="voucher">Voucher code</label>
+												<input type="text" id="voucher" name="voucher" class="form-control"> 
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="form-group text-left accept">
+									<div class="checkbox">
+								    <label class="disclaimer">
+								      <input type="checkbox" id="accept" name="accept" required> <span id="accept-text">By completing this purchase I accept Wifinity's <a href="#">Privacy Policy</a> and <a href="#">Terms of Use</a></span>
+								    </label>
+								  </div>
+									<button type="submit" class="btn btn-primary">Next <i class="glyphicon glyphicon-chevron-right"></i></button>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+    </section>
+    <!-- Mobile -->
+    <div id="mobile" class="visible-xs">
+      <section id="total" class="ashy">
+      	<div class="container">
+  	    	<div class="row">
+            <div class="col-sm-12">
+              <strong>Total: £<span id="plan-price-mobile">1.99</span></strong>
+            </div>  
+          </div>
+      	</div>
+      </section>
+      <section id="customizer">
+        <div class="container">
+          <form action="" class="" id="mobile-payments">
+						<legend>To complete your purchase please enter your card details below</legend>
+						<div class="form-group">
+							<label for="cardname">Name on card</label>
+							<input type="text" id="cardname" name="cardname" class="form-control" required>
+						</div>
+						<!-- <div class="form-group">
+							<label for="cardtype">Card type</label>
+							<select name="cardtype" id="cardtype" class="form-control" required>
+								<option value="">- Select -</option>
+								<option value="visa">Visa</option>
+								<option value="mastercard">Mastercard</option>
+								<option value="ax">American Express</option>
+								<option value="discover">Discover</option>
+							</select>
+						</div> -->
+						<div class="form-group">
+							<label for="cardnumber">Card number</label>
+							<input type="text" id="checkout_card_number" size="20" name="cardnumber" pattern="[0-9]*" autocomplete="off" class="form-control stripe_card_number" required="required">
+							<ul class="card_logos" style="display: none">
+								<li class="card_visa">Visa</li>
+								<li class="card_mastercard">Mastercard</li>
+								<li class="card_amex">American Express</li>
+								<li class="card_discover">Discover</li>
+								<li class="card_jcb">JCB</li>
+								<li class="card_diners">Diners Club</li>
+							</ul>
+						</div>
+						<div class="form-group expiry">
+							<div class="row">
+								<label for="expirydatemonth" class="col-sm-12">Expiry date</label>
+							</div>
+							<div class="row">
+								<div class="col-sm-6">
+									<select id="expirydatemonth" name="expirydatemonth" class="form-control" required>
+										<option value="">Select Month</option>
+										<option value="01">01</option>
+								    <option value="02">02</option>
+								    <option value="03">03</option>
+								    <option value="04">04</option>
+								    <option value="05">05</option>
+								    <option value="06">06</option>
+								    <option value="07">07</option>
+								    <option value="08">08</option>
+								    <option value="09">09</option>
+								    <option value="10">10</option>
+								    <option value="11">11</option>
+								    <option value="12">12</option>
+								  </select>
+								</div>
+								<div class="col-sm-6">
+									<select id="expirydateyear" name="expirydateyear" class="form-control" required>
+										<option value="">Select Year</option>
+										<option value="2014">2014</option>
+								    <option value="2015">2015</option>
+								    <option value="2016">2016</option>
+								    <option value="2017">2017</option>
+								    <option value="2018">2018</option>
+								    <option value="2019">2019</option>
+								    <option value="2020">2020</option>
+								    <option value="2021">2021</option>
+								    <option value="2022">2022</option>
+								  </select>
+								</div>
+							</div>
+						</div>
+						<div class="form-group text-left security">
+							<div class="row">
+								<div class="col-xs-6">
 									<label for="issuenumber">Security code</label>
-									<input type="text" id="securitycode" name="securitycode" class="form-control" style="width: 100px; display: inline-block; margin-right: 10px" required maxlength="4"> 
-									<a href="#security-code-modal" data-toggle="modal" data-target="#security-code-modal"><i class="glyphicon glyphicon-question-sign"></i></a>
-									<a href="#" id="redeem-voucher">Redeem Voucher</a>
-									<div class="modal" id="security-code-modal">
+									<input type="text" id="securitycode" name="securitycode" class="form-control" style="width: 130px; display: inline-block; margin-right: 10px" required maxlength="4"> 
+									<a href="#security-code-modal-mobile" data-toggle="modal" data-target="#security-code-modal-mobile"><i class="glyphicon glyphicon-question-sign"></i></a>
+									<div class="modal" id="security-code-modal-mobile">
 										<div class="modal-dialog">
 											<div class="modal-content">
 												<div class="modal-header">
@@ -153,20 +279,27 @@
 										</div><!-- /.modal-dialog -->
 									</div><!-- /.modal -->
 								</div>
-								<div class="form-group text-left accept">
-									<div class="checkbox">
-								    <label class="disclaimer">
-								      <input type="checkbox" id="accept" name="accept" required> <span id="accept-text">By completing this purchase I accept Wifinity's <a href="#">Privacy Policy</a> and <a href="#">Terms of Use</a></span>
-								    </label>
-								  </div>
-									<button type="submit" class="btn btn-primary">Next <i class="glyphicon glyphicon-chevron-right"></i></button>
+								<div class="col-xs-6">
+									<a href="#" id="redeem-voucher-mobile">Redeem Voucher</a>
+									<div style="display: none" id="voucher-field-mobile">
+										<label for="voucher">Voucher code</label>
+										<input type="text" id="voucher-mobile" name="voucher" class="form-control"> 
+									</div>
 								</div>
-							</form>
+							</div>
 						</div>
-					</div>
-				</div>
-			</div>
-    </section>
+						<div class="form-group text-left accept">
+							<div class="checkbox">
+						    <label class="disclaimer">
+						      <input type="checkbox" id="accept" name="accept" required> <span id="accept-text">By completing this purchase I accept Wifinity's <a href="#">Privacy Policy</a> and <a href="#">Terms of Use</a></span>
+						    </label>
+						  </div>
+							<button type="submit" class="btn btn-primary">Next <i class="glyphicon glyphicon-chevron-right"></i></button>
+						</div>
+					</form>
+        </div>
+      </section>
+    </div>
     <footer>
     	<div class="container">
     		<div class="row">
@@ -190,33 +323,49 @@
    		$('#checkout_card_number').creditCardTypeDetector({ 'credit_card_logos' : '.card_logos' });
 
    		
-    	// Query Parameter Functionality
-    	var myParam = location.search.split('plan=')[1]
-    	console.log(myParam);
+    		// Query Parameter Functionality
+    	var vars = [], hash;
+	    var q = document.URL.split('?')[1];
+	    if(q != undefined){
+        q = q.split('&');
+        for(var i = 0; i < q.length; i++){
+          hash = q[i].split('=');
+          vars.push(hash[1]);
+          vars[hash[0]] = hash[1];
+        }
+			}
+			var myPlan = vars['plan'];
+			var myDevices = vars['devices'];
+			var myBandwidth = vars['bandwidth'];
+			var myTotal = vars['total'];
+			console.log(vars);
 
-   		if(myParam == "free"){
-   			$('#free').fadeIn();
-   			// $('.btn-primary').attr('href', 'confirmation.html?plan=daily')
+			$('#plan-price').text(myTotal);
+			$('#plan-price-mobile').text(myTotal);
+
+
+    	if(myPlan == "free"){
+   			$('#plan-free').fadeIn();
    		}
-   		if(myParam == "daily"){
-   			$('#daily').fadeIn();
-   			// $('.btn-primary').attr('href', 'confirmation.html?plan=daily')
+   		if(myPlan == "daily"){
+   			$('#plan-daily').fadeIn();
    		}
-   		if(myParam == "weekly"){
-   			$('#weekly').fadeIn();
-   			// $('.btn-primary').attr('href', 'confirmation.html?plan=weekly')
+   		if(myPlan == "weekly"){
+   			$('#plan-weekly').fadeIn();
    		}
-   		if(myParam == "monthly"){
-   			$('#monthly').fadeIn();
-   			// $('.btn-primary').attr('href', 'confirmation.html?plan=monthly')
+   		if(myPlan == "monthly"){
+   			$('#plan-monthly').fadeIn();
    		}
-   		if(myParam == "yearly"){
-   			$('#yearly').fadeIn();
-   			// $('.btn-primary').attr('href', 'confirmation.html?plan=yearly')
+   		if(myPlan == "yearly"){
+   			$('#plan-yearly').fadeIn();
    		}
 
+   		$('#plan-total').fadeIn();
+
+   	// Nonmobile Functionality
+   	
    		// Form functionality
- 			$('#payments').validate({
+ 			$('#nonmobile-payments').validate({
  				errorPlacement: function(error, element) {
 			    if (element.attr("name") == "accept" || element.attr("name") == "lname" ) {
 			      error.insertAfter("#redeem-voucher");
@@ -231,6 +380,34 @@
 
  			$('.glyphicon-question-sign').popover({
  				html: true
+ 			});
+
+ 			$('#redeem-voucher').click(function(e){
+ 				e.preventDefault();
+ 				$(this).hide();
+ 				$('#voucher-field').fadeIn();
+ 			});
+
+ 		
+ 		// Mobile Functionality
+
+ 			// Form functionality
+ 			$('#nonmobile-payments').validate({
+ 				errorPlacement: function(error, element) {
+			    if (element.attr("name") == "accept" || element.attr("name") == "lname" ) {
+			      error.insertAfter("#redeem-voucher");
+			    } else {
+			      error.insertAfter(element);
+			    }
+			  },
+    		submitHandler: function(form) {
+    			window.location = 'confirmation.html?plan='+myParam;
+    		}
+    	});
+ 			$('#redeem-voucher-mobile').click(function(e){
+ 				e.preventDefault();
+ 				$(this).hide();
+ 				$('#voucher-field-mobile').fadeIn();
  			});
     });
     </script>

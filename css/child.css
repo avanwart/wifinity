@@ -221,7 +221,7 @@ form .active .form-control, .form-horizontal .active .form-control {
 form legend, .form-horizontal legend {
   text-align: center;
   border: none;
-  margin-bottom: 30px;
+  margin: 30px 0;
   font-size: 16px; }
 form ul.card_logos, .form-horizontal ul.card_logos {
   position: absolute;
@@ -308,6 +308,10 @@ form .disclaimer, .form-horizontal .disclaimer {
     width: 360px; }
   #payment h3 {
     margin: 10px 0 20px; }
+  #payment #redeem-voucher {
+    display: inline-block;
+    margin-top: 30px;
+    font-weight: normal; }
 
 footer {
   background: #efefef;
@@ -377,8 +381,8 @@ footer {
   .navbar .navbar-header .navbar-brand {
     float: none; }
   .navbar .navbar-header ul.status {
-    margin-bottom: 20px; } }
-@media screen and (max-width: 640px) {
+    margin-bottom: 20px; }
+
   body {
     padding-top: 115px; }
 
@@ -529,7 +533,7 @@ footer {
       white-space: normal; }
     form .security i {
       position: absolute;
-      left: 110px;
+      left: 160px;
       top: 36px; }
     form label.error {
       padding: 4px 0;
@@ -544,4 +548,8 @@ footer {
       form label.error:after, form label.error:before {
         display: none; }
     form h4.modal-title {
-      font-size: 17px; } }
+      font-size: 17px; }
+    form #redeem-voucher-mobile {
+      display: inline-block;
+      margin-top: 30px;
+      font-weight: normal; } }

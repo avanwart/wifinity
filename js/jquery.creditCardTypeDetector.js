@@ -77,7 +77,7 @@
 					$('.card_logos').fadeIn(200);
 				} else {
 					$(logos_obj).removeClass('is_visa');
-					$('.card_logos').hide();
+					// $('.card_logos').hide();
 				}
 
 				if ( cur_val.match(mastercard_regex) ) {
@@ -85,7 +85,7 @@
 					$('.card_logos').fadeIn(200);
 				} else {
 					$(logos_obj).removeClass('is_mastercard');
-					$('.card_logos').hide();
+					// $('.card_logos').hide();
 				}
 
 				if ( cur_val.match(amex_regex) ) {
@@ -93,7 +93,7 @@
 					$('.card_logos').fadeIn(200);
 				} else {
 					$(logos_obj).removeClass('is_amex');
-					$('.card_logos').hide();
+					// $('.card_logos').hide();
 				}
 
 				if ( cur_val.match(diners_regex) ) {
@@ -101,7 +101,7 @@
 					$('.card_logos').fadeIn(200);
 				} else {
 					$(logos_obj).removeClass('is_diners');
-					$('.card_logos').hide();
+					// $('.card_logos').hide();
 				}
 
 				if ( cur_val.match(discover_regex) ) {
@@ -109,7 +109,7 @@
 					$('.card_logos').fadeIn(200);
 				} else {
 					$(logos_obj).removeClass('is_discover');
-					$('.card_logos').hide();
+					// $('.card_logos').hide();
 				}
 
 				if ( cur_val.match(jcb_regex) ) {
@@ -117,7 +117,7 @@
 					$('.card_logos').fadeIn(200);
 				} else {
 					$(logos_obj).removeClass('is_jcb');
-					$('.card_logos').hide();
+					// $('.card_logos').hide();
 				}
 
 				// if nothing is a hit we add a class to fade them all out

@@ -40,8 +40,8 @@
               <div class="row menubar">
                 <div class="col-sm-12">
                   <ul class="mobile-status visible-xs">
-                    <li class="step-1 fill"><a href="#">1. Customize</a></li>
-                    <li class="step-2 fill"><a href="#">2.</a></li>
+                    <li class="step-1 fill"><a href="#">1.</a></li>
+                    <li class="step-2 fill"><a href="#">2. Account</a></li>
                     <li class="step-3"><a href="#">3.</a></li>
                     <li class="step-4"><a href="#">4.</a></li>
                   </ul>
@@ -62,7 +62,7 @@
           <div class="row">
             <div class="col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3 col-sm-12 card">
 					    <div class="alert alert-success fade in" role="alert" id="plan-total" style="display: none">
-					      Your package: <br class="visible-xs"/><strong>One day of WiFi for £<span id="plan-price"></span></strong>
+					      Your total: <br class="visible-xs"/><strong>£<span id="plan-price"></span></strong>
 					    </div>
     					<form action="" class="" id="nonmobile-create-account">
     						<legend>To proceed to high speed WiFi, please enter your details</legend>
@@ -151,7 +151,10 @@
         }
 			}
 			var myPlan = vars['plan'];
+			var myDevices = vars['devices'];
+			var myBandwidth = vars['bandwidth'];
 			var myTotal = vars['total'];
+			console.log(vars);
 
 			$('#plan-price').text(myTotal);
 
@@ -177,14 +180,14 @@
    		// Form functionality
     	$('#mobile-create-account').validate({
     		submitHandler: function(form) {
-    			window.location = 'payment.html?plan='+myParam;
+    			window.location = 'payment.html?plan='+myPlan;
     		}
     	});
 
     	// Form functionality
     	$('#nonmobile-create-account').validate({
     		submitHandler: function(form) {
-    			window.location = 'payment.html?plan=daily&total=9.99';
+    			window.location = 'payment.html?plan='+myPlan+'&total='+myTotal;
     		}
     	});
 
