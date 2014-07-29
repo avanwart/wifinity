@@ -151,13 +151,7 @@
         }
 			}
 			var myPlan = vars['plan'];
-			var myDevices = vars['devices'];
-			var myBandwidth = vars['bandwidth'];
 			var myTotal = vars['total'];
-			console.log(vars);
-
-			$('#plan-price').text(myTotal);
-
 
     	if(myPlan == "free"){
    			$('#nonmobile-plan-price').text('0.00');
@@ -171,7 +165,7 @@
    		// Form functionality
     	$('#mobile-create-account').validate({
     		submitHandler: function(form) {
-    			window.location = 'payment.html?plan='+myPlan;
+    			window.location = 'payment.html?plan='+myPlan+'&total='+myTotal;
     		}
     	});
 
