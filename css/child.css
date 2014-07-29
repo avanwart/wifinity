@@ -371,6 +371,10 @@ footer {
   .navbar .navbar-header ul.mobile-status a {
     cursor: default; }
 
+  body h2 small {
+    font-size: 85%;
+    margin-left: 10px; }
+
   .navbar ul#menu-top-nav {
     margin: 0; }
     .navbar ul#menu-top-nav li {

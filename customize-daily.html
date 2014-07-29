@@ -164,7 +164,7 @@
                 <h2>Duration</h2>
                 <div class="row" style="padding: 0">
                   <div class="col-xs-6 active">
-                    <select name="duration-days" id="duration-days" class="form-control value">
+                    <select name="duration-days" id="mobile-duration-days" class="form-control value">
                       <option value="1.99">1 day - £1.99</option>
                       <option value="3.98">2 days - £3.98</option>
                       <option value="5.97">3 days - £5.97</option>
@@ -177,7 +177,7 @@
                   <span>or</span>
                     <div class="checkbox">
                       <label>
-                        <input type="checkbox" id="one-week" value="7.99" class="value"> 1 week <br><small>£7.99</small> <em>Save 66%</em>
+                        <input type="checkbox" id="mobile-one-week" value="7.99" class="value"> 1 week <br><small>£7.99</small> <em>Save 66%</em>
                       </label>
                     </div>
                   </div>
@@ -187,7 +187,7 @@
             <div class="row devices">
               <div class="col-sm-12">
                 <h2>Devices <small>£1 per extra device</small></h2>
-                <select name="devices" id="devices" class="form-control">
+                <select name="devices" id="mobile-devices" class="form-control">
                   <option value="0">1 device</option>
                   <option value="1">2 devices</option>
                   <option value="2">3 devices</option>
@@ -204,7 +204,7 @@
             <div class="row bandwidth">
               <div class="col-sm-12">
                 <h2>Bandwidth <small>£1 per 2 Mbps increment</small></h2>
-                <select name="bandwidth" id="bandwidth" class="form-control">
+                <select name="bandwidth" id="mobile-bandwidth" class="form-control">
                   <option value="0">4 Mbps</option>
                   <option value="1">6 Mbps</option>
                   <option value="2">8 Mbps</option>
@@ -315,17 +315,17 @@
     // Mobile
 
       // Price calculator
-      var Devices = Number($('#devices').val());
-      var Bandwidth = Number($('#bandwidth').val());
-      var Duration = Number($('.active .value').val());
+      var Devices = Number($('#mobile-devices').val());
+      var Bandwidth = Number($('#mobile-bandwidth').val());
+      var Duration = Number($('#mobile .active .value').val());
       var Total = (Devices += Bandwidth += Duration);
       console.log(Total);
       $('#price').text(Total).hide().fadeIn();
 
       $('#mobile select').change(function(){
-        var Devices = Number($('#devices').val());
-        var Bandwidth = Number($('#bandwidth').val());
-        var Duration = Number($('.active .value').val());
+        var Devices = Number($('#mobile-devices').val());
+        var Bandwidth = Number($('#mobile-bandwidth').val());
+        var Duration = Number($('#mobile .active .value').val());
         var Total = (Devices += Bandwidth += Duration);
         console.log(Total);
         $('#price').text(Total).hide().fadeIn();
@@ -333,18 +333,18 @@
       });
 
       // If they click the one week checkbox
-      $('#one-week').change(function(){
+      $('#mobile-one-week').change(function(){
         if(this.checked){
           $('.checkbox').parent().addClass('active');
-          $('#duration-days').parent().removeClass('active');
+          $('#mobile-duration-days').parent().removeClass('active');
         } else {
           $('.checkbox').parent().removeClass('active');
-          $('#duration-days').parent().addClass('active');
+          $('#mobile-duration-days').parent().addClass('active');
         }
         // Update the price
-        var Devices = Number($('#devices').val());
-        var Bandwidth = Number($('#bandwidth').val());
-        var Duration = Number($('.active .value').val());
+        var Devices = Number($('#mobile-devices').val());
+        var Bandwidth = Number($('#mobile-bandwidth').val());
+        var Duration = Number($('#mobile .active .value').val());
         var Total = (Devices += Bandwidth += Duration);
         console.log(Total);
         $('#price').text(Total).hide().fadeIn();
@@ -352,34 +352,27 @@
       });
 
       // If they switch to days after choosing one week
-      $('#duration-days').change(function(){
+      $('#mobile-duration-days').change(function(){
         $('.checkbox').parent().removeClass('active');
-        $('#duration-days').parent().addClass('active');
-        var Devices = Number($('#devices').val());
-        var Bandwidth = Number($('#bandwidth').val());
-        var Duration = Number($('.active .value').val());
+        $('#mobile-duration-days').parent().addClass('active');
+        var Devices = Number($('#mobile-devices').val());
+        var Bandwidth = Number($('#mobile-bandwidth').val());
+        var Duration = Number($('#mobile .active .value').val());
         var Total = (Devices += Bandwidth += Duration);
         console.log(Total);
-        $('#one-week').prop('checked', false)
+        $('#mobile-one-week').prop('checked', false)
         $('#price').text(Total).hide().fadeIn();
       });
 
-      // Determine next button destination
-    	$('#one-day').click(function(){
-    		$('.btn-primary').attr('href', 'create-account.html?daily')
-    	});
-    	$('#one-month').click(function(){
-    		$('.btn-primary').attr('href', 'create-account.html?monthly')
-    	});
 
       $('#mobile-customizer').validate({
         submitHandler: function(form) {
           var Devices = Number($('#nonmobile-devices').val());
           var Bandwidth = Number($('#nonmobile-bandwidth').val());
-          var Duration = Number($('.active .value').val());
+          var Duration = Number($('#nonmobile .active .value').val());
           var Total = (Devices += Bandwidth += Duration);
           
-          window.location = 'create-account.html?plan='+myPlan+'&devices='+Devices+'&bandwidth='+Bandwidth+'&total='+Total;
+          window.location = 'create-account.html?plan='+myPlan+'&total='+Total;
         }
       });
 
