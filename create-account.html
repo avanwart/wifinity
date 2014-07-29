@@ -61,7 +61,7 @@
           </div>
           <div class="row">
             <div class="col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3 col-sm-12 card">
-					    <div class="alert alert-success fade in" role="alert" id="plan-total" style="display: none">
+					    <div class="alert alert-success fade in" role="alert" id="plan-total">
 					      Your total: <br class="visible-xs"/><strong>£<span id="nonmobile-plan-price" style="display: none"></span></strong>
 					    </div>
     					<form action="" class="" id="nonmobile-create-account">
@@ -160,7 +160,10 @@
    			$('#mobile-plan-price').fadeIn();
    		}
 
-   		$('#plan-total').fadeIn();
+   		$('#nonmobile-plan-price').text(myTotal);
+   		$('#nonmobile-plan-price').fadeIn();
+   		$('#mobile-plan-price').text(myTotal);
+   		$('#mobile-plan-price').fadeIn();
 
    		// Form functionality
     	$('#mobile-create-account').validate({

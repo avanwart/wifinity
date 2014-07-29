@@ -257,7 +257,7 @@
           var nonmobileDuration = Number($('.active .value').val());
           var nonmobileTotal = (nonmobileDevices += nonmobileBandwidth += nonmobileDuration);
           
-          window.location = 'create-account.html?plan='+myPlan+'&devices='+nonmobileDevices+'&bandwidth='+nonmobileBandwidth+'&total='+nonmobileTotal;
+          window.location = 'create-account.html?plan=daily&total='+nonmobileTotal;
         }
       });
       
@@ -364,7 +364,6 @@
         $('#price').text(Total).hide().fadeIn();
       });
 
-
       $('#mobile-customizer').validate({
         submitHandler: function(form) {
           var Devices = Number($('#nonmobile-devices').val());
@@ -372,7 +371,7 @@
           var Duration = Number($('#nonmobile .active .value').val());
           var Total = (Devices += Bandwidth += Duration);
           
-          window.location = 'create-account.html?plan='+myPlan+'&total='+Total;
+          window.location = 'create-account.html?plan=daily&total='+Total;
         }
       });
 

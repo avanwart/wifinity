@@ -257,7 +257,7 @@
           var nonmobileDuration = Number($('.active .value').val());
           var nonmobileTotal = (nonmobileDevices += nonmobileBandwidth += nonmobileDuration);
           
-          window.location = 'create-account.html?plan='+myPlan+'&devices='+nonmobileDevices+'&bandwidth='+nonmobileBandwidth+'&total='+nonmobileTotal;
+          window.location = 'create-account.html?plan=monthly&total='+nonmobileTotal;
         }
       });
       
@@ -372,7 +372,7 @@
           var Duration = Number($('#nonmobile .active .value').val());
           var Total = (Devices += Bandwidth += Duration);
           
-          window.location = 'create-account.html?plan='+myPlan+'&total='+Total;
+          window.location = 'create-account.html?plan=monthly&total='+Total;
         }
       });
 
