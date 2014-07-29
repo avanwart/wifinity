@@ -91,7 +91,10 @@
       <section id="total" class="ashy">
         <div class="container">
           <div class="row">
-            <div class="col-sm-12">
+            <div class="col-sm-12 complete-message-free" style="display: none">
+              <strong>Free account activated</strong>
+            </div>
+            <div class="col-sm-12 complete-message">
               <strong>Transaction Complete for £<span id="plan-price-mobile" style="display: none">1.99</span></strong>
             </div>  
           </div>
@@ -157,8 +160,6 @@
         }
       }
       var myPlan = vars['plan'];
-      var myDevices = vars['devices'];
-      var myBandwidth = vars['bandwidth'];
       var myTotal = vars['total'];
       console.log(vars);
 
@@ -166,6 +167,11 @@
       $('#plan-price-mobile').text(myTotal);
       $('#plan-total').fadeIn();
       $('#plan-price-mobile').fadeIn();
+
+      if(myPlan == "free"){
+        $('.complete-message').hide();
+        $('.complete-message-free').fadeIn();
+      }
 
 
       // Nonmobile validation
