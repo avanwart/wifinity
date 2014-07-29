@@ -255,27 +255,32 @@ form, .form-horizontal
 	.form-group
 		position: relative
 	label.error
-		position: absolute
-		top: -10px
-		right: 0
-		background: rgba(0, 0, 0, 0.7)
-		color: white
-		padding: 5px 10px
-		border-radius: 2px
-		font-size: 14px
-		white-space: nowrap
-		&:after
-			content: ""
-			position: absolute
-			width: 0
-			height: 0
-			border: 8px solid
-			border-color: rgba(0, 0, 0, 0.7) transparent transparent transparent
-			display: block
-			top: 30px
-			right: 15px
+		color: red
+		font-weight: bold
+		font-size: 12px
+		// position: absolute
+		// top: -10px
+		// right: 0
+		// background: rgba(0, 0, 0, 0.7)
+		// color: white
+		// padding: 5px 10px
+		// border-radius: 2px
+		// font-size: 14px
+		// white-space: nowrap
+		// &:after
+		// 	content: ""
+		// 	position: absolute
+		// 	width: 0
+		// 	height: 0
+		// 	border: 8px solid
+		// 	border-color: rgba(0, 0, 0, 0.7) transparent transparent transparent
+		// 	display: block
+		// 	top: 30px
+		// 	right: 15px
 	.checkbox
 		margin-bottom: 15px
+		label.error
+			padding-left: 0
 	.btn-primary
 		margin-bottom: 10px
 		width: 200px
@@ -335,6 +340,9 @@ form, .form-horizontal
 		display: inline-block
 		margin-top: 30px
 		font-weight: normal
+
+
+
 
 footer
 	background: $ash
@@ -422,21 +430,30 @@ footer
 				float: none
 			ul.status
 				margin-bottom: 20px
+			ul.mobile-status
+				a
+					cursor: default
 	body
-		padding-top: 115px
+		// padding-top: 115px
 	.navbar
-		height: 71px
-		position: fixed
-		left: 0
-		right: 0
-		top: 0
-		z-index: 10
+		// height: 71px
+		// position: fixed
+		// left: 0
+		// right: 0
+		// top: 0
+		// z-index: 10
+		ul#menu-top-nav
+			margin: 0
+			li
+				padding-top: 0
 		.navbar-header
 			text-align: center
 			.menubar
 				background: url('../img/menubar-bg.gif') 50% 50% no-repeat
 				background-size: cover
 				height: 24px
+				&.last
+					background: #333
 			ul.mobile-status
 				list-style: none
 				overflow: hidden
@@ -512,11 +529,11 @@ footer
 	section#total
 		text-align: center
 		padding: 10px 0
-		position: fixed
-		z-index: 10
-		top: 71px
-		left: 0
-		right: 0
+		// position: fixed
+		// z-index: 10
+		// top: 71px
+		// left: 0
+		// right: 0
 	section#customizer
 		padding: 0
 		.row
@@ -564,11 +581,14 @@ footer
 		width: auto
 		legend
 			margin: 15px 0
-			text-align: left
+			text-align: center
 			line-height: 1.5
 		.btn-primary
 			width: 100%
 		.expiry
+			margin-bottom: 5px
+			.row
+				padding: 0!important
 			#expirydatemonth
 				margin-bottom: 10px
 		.disclaimer
@@ -596,3 +616,8 @@ footer
 			display: inline-block
 			margin-top: 30px
 			font-weight: normal
+
+	#mobile-confirmation
+		padding: 0
+		form
+			margin-top: 0

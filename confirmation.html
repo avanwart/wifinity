@@ -22,85 +22,107 @@
   </head>
   <body>
   	<header class="header" role="banner">
-			<nav role="navigation">
-				<div class="navbar navbar-default">
-					<div class="container">
-						<!-- .navbar-toggle is used as the toggle for collapsed navbar content -->
-						<div class="navbar-header">
-							<a class="navbar-brand" href="/wifinity" title="Wifinity Inc." rel="homepage">
-								<img src="img/wifinity-logo-2x.jpg" alt="Wifinity Inc.">
-							</a>
-						</div>							
-					</div>
-				</div> 
-			</nav>
-		</header>
-    <section class="ashy steps">
-			<div class="container">
-				<div class="row">
-		    		<div class="col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
-		    			<div class="row">
-		    				<div class="col-sm-4 active text-center"><h2>Step 1. Create your account</h2></div>
-		    				<div class="col-sm-4 text-center"><h2>Step 2. Payment</h2></div>
-		    				<div class="col-sm-4 text-center"><h2><strong>Step 3. Confirmation</strong></h2></div>
-		    			</div>
-		    		</div>
-	    		</div>
-    		</div>
-			</div>
-		</section>
-    <section id="payment">
+      <nav role="navigation">
+        <div class="navbar navbar-default">
+          <div class="container">
+            <div class="navbar-header">
+              <a class="navbar-brand" href="/wifinity" title="Wifinity Inc." rel="homepage">
+                <img src="img/wifinity-logo-2x.jpg" alt="Wifinity Inc.">
+              </a>
+              <!-- Nonmobile progress bar -->
+              <ul class="status hidden-xs">
+                <li class="step-1 fill"><i>1</i><br/>Customize</li>
+                <li class="step-2 fill"><i>2</i><br/>Create account</li>
+                <li class="step-3 fill"><i>3</i><br/>Payment</li>
+                <li class="step-4 partial"><i>4</i><br/>Set Password</li>
+              </ul>
+              <!-- Mobile progress bar -->
+              <div class="row menubar last">
+                <div class="col-sm-12">
+                  <ul class="mobile-status visible-xs">
+                    <li class="step-1 fill"><a href="#">1.</a></li>
+                    <li class="step-2 fill"><a href="#">2.</a></li>
+                    <li class="step-3 fill"><a href="#">3.</a></li>
+                    <li class="step-4 fill"><a href="#">4. Password</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>              
+          </div>
+        </div> 
+      </nav>
+    </header>
+    <!-- Nonmobile -->
+    <section id="nonmobile-confirmation" class="ashy hidden-xs">
     	<div class="container" id="truecontent">
    			<div class="capsule">
 	    		<div class="row">
-	    			<div class="col-sm-12 col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2 text-center">
-	    				<div class="alert alert-success fade in" role="alert" id="free" style="display: none">
-					      Your package: <br/><strong>15 minutes of FREE WiFi</strong>
-					    </div>
-					    <div class="alert alert-success fade in" role="alert" id="daily" style="display: none">
-					      Your package: <br/><strong>One day of WiFi for £1.99</strong>
-					    </div>
-					    <div class="alert alert-success fade in" role="alert" id="weekly" style="display: none">
-					      Your package: <br/><strong>One week of WiFi for £7.99</strong>
-					    </div>
-					    <div class="alert alert-success fade in" role="alert" id="monthly" style="display: none">
-					      Your package: <br/><strong>One month of WiFi for £13.25</strong>
-					    </div>
-					    <div class="alert alert-success fade in" role="alert" id="yearly" style="display: none">
-					      Your package: <br/><strong>12 month contract, £8.75 per month</strong>
-					    </div>
+	    			<div class="col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3 col-sm-12 card">
+	    				<!-- <div class="alert alert-success fade in" role="alert" id="plan-total" style="display: none">
+                Your total: <br class="visible-xs"/><strong>£<span id="plan-price"></span></strong>
+              </div> -->
+              <form action="" style="margin-top: 30px" id="nonmobile-finalize">
+                <legend>To proceed to high-speed WiFi, <br class="visible-xs"/>finalize your account:</legend>
+                <div class="form-group">
+                  <label for="email">Email address</label>
+                  <input type="text" id="nonmobile-email" name="email" class="form-control" value="george@roiworks.com" disabled>
+                </div>
+                <div class="form-group">
+                  <label for="password">Create password</label>
+                  <input type="password" id="nonmobile-password" name="password" class="form-control" required minlength="8">
+                </div>
+                <div class="form-group">
+                  <label for="mobile">Mobile number</label>
+                  <input type="text" id="nonmobile-mobile" name="mobile" class="form-control" required minlength="12">
+                </div>
+                <div class="form-group">
+                  <div class="disclaimer">If you forget your username or password, we can text them to you.</div>
+                </div>
+                <div class="form-group text-left">
+                  <input type="submit" class="btn btn-primary" value="Get me online">
+                </div>
+              </form>
 	    			</div>
-		    		<div class="col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
-		    			<div class="row">
-		    				<div class="col-sm-12">
-		    					<h3>To proceed to high-speed WiFi, <br class="visible-xs"/>finalize your account:</h3>
-		    					<form action="" style="margin-top: 30px" id="finalize">
-										<div class="form-group">
-		    							<label for="email">Email address</label>
-		    							<input type="text" id="email" name="email" class="form-control" value="george@roiworks.com" disabled>
-		    						</div>
-										<div class="form-group">
-		    							<label for="password">Create password</label>
-	    								<input type="password" id="password" name="password" class="form-control" required minlength="8">
-		    						</div>
-		  							<div class="form-group">
-		    							<label for="mobile">Mobile number</label>
-		    							<input type="text" id="mobile" name="mobile" class="form-control" required minlength="12">
-		    						</div>
-		    						<div class="form-group">
-		    							<div class="disclaimer">If you forget your username or password, we can text them to you.</div>
-		    						</div>
-		    						<div class="form-group text-left">
-	    								<input type="submit" class="btn btn-primary" value="Get me online">
-		    						</div>
-		  						</form>
-		    				</div>
-		    			</div>
-		    		</div>
-	    		</div>
+		      </div>
 	    	</div>
     	</div>
     </section>
+    <div id="mobile" class="visible-xs">
+      <section id="total" class="ashy">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-12">
+              <strong>Transaction Complete for £<span id="plan-price-mobile" style="display: none">1.99</span></strong>
+            </div>  
+          </div>
+        </div>
+      </section>
+      <section id="mobile-confirmation">
+        <div class="container">
+         <form action="" id="mobile-finalize">
+            <legend>To proceed to high-speed WiFi, <br class="visible-xs"/>finalize your account:</legend>
+            <div class="form-group">
+              <label for="email">Email address</label>
+              <input type="text" id="mobile-email" name="email" class="form-control" value="george@roiworks.com" disabled>
+            </div>
+            <div class="form-group">
+              <label for="password">Create password</label>
+              <input type="password" id="mobile-password" name="password" class="form-control" required minlength="8">
+            </div>
+            <div class="form-group">
+              <label for="mobile">Mobile number</label>
+              <input type="text" id="mobile-mobile" name="mobile" class="form-control" required minlength="9">
+            </div>
+            <div class="form-group">
+              <div class="disclaimer">If you forget your username or password, we can text them to you.</div>
+            </div>
+            <div class="form-group text-left">
+              <input type="submit" class="btn btn-primary" value="Get me online">
+            </div>
+          </form>
+        </div>
+      </section>
+    </div>
     <footer>
     	<div class="container">
     		<div class="row">
@@ -120,9 +142,35 @@
     <script>
     $(document).ready(function(){
 
-    	// Form functionality
-    	$('#finalize').validate({
-    		submitHandler: function(form) {
+    	$('#nonmobile-mobile').mask("99 99999999999",{placeholder:" "});
+      $('#mobile-mobile').mask("99 99999999999",{placeholder:" "});
+    	
+      // Query Parameter Functionality
+      var vars = [], hash;
+      var q = document.URL.split('?')[1];
+      if(q != undefined){
+        q = q.split('&');
+        for(var i = 0; i < q.length; i++){
+          hash = q[i].split('=');
+          vars.push(hash[1]);
+          vars[hash[0]] = hash[1];
+        }
+      }
+      var myPlan = vars['plan'];
+      var myDevices = vars['devices'];
+      var myBandwidth = vars['bandwidth'];
+      var myTotal = vars['total'];
+      console.log(vars);
+
+      $('#plan-price').text(myTotal);
+      $('#plan-price-mobile').text(myTotal);
+      $('#plan-total').fadeIn();
+      $('#plan-price-mobile').fadeIn();
+
+
+      // Nonmobile validation
+      $('#nonmobile-finalize').validate({
+        submitHandler: function(form) {
           // ajax method
           // $.ajax({
           //     url: action, // determined from click handler above
@@ -131,29 +179,21 @@
           // Redirect
           window.location = "http://www.google.com/";     
         }
-    	});
+      });
 
-    	$('#mobile').mask("999 999 9999",{placeholder:" "});
+      $('#mobile-finalize').validate({
+        submitHandler: function(form) {
+          // ajax method
+          // $.ajax({
+          //     url: action, // determined from click handler above
+          //     // ajax options
+          // }); 
+          // Redirect
+          window.location = "http://www.google.com/";     
+        }
+      });
 
-    	// Query Parameter Functionality
-    	var myParam = location.search.split('plan=')[1]
-    	console.log(myParam);
 
-   		if(myParam == "free"){
-   			$('#free').fadeIn();
-   		}
-   		if(myParam == "daily"){
-   			$('#daily').fadeIn();
-   		}
-   		if(myParam == "weekly"){
-   			$('#weekly').fadeIn();
-   		}
-   		if(myParam == "monthly"){
-   			$('#monthly').fadeIn();
-   		}
-   		if(myParam == "yearly"){
-   			$('#yearly').fadeIn();
-   		}
     });
     </script>
   </body>

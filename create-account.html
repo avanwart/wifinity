@@ -62,7 +62,7 @@
           <div class="row">
             <div class="col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3 col-sm-12 card">
 					    <div class="alert alert-success fade in" role="alert" id="plan-total" style="display: none">
-					      Your total: <br class="visible-xs"/><strong>£<span id="plan-price"></span></strong>
+					      Your total: <br class="visible-xs"/><strong>£<span id="nonmobile-plan-price" style="display: none"></span></strong>
 					    </div>
     					<form action="" class="" id="nonmobile-create-account">
     						<legend>To proceed to high speed WiFi, please enter your details</legend>
@@ -93,7 +93,7 @@
       	<div class="container">
   	    	<div class="row">
             <div class="col-sm-12">
-              <strong>Total: £<span id="price">1.99</span></strong>
+              <strong>Total: £<span id="mobile-plan-price" style="display: none">1.99</span></strong>
             </div>  
           </div>
       	</div>
@@ -160,19 +160,10 @@
 
 
     	if(myPlan == "free"){
-   			$('#plan-free').fadeIn();
-   		}
-   		if(myPlan == "daily"){
-   			$('#plan-daily').fadeIn();
-   		}
-   		if(myPlan == "weekly"){
-   			$('#plan-weekly').fadeIn();
-   		}
-   		if(myPlan == "monthly"){
-   			$('#plan-monthly').fadeIn();
-   		}
-   		if(myPlan == "yearly"){
-   			$('#plan-yearly').fadeIn();
+   			$('#nonmobile-plan-price').text('0.00');
+   			$('#nonmobile-plan-price').fadeIn();
+   			$('#mobile-plan-price').text('0.00');
+   			$('#mobile-plan-price').fadeIn();
    		}
 
    		$('#plan-total').fadeIn();
