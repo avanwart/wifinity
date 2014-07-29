@@ -15,7 +15,10 @@
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
+    <!--[if lt IE 8]>
+    <link href="/css/bootstrap-ie7.css" rel="stylesheet">
+<![endif]-->
+<!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
@@ -58,9 +61,9 @@
    			<div class="capsule">
 	    		<div class="row">
 	    			<div class="col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3 col-sm-12 card">
-	    				<!-- <div class="alert alert-success fade in" role="alert" id="plan-total" style="display: none">
-                Your total: <br class="visible-xs"/><strong>£<span id="plan-price"></span></strong>
-              </div> -->
+	    				<div class="alert alert-success fade in" role="alert" id="plan-total">
+                Your total: <br class="visible-xs"/><strong>£<span id="plan-price" style="display: none"></span></strong>
+              </div>
               <form action="" style="margin-top: 30px" id="nonmobile-finalize">
                 <legend>To proceed to high-speed WiFi, <br class="visible-xs"/>finalize your account:</legend>
                 <div class="form-group">
