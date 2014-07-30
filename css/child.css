@@ -374,7 +374,11 @@ footer {
     background-size: 328px 2px; } }
 @media screen and (max-width: 991px) {
   .navbar .navbar-header ul.status {
-    background-size: 246px 2px; } }
+    background-size: 246px 2px;
+    margin-left: 20px;
+    display: inline-block; }
+    .navbar .navbar-header ul.status li {
+      font-size: 12px; } }
 @media screen and (max-width: 767px) {
   .navbar .navbar-header .navbar-brand {
     float: none; }
