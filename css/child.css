@@ -109,6 +109,9 @@ section {
   section .container {
     position: relative;
     height: 100%; }
+  section .row.choice {
+    background: url("../img/or.jpg") center center no-repeat;
+    background-size: 33px 18px; }
   section h1 {
     margin: 0 0 15px;
     color: #212121;

@@ -76,7 +76,7 @@
                 </div>
                 <div class="form-group">
                   <label for="mobile">Mobile number</label>
-                  <input type="text" id="nonmobile-mobile" name="mobile" class="form-control" required minlength="12">
+                  <input type="text" id="nonmobile-mobile" name="mobile" class="form-control" required minlength="9">
                 </div>
                 <div class="form-group">
                   <div class="disclaimer">If you forget your username or password, we can text them to you.</div>
@@ -179,6 +179,7 @@
 
       // Nonmobile validation
       $('#nonmobile-finalize').validate({
+
         submitHandler: function(form) {
           // ajax method
           // $.ajax({
