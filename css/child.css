@@ -280,7 +280,7 @@ form .disclaimer, .form-horizontal .disclaimer {
     margin-bottom: 60px; }
   #create form {
     display: inline-block;
-    width: 460px; }
+    width: 360px; }
   #create .text-left {
     text-align: left; }
 
@@ -298,6 +298,10 @@ form .disclaimer, .form-horizontal .disclaimer {
     display: inline-block;
     margin-top: 30px;
     font-weight: normal; }
+
+#nonmobile-confirmation form {
+  width: 75%;
+  display: inline-block; }
 
 footer {
   background: #efefef;
