@@ -1,5 +1,6 @@
 body {
   font-size: 17px;
+  background: #efefef;
   font-family: "Open Sans", sans-serif;
   -webkit-font-smoothing: antialiased; }
 
@@ -313,6 +314,11 @@ form .disclaimer, .form-horizontal .disclaimer {
 #nonmobile-confirmation form {
   width: 75%;
   display: inline-block; }
+  #nonmobile-confirmation form .email {
+    margin-bottom: 0; }
+    #nonmobile-confirmation form .email small a {
+      font-size: 13px;
+      font-weight: normal; }
 
 .modal#terms .modal-content .modal-body h2 {
   padding-bottom: 6px;

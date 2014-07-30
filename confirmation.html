@@ -16,11 +16,12 @@
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 8]>
-    <link href="/css/bootstrap-ie7.css" rel="stylesheet">
-<![endif]-->
-<!--[if lt IE 9]>
+      <link href="/css/bootstrap-ie7.css" rel="stylesheet">
+    <![endif]-->
+    <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+      <link rel="stylesheet" type="text/css" href="css/ie8-and-down.css" />
     <![endif]-->
   </head>
   <body>
@@ -66,9 +67,10 @@
               </div>
               <form action="" style="margin-top: 30px" id="nonmobile-finalize">
                 <legend>To proceed to high-speed WiFi, <br class="visible-xs"/>finalize your account:</legend>
-                <div class="form-group">
+                <div class="form-group text-right email">
                   <label for="email">Email address</label>
-                  <input type="text" id="nonmobile-email" name="email" class="form-control" value="george@roiworks.com" disabled>
+                  <input type="text" id="nonmobile-email" name="email" class="form-control" value="george@roiworks.com" disabled required>
+                  <small><a href="#" id="change-email">Change email address</a></small>
                 </div>
                 <div class="form-group">
                   <label for="password">Create password</label>
@@ -76,7 +78,7 @@
                 </div>
                 <div class="form-group">
                   <label for="mobile">Mobile number</label>
-                  <input type="text" id="nonmobile-mobile" name="mobile" class="form-control" required minlength="9">
+                  <input type="text" id="nonmobile-mobile" name="mobile" class="form-control" required minlength="9x`">
                 </div>
                 <div class="form-group">
                   <div class="disclaimer">If you forget your username or password, we can text them to you.</div>
@@ -201,6 +203,11 @@
           // Redirect
           window.location = "http://www.google.com/";     
         }
+      });
+
+      $('#change-email').click(function(){
+        $(this).fadeOut().parent().parent().removeClass('email');
+        $('#nonmobile-email').prop('disabled', false).focus();
       });
 
 

@@ -22,6 +22,7 @@
 <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+      <link rel="stylesheet" type="text/css" href="css/ie8-and-down.css" />
     <![endif]-->
   </head>
   <body>
@@ -486,10 +487,8 @@
    	$(document).ready(function(){
 
    		// Detect credit card type
-   		$('#nonmobile-cardnumber').creditCardTypeDetector({ 'credit_card_logos' : '.card_logos' });
    		$('#mobile-cardnumber').creditCardTypeDetector({ 'credit_card_logos' : '.card_logos' });
 
-   		
     	// Query Parameter Functionality
     	var vars = [], hash;
 	    var q = document.URL.split('?')[1];
