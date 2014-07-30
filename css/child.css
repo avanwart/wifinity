@@ -335,9 +335,19 @@ footer {
   font-size: 14px; }
 
 @media screen and (max-width: 1199px) {
+  .navbar .navbar-header ul.status {
+    background-size: 328px 2px; }
+
   section .card h3 {
     font-size: 18px; } }
-@media screen and (max-width: 992px) {
+@media screen and (max-width: 991px) {
+  .navbar .navbar-header ul.status {
+    background-size: 246px 2px;
+    margin-left: 20px;
+    display: inline-block; }
+    .navbar .navbar-header ul.status li {
+      font-size: 12px; }
+
   section .card h3 {
     font-size: 18px; }
   section.light ul li {
@@ -345,6 +355,9 @@ footer {
 @media screen and (max-width: 767px) {
   body {
     padding: 0; }
+    body h2 small {
+      font-size: 85%;
+      margin-left: 10px; }
 
   .navbar {
     position: relative;
@@ -385,28 +398,14 @@ footer {
     white-space: normal; }
 
   footer {
-    font-size: 12px; } }
-@media screen and (max-width: 1200px) {
-  .navbar .navbar-header ul.status {
-    background-size: 328px 2px; } }
-@media screen and (max-width: 991px) {
-  .navbar .navbar-header ul.status {
-    background-size: 246px 2px;
-    margin-left: 20px;
-    display: inline-block; }
-    .navbar .navbar-header ul.status li {
-      font-size: 12px; } }
-@media screen and (max-width: 767px) {
+    font-size: 12px; }
+
   .navbar .navbar-header .navbar-brand {
     float: none; }
   .navbar .navbar-header ul.status {
     margin-bottom: 20px; }
   .navbar .navbar-header ul.mobile-status a {
     cursor: default; }
-
-  body h2 small {
-    font-size: 85%;
-    margin-left: 10px; }
 
   .navbar ul#menu-top-nav {
     margin: 0; }
@@ -582,4 +581,9 @@ footer {
   #mobile-confirmation {
     padding: 0; }
     #mobile-confirmation form {
-      margin-top: 0; } }
+      margin-top: 0; }
+      #mobile-confirmation form .email {
+        margin-bottom: 0; }
+        #mobile-confirmation form .email small a {
+          font-size: 12px;
+          font-weight: normal; } }

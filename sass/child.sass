@@ -385,14 +385,32 @@ footer
 	color: #999
 	font-size: 14px
 
-// Responsive
+// Media Queries
+	
+	
+
+@media screen and (max-width: 767px)
+	
+
 @media screen and (max-width: 1199px)
+	.navbar
+		.navbar-header
+			ul.status
+				background-size: 328px 2px
 	section
 		.card
 			h3
 				font-size: 18px
 
-@media screen and (max-width: 992px)
+@media screen and (max-width: 991px)
+	.navbar
+		.navbar-header
+			ul.status
+				background-size: 246px 2px
+				margin-left: 20px
+				display: inline-block
+				li
+					font-size: 12px
 	section
 		.card
 			h3
@@ -405,6 +423,9 @@ footer
 @media screen and (max-width: 767px)
 	body
 		padding: 0
+		h2 small
+			font-size: 85%
+			margin-left: 10px
 	.navbar
 		position: relative
 		margin: 0
@@ -446,23 +467,6 @@ footer
 	footer
 		font-size: 12px
 
-@media screen and (max-width: 1200px)
-	.navbar
-		.navbar-header
-			ul.status
-				background-size: 328px 2px
-
-@media screen and (max-width: 991px)
-	.navbar
-		.navbar-header
-			ul.status
-				background-size: 246px 2px
-				margin-left: 20px
-				display: inline-block
-				li
-					font-size: 12px
-
-@media screen and (max-width: 767px)
 	.navbar
 		.navbar-header
 			.navbar-brand
@@ -472,11 +476,7 @@ footer
 			ul.mobile-status
 				a
 					cursor: default
-	body
-		// padding-top: 115px
-		h2 small
-			font-size: 85%
-			margin-left: 10px
+	
 	.navbar
 		// height: 71px
 		// position: fixed
@@ -668,3 +668,9 @@ footer
 		padding: 0
 		form
 			margin-top: 0
+			.email
+				margin-bottom: 0
+				small
+					a
+						font-size: 12px
+						font-weight: normal

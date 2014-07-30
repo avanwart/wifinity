@@ -69,8 +69,8 @@
                 <legend>To proceed to high-speed WiFi, <br class="visible-xs"/>finalize your account:</legend>
                 <div class="form-group text-right email">
                   <label for="email">Email address</label>
-                  <input type="text" id="nonmobile-email" name="email" class="form-control" value="george@roiworks.com" disabled required>
-                  <small><a href="#" id="change-email">Change email address</a></small>
+                  <input type="text" id="nonmobile-email" name="email" class="form-control" value="johndoe@gmail.com" disabled required>
+                  <small><a href="#" id="change-email-nonmobile">Change email address</a></small>
                 </div>
                 <div class="form-group">
                   <label for="password">Create password</label>
@@ -109,9 +109,10 @@
         <div class="container">
          <form action="" id="mobile-finalize">
             <legend>To proceed to high-speed WiFi, <br class="visible-xs"/>finalize your account:</legend>
-            <div class="form-group">
+            <div class="form-group email text-right">
               <label for="email">Email address</label>
-              <input type="text" id="mobile-email" name="email" class="form-control" value="george@roiworks.com" disabled>
+              <input type="email" id="mobile-email" name="email" class="form-control" value="johndoe@gmail.com" disabled required>
+              <small><a href="#" id="change-email-mobile">Change email address</a></small>
             </div>
             <div class="form-group">
               <label for="password">Create password</label>
@@ -200,14 +201,19 @@
           //     url: action, // determined from click handler above
           //     // ajax options
           // }); 
+          alert('Form is valid.  Redirect them somewhere, I.E. Google')
           // Redirect
           window.location = "http://www.google.com/";     
         }
       });
 
-      $('#change-email').click(function(){
+      $('#change-email-nonmobile').click(function(){
         $(this).fadeOut().parent().parent().removeClass('email');
         $('#nonmobile-email').prop('disabled', false).focus();
+      });
+      $('#change-email-mobile').click(function(){
+        $(this).fadeOut().parent().parent().removeClass('email');
+        $('#mobile-email').prop('disabled', false).focus();
       });
 
 
