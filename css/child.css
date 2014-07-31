@@ -258,6 +258,8 @@ form label.error, .form-horizontal label.error {
   color: red;
   font-weight: bold;
   font-size: 12px; }
+form .duration h2, .form-horizontal .duration h2 {
+  margin-bottom: 0 !important; }
 form .checkbox, .form-horizontal .checkbox {
   margin-bottom: 15px; }
   form .checkbox label.error, .form-horizontal .checkbox label.error {
