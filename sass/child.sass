@@ -135,6 +135,20 @@ section
 	.row.choice
 		background: url('../img/or.jpg') center center no-repeat
 		background-size: 29px 16px
+		.daily, .weekly, .monthly, .yearly
+			padding: 10px 15px!important
+			.inner
+				display: inline-block
+				width: 90%
+				padding: 15px 15px 10px!important
+				border: 1px solid white
+				border-radius: 6px
+			&.active
+				text-align: center
+				.inner
+					background: lighten($green, 52%)
+					border: 1px solid lighten($green, 30%)
+
 		select
 			clear: both
 	h1
@@ -247,11 +261,11 @@ section#nonmobile
 			margin-bottom: 10px
 
 form, .form-horizontal
-	.active
-		.form-control
-			border-color: #66afe9
-			outline: 0
-			box-shadow: none
+	// .active
+	// 	.form-control
+	// 		border-color: #66afe9
+	// 		outline: 0
+	// 		box-shadow: none
 	legend
 		text-align: center
 		border: none
@@ -577,6 +591,7 @@ footer
 		// left: 0
 		// right: 0
 	section#customizer
+		background: white
 		padding: 0
 		.row
 			padding: 8px 0
@@ -588,6 +603,13 @@ footer
 			text-align: left
 		hr
 			margin: 10px 0
+		.choice
+			.inner
+				margin-bottom: 20px
+			.weekly, .yearly
+				text-align: center
+				.checkbox
+					display: inline-block
 		.duration, .devices, .bandwidth
 			text-align: center
 		.duration
@@ -605,11 +627,11 @@ footer
 				color: darken($green, 15%)
 			.checkbox
 				margin: 5px
-			.col-xs-6
-				&.active
-					color: #66afe9
-					small
-						color: $black
+			select
+				margin-bottom: 15px
+			p
+				margin: 0
+				font-size: 14px
 		.duration
 			padding-bottom: 0
 			border-bottom: 1px dotted #d9d9d9

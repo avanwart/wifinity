@@ -117,6 +117,19 @@ section {
   section .row.choice {
     background: url("../img/or.jpg") center center no-repeat;
     background-size: 29px 16px; }
+    section .row.choice .daily, section .row.choice .weekly, section .row.choice .monthly, section .row.choice .yearly {
+      padding: 10px 15px !important; }
+      section .row.choice .daily .inner, section .row.choice .weekly .inner, section .row.choice .monthly .inner, section .row.choice .yearly .inner {
+        display: inline-block;
+        width: 90%;
+        padding: 15px 15px 10px !important;
+        border: 1px solid white;
+        border-radius: 6px; }
+      section .row.choice .daily.active, section .row.choice .weekly.active, section .row.choice .monthly.active, section .row.choice .yearly.active {
+        text-align: center; }
+        section .row.choice .daily.active .inner, section .row.choice .weekly.active .inner, section .row.choice .monthly.active .inner, section .row.choice .yearly.active .inner {
+          background: #eef9e1;
+          border: 1px solid #bae684; }
     section .row.choice select {
       clear: both; }
   section h1 {
@@ -226,10 +239,6 @@ section#nonmobile {
       margin-top: 10px;
       margin-bottom: 10px; }
 
-form .active .form-control, .form-horizontal .active .form-control {
-  border-color: #66afe9;
-  outline: 0;
-  box-shadow: none; }
 form legend, .form-horizontal legend {
   text-align: center;
   border: none;
@@ -494,6 +503,7 @@ footer {
     padding: 10px 0; }
 
   section#customizer {
+    background: white;
     padding: 0; }
     section#customizer .row {
       padding: 8px 0; }
@@ -505,6 +515,12 @@ footer {
       text-align: left; }
     section#customizer hr {
       margin: 10px 0; }
+    section#customizer .choice .inner {
+      margin-bottom: 20px; }
+    section#customizer .choice .weekly, section#customizer .choice .yearly {
+      text-align: center; }
+      section#customizer .choice .weekly .checkbox, section#customizer .choice .yearly .checkbox {
+        display: inline-block; }
     section#customizer .duration, section#customizer .devices, section#customizer .bandwidth {
       text-align: center; }
     section#customizer .duration span {
@@ -521,10 +537,11 @@ footer {
       color: #466e16; }
     section#customizer .duration .checkbox {
       margin: 5px; }
-    section#customizer .duration .col-xs-6.active {
-      color: #66afe9; }
-      section#customizer .duration .col-xs-6.active small {
-        color: #212121; }
+    section#customizer .duration select {
+      margin-bottom: 15px; }
+    section#customizer .duration p {
+      margin: 0;
+      font-size: 14px; }
     section#customizer .duration {
       padding-bottom: 0;
       border-bottom: 1px dotted #d9d9d9; }
