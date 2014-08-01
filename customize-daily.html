@@ -72,27 +72,27 @@
                       <h2>Duration</h2>
                       <div class="row choice">
                         <div class="col-sm-6 col-md-offset-0 active daily text-center">
-                          <div class="inner">
-                            <select name="duration-days" id="nonmobile-duration-days" class="form-control value">
-                              <option value="1.99">1 day</option>
-                              <option value="3.98">2 days</option>
-                              <option value="5.97">3 days</option>
-                              <option value="7.96">4 days</option>
-                              <option value="9.95">5 days</option>
-                              <option value="11.94">6 days</option>
-                            </select>
-                            <p>£1.99/day</p>
+                          <div class="checkbox">
+                            <label>
+                              <input type="radio" id="nonmobile-daily" value="daily" class="value" name="daily-plan" checked> Daily
+                            </label>
                           </div>
+                          <select name="duration-days" id="nonmobile-duration-days" class="form-control value">
+                            <option value="1.99">1 day - £1.99</option>
+                            <option value="3.98">2 days - £3.98</option>
+                            <option value="5.97">3 days - £5.97</option>
+                            <option value="7.96">4 days - £7.96</option>
+                            <option value="9.95">5 days - £9.95</option>
+                            <option value="11.94">6 days - £11.94</option>
+                          </select>
                         </div>
                         <div class="col-sm-6 weekly text-center">
-                          <div class="inner">
-                            <!-- <span>or</span> -->
-                            <div class="checkbox">
-                              <label>
-                                <input type="checkbox" id="nonmobile-one-week" value="7.99" class="value"> 1 week 
-                                <div class="pricepoint">£7.99 <em class="savings">Save 43%</em></div>
-                              </label>
-                            </div>
+                          <!-- <span>or</span> -->
+                          <div class="checkbox offset-left">
+                            <label>
+                              <input type="radio" id="nonmobile-one-week" value="oneweek" class="value" name="daily-plan"> 1 week 
+                              <div class="pricepoint">£7.99 <em class="savings">Save 43%</em></div>
+                            </label>
                           </div>
                         </div>
                       </div>
@@ -138,10 +138,9 @@
                   </div>
                 </div>
                 <div class="row">
-                  <div class="col-sm-6 col-sm-offset-3 text-center checkout">
-                    Total: £<span id="total">1.99</span>
+                 <div class="col-sm-6 col-sm-offset-3 text-center checkout">
+                    Total: £<span id="total"></span>
                     <button class="btn btn-primary btn-block">Next &rarr;</button>
-                  </div>
                 </div>
               </form>
             </div>
@@ -155,7 +154,7 @@
       	<div class="container">
   	    	<div class="row">
             <div class="col-sm-12">
-              <strong>Total: £<span id="price">1.99</span></strong>
+              <strong>Total: £<span id="price"></span></strong>
             </div>  
           </div>
       	</div>
@@ -258,128 +257,33 @@
       var myPlan = location.search.split('plan=')[1]
       console.log(myPlan);
 
+
+      // Radio button functionality
+      $('#nonmobile-one-week').change(function(){
+        if($(this).prop('checked', true)){
+          $('#nonmobile-duration-days').prop('disabled', 'disabled');
+        }
+      });
+      $('#nonmobile-daily').change(function(){
+        if($(this).prop('checked', true)){
+          $('#nonmobile-duration-days').prop('disabled', false);
+        }
+      });
+
+      // NONMOBILE FORM VALIDATION
       $('#nonmobile-customizer').validate({
         submitHandler: function(form) {
-          var nonmobileDevices = Number($('#nonmobile-devices').val());
-          var nonmobileBandwidth = Number($('#nonmobile-bandwidth').val());
-          var nonmobileDuration = Number($('.active .value').val());
-          var nonmobileTotal = (nonmobileDevices += nonmobileBandwidth += nonmobileDuration);
-          
-          window.location = 'create-account.html?plan=daily&total='+nonmobileTotal;
+
+          window.location = 'create-account.html?total=';
         }
       });
       
-    // Non mobile
-
-      // Price calculator
-      var nonmobileDevices = Number($('#nonmobile-devices').val());
-      var nonmobileBandwidth = Number($('#nonmobile-bandwidth').val());
-      var nonmobileDuration = Number($('.active .value').val());
-      var nonmobileTotal = (nonmobileDevices += nonmobileBandwidth += nonmobileDuration);
-      console.log(Total);
-      $('#total').text(nonmobileTotal).hide().fadeIn();
-
-      $('#nonmobile select').change(function(){
-        var nonmobileDevices = Number($('#nonmobile-devices').val());
-        var nonmobileBandwidth = Number($('#nonmobile-bandwidth').val());
-        var nonmobileDuration = Number($('.active .value').val());
-        var nonmobileTotal = (nonmobileDevices += nonmobileBandwidth += nonmobileDuration);
-        console.log(nonmobileTotal);
-        $('#total').text(nonmobileTotal).hide().fadeIn();
-
-      });
-
-      // If they click the one week checkbox
-      $('#nonmobile-one-week').change(function(){
-        if(this.checked){
-          $('#nonmobile .checkbox').parent().parent().addClass('active');
-          $('#nonmobile-duration-days').parent().parent().removeClass('active');
-        } else {
-          $('#nonmobile .checkbox').parent().parent().removeClass('active');
-          $('#nonmobile-duration-days').parent().parent().addClass('active');
-        }
-        // Update the price
-        var nonmobileDevices = Number($('#nonmobile-devices').val());
-        var nonmobileBandwidth = Number($('#nonmobile-bandwidth').val());
-        var nonmobileDuration = Number($('.active .value').val());
-        var nonmobileTotal = (nonmobileDevices += nonmobileBandwidth += nonmobileDuration);
-        console.log(nonmobileTotal);
-        $('#total').text(nonmobileTotal).hide().fadeIn();
-      });
-
-      // If they switch to days after choosing one week
-      $('#nonmobile-duration-days').click(function(){
-        $('#nonmobile .checkbox').parent().parent().removeClass('active');
-        $('#nonmobile-duration-days').parent().parent().addClass('active');
-        var nonmobileDevices = Number($('#nonmobile-devices').val());
-        var nonmobileBandwidth = Number($('#nonmobile-bandwidth').val());
-        var nonmobileDuration = Number($('.active .value').val());
-        var nonmobileTotal = (nonmobileDevices += nonmobileBandwidth += nonmobileDuration);
-        console.log(nonmobileTotal);
-        $('#nonmobile-one-week').prop('checked', false)
-        $('#total').text(nonmobileTotal).hide().fadeIn();
-      });
-
-    // Mobile
-
-      // Price calculator
-      var Devices = Number($('#mobile-devices').val());
-      var Bandwidth = Number($('#mobile-bandwidth').val());
-      var Duration = Number($('#mobile .active .value').val());
-      var Total = (Devices += Bandwidth += Duration);
-      console.log(Total);
-      $('#price').text(Total).hide().fadeIn();
-
-      $('#mobile select').change(function(){
-        var Devices = Number($('#mobile-devices').val());
-        var Bandwidth = Number($('#mobile-bandwidth').val());
-        var Duration = Number($('#mobile .active .value').val());
-        var Total = (Devices += Bandwidth += Duration);
-        console.log(Total);
-        $('#price').text(Total).hide().fadeIn();
-
-      });
-
-      // If they click the one week checkbox
-      $('#mobile-one-week').change(function(){
-        if(this.checked){
-          $('.checkbox').parent().parent().addClass('active');
-          $('#mobile-duration-days').parent().parent().removeClass('active');
-        } else {
-          $('.checkbox').parent().parent().removeClass('active');
-          $('#mobile-duration-days').parent().parent().addClass('active');
-        }
-        // Update the price
-        var Devices = Number($('#mobile-devices').val());
-        var Bandwidth = Number($('#mobile-bandwidth').val());
-        var Duration = Number($('#mobile .active .value').val());
-        var Total = (Devices += Bandwidth += Duration);
-        console.log(Total);
-        $('#price').text(Total).hide().fadeIn();
-
-      });
-
-      // If they switch to days after choosing one week
-      $('#mobile-duration-days').click(function(){
-        $('.checkbox').parent().parent().removeClass('active');
-        $('#mobile-duration-days').parent().parent().addClass('active');
-        var Devices = Number($('#mobile-devices').val());
-        var Bandwidth = Number($('#mobile-bandwidth').val());
-        var Duration = Number($('#mobile .active .value').val());
-        var Total = (Devices += Bandwidth += Duration);
-        console.log(Total);
-        $('#mobile-one-week').prop('checked', false)
-        $('#price').text(Total).hide().fadeIn();
-      });
-
+      // MOBILE FORM VALIDATION
       $('#mobile-customizer').validate({
         submitHandler: function(form) {
-          var Devices = Number($('#nonmobile-devices').val());
-          var Bandwidth = Number($('#nonmobile-bandwidth').val());
-          var Duration = Number($('#nonmobile .active .value').val());
-          var Total = (Devices += Bandwidth += Duration);
           
-          window.location = 'create-account.html?plan=daily&total='+Total;
+          
+          window.location = 'create-account.html?total=';
         }
       });
 

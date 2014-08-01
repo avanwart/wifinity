@@ -117,19 +117,8 @@ section {
   section .row.choice {
     background: url("../img/or.jpg") center center no-repeat;
     background-size: 29px 16px; }
-    section .row.choice .daily, section .row.choice .weekly, section .row.choice .monthly, section .row.choice .yearly {
-      padding: 10px 15px !important; }
-      section .row.choice .daily .inner, section .row.choice .weekly .inner, section .row.choice .monthly .inner, section .row.choice .yearly .inner {
-        display: inline-block;
-        width: 90%;
-        padding: 15px 15px 10px !important;
-        border: 1px solid white;
-        border-radius: 6px; }
-      section .row.choice .daily.active, section .row.choice .weekly.active, section .row.choice .monthly.active, section .row.choice .yearly.active {
-        text-align: center; }
-        section .row.choice .daily.active .inner, section .row.choice .weekly.active .inner, section .row.choice .monthly.active .inner, section .row.choice .yearly.active .inner {
-          background: #eef9e1;
-          border: 1px solid #bae684; }
+    section .row.choice .daily .checkbox {
+      margin-bottom: 10px; }
     section .row.choice select {
       clear: both; }
   section h1 {
@@ -202,12 +191,14 @@ section#nonmobile {
     padding: 0 15px; }
   section#nonmobile h2 {
     letter-spacing: 0;
-    font-weight: normal;
+    font-weight: bold;
     margin-bottom: 15px; }
   section#nonmobile select {
     margin-bottom: 10px;
     width: 75%;
     display: inline-block; }
+  section#nonmobile .daily .checkbox {
+    margin-bottom: 10px; }
   section#nonmobile .checkbox {
     margin: 8px 0 0 0;
     font-size: 17px;
@@ -220,6 +211,8 @@ section#nonmobile {
     margin-bottom: 20px; }
   section#nonmobile .border-right {
     border-right: 1px solid #efefef; }
+  section#nonmobile .offset-left {
+    margin-left: -60px; }
   section#nonmobile .weekly span {
     position: absolute;
     left: -8px;
