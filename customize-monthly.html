@@ -155,7 +155,7 @@
       	<div class="container">
   	    	<div class="row">
             <div class="col-sm-12">
-              <strong>Total: £<span id="price">1.99</span></strong>
+              <strong>Total: £<span id="price"></span></strong>
             </div>  
           </div>
       	</div>
@@ -171,7 +171,7 @@
                     <div class="inner">
                       <div class="checkbox">
                         <label>
-                          <input type="radio" id="mobile-monthly" value="monthly" class="value" name="monthly-plan" required> Monthly Plan - £13.25/month
+                          <input type="radio" id="mobile-monthly" value="monthly" class="value" name="monthly-plan" required checked> Monthly Plan - £13.25/month
                           <select name="duration-months" id="mobile-duration-months" class="form-control value">
                             <option value="13.25">1 month - £13.25</option>
                             <option value="26.50">2 months - £26.50</option>
@@ -318,29 +318,11 @@
 
       // MOBILE FUNCTIONALITY
 
-        // $('#mobile-monthly, .monthly label').bind('touchstart', function(){
-        //   $('#mobile-monthly').prop('checked', true);
-        // });
-
-        // $('#mobile-one-year').bind('touchstart', function(){
-        //   $('#mobile-one-year').prop('checked', true);
-        // });
-
-        // $('#mobile input[type="radio"]').bind('touchstart', function(){
-        //   $(this).prop('checked', true);
-        //   if($('#mobile-one-year').prop('checked', true)){
-        //     $('#mobile-duration-months').prop('disabled', 'disabled');
-        //   }
-        // });
         // Radio button functionality
         $('#mobile-one-year').click(function(){
           $('#mobile-duration-months').prop('disabled', 'disabled').removeClass('success');
         });
-        // $('#mobile-monthly').change(function(){
-        //   if($(this).prop('checked', true)){
-        //     $('#mobile-duration-months').prop('disabled', false);
-        //   }
-        // });
+        
         $('#mobile-monthly').click(function(){
           $('#mobile-duration-months').prop('disabled', false);
           $('#mobile-duration-months').focus();

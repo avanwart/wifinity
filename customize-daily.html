@@ -309,9 +309,12 @@
         // MOBILE FORM VALIDATION
         $('#mobile-customizer').validate({
           validClass: "success",
-          submitHandler: function(form) {
-            
-            
+          errorPlacement: function(error, element) {
+            if (element.attr("name") == "daily-plan") {
+              error.insertAfter(".weekly .checkbox");
+            }
+          },
+          submitHandler: function(form) { 
             window.location = 'create-account.html?total=';
           }
         });
