@@ -511,11 +511,11 @@ footer {
     section#customizer hr {
       margin: 10px 0; }
     section#customizer .choice .inner {
-      margin-bottom: 20px; }
+      margin-bottom: 0; }
+      section#customizer .choice .inner .checkbox {
+        margin-bottom: 0; }
     section#customizer .choice .weekly, section#customizer .choice .yearly {
       text-align: center; }
-      section#customizer .choice .weekly .checkbox, section#customizer .choice .yearly .checkbox {
-        display: inline-block; }
     section#customizer .duration, section#customizer .devices, section#customizer .bandwidth {
       text-align: center; }
     section#customizer .duration span {
@@ -530,8 +530,6 @@ footer {
       font-size: 13px;
       font-weight: bold;
       color: #466e16; }
-    section#customizer .duration .checkbox {
-      margin: 5px; }
     section#customizer .duration select {
       margin-bottom: 15px; }
     section#customizer .duration p {
@@ -554,6 +552,23 @@ footer {
       line-height: 1.5; }
     form .btn-primary {
       width: 100%; }
+    form .choice {
+      background: none !important; }
+    form .form-control[disabled] {
+      color: #cccccc; }
+    form .daily label, form .weekly label, form .monthly label, form .yearly label {
+      display: block !important;
+      padding: 0 5px;
+      white-space: nowrap; }
+      form .daily label input, form .weekly label input, form .monthly label input, form .yearly label input {
+        margin: 0 5px 15px 0; }
+    form .weekly label input {
+      margin-bottom: 20px; }
+    form .or {
+      text-transform: uppercase;
+      font-weight: bold;
+      color: #cccccc;
+      font-size: 20px !important; }
     form .expiry {
       margin-bottom: 5px; }
       form .expiry .row {

@@ -616,11 +616,11 @@ footer
 			margin: 10px 0
 		.choice
 			.inner
-				margin-bottom: 20px
+				margin-bottom: 0
+				.checkbox
+					margin-bottom: 0
 			.weekly, .yearly
 				text-align: center
-				.checkbox
-					display: inline-block
 		.duration, .devices, .bandwidth
 			text-align: center
 		.duration
@@ -636,8 +636,6 @@ footer
 				font-size: 13px
 				font-weight: bold
 				color: darken($green, 15%)
-			.checkbox
-				margin: 5px
 			select
 				margin-bottom: 15px
 			p
@@ -660,6 +658,27 @@ footer
 			line-height: 1.5
 		.btn-primary
 			width: 100%
+		.choice
+			background: none!important
+		.form-control[disabled]
+			color: #ccc
+		.daily, .weekly, .monthly, .yearly
+			label
+				// background: $ash
+				display: block!important
+				padding: 0 5px
+				white-space: nowrap
+				input
+					margin: 0 5px 15px 0
+		.weekly
+			label
+				input
+					margin-bottom: 20px
+		.or
+			text-transform: uppercase
+			font-weight: bold
+			color: #ccc
+			font-size: 20px!important
 		.expiry
 			margin-bottom: 5px
 			.row
