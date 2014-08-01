@@ -72,27 +72,27 @@
                       <h2>Duration</h2>
                       <div class="row choice">
                         <div class="col-sm-6 col-md-offset-0 active monthly text-center">
-                          <div class="inner" style="padding-top: 0">
-                            <select name="duration-months" id="nonmobile-duration-months" class="form-control value">
-                              <option value="13.25">1 month</option>
-                              <option value="26.50">2 months</option>
-                              <option value="39.75">3 months</option>
-                              <option value="53.00">4 months</option>
-                              <option value="66.25">5 months</option>
-                              <option value="79.50">6 months</option>
-                            </select>
-                            <p>£13.25/month</p>
+                          <div class="checkbox">
+                            <label>
+                              <input type="radio" id="nonmobile-monthly" value="monthly" class="value" name="monthly-plan" checked> Monthly
+                            </label>
                           </div>
+                          <select name="duration-months" id="nonmobile-duration-months" class="form-control value">
+                            <option value="13.25">1 month - £13.25</option>
+                            <option value="26.50">2 months - £26.50</option>
+                            <option value="39.75">3 months - £39.75</option>
+                            <option value="53.00">4 months - £53.00</option>
+                            <option value="66.25">5 months - £66.25</option>
+                            <option value="79.50">6 months - £79.50</option>
+                          </select>
                         </div>
                         <div class="col-sm-6 yearly text-center">
-                          <div class="inner" style="padding-top: 0">
-                            <!-- <span>or</span> -->
-                            <div class="checkbox">
-                              <label>
-                                <input type="checkbox" id="nonmobile-one-year" value="8.95" class="value"> 12 months
-                                <div class="pricepoint">£8.95/mo <em class="savings">Save 33%</em></div>
-                              </label>
-                            </div>
+                          <!-- <span>or</span> -->
+                          <div class="checkbox offset-left">
+                            <label>
+                              <input type="radio" id="nonmobile-one-year" value="8.95" class="value" name="monthly-plan"> 12 months
+                              <div class="pricepoint">£8.95/mo <em class="savings">Save 33%</em></div>
+                            </label>
                           </div>
                         </div>
                       </div>
@@ -165,6 +165,40 @@
           <form action="" id="mobile-customizer">
             <div class="row duration">
               <div class="col-sm-12">
+                <h2 class="duration-headline">Duration</h2>
+                <div class="row choice" style="padding: 0">
+                  <div class="col-xs-12 active monthly">
+                    <div class="inner">
+                      <div class="checkbox">
+                        <label>
+                          <input type="radio" id="mobile-monthly" value="monthly" class="value" name="monthly-plan" required> Monthly Plan - £13.25/month
+                          <select name="duration-months" id="mobile-duration-months" class="form-control value">
+                            <option value="13.25">1 month - £13.25</option>
+                            <option value="26.50">2 months - £26.50</option>
+                            <option value="39.75">3 months - £39.75</option>
+                            <option value="53.00">4 months - £53.00</option>
+                            <option value="66.25">5 months - £66.25</option>
+                            <option value="79.50">6 months - £79.50</option>
+                          </select>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xs-12 yearly">
+                    <div class="inner">
+                    <p class="text-center or">or</p>
+                      <div class="checkbox">
+                        <label>
+                          <input type="radio" id="mobile-one-year" value="7.99" class="value" name="monthly-plan" required> 1 year for £8.95/month <em>Save 33%</em>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- <div class="row duration">
+              <div class="col-sm-12">
                 <h2>Duration</h2>
                 <div class="row choice" style="padding: 0">
                   <div class="col-xs-12 active monthly">
@@ -191,7 +225,7 @@
                   </div>
                 </div>
               </div>
-            </div>
+            </div> -->
             <div class="row devices">
               <div class="col-sm-12">
                 <h2>Devices <small>£1 per extra device</small></h2>
@@ -258,131 +292,72 @@
       var myPlan = location.search.split('plan=')[1]
       console.log(myPlan);
 
-      $('#nonmobile-customizer').validate({
-        submitHandler: function(form) {
-          var nonmobileDevices = Number($('#nonmobile-devices').val());
-          var nonmobileBandwidth = Number($('#nonmobile-bandwidth').val());
-          var nonmobileDuration = Number($('.active .value').val());
-          var nonmobileTotal = (nonmobileDevices += nonmobileBandwidth += nonmobileDuration);
-          
-          window.location = 'create-account.html?plan=monthly&total='+nonmobileTotal;
-        }
-      });
+      // NONMOBILE FUNCTIONALITY
+
+        // Radio button functionality
+        $('#nonmobile-one-year').change(function(){
+          if($(this).prop('checked', true)){
+            $('#nonmobile-duration-months').prop('disabled', 'disabled');
+          }
+        });
+        $('#nonmobile-monthly').change(function(){
+          if($(this).prop('checked', true)){
+            $('#nonmobile-duration-months').prop('disabled', false);
+          }
+        });
+
+        // NONMOBILE FORM VALIDATION
+        $('#nonmobile-customizer').validate({
+          validClass: "success",
+
+          submitHandler: function(form) {
+
+            window.location = 'create-account.html?total=';
+          }
+        });
+
+      // MOBILE FUNCTIONALITY
+
+        // $('#mobile-monthly, .monthly label').bind('touchstart', function(){
+        //   $('#mobile-monthly').prop('checked', true);
+        // });
+
+        // $('#mobile-one-year').bind('touchstart', function(){
+        //   $('#mobile-one-year').prop('checked', true);
+        // });
+
+        // $('#mobile input[type="radio"]').bind('touchstart', function(){
+        //   $(this).prop('checked', true);
+        //   if($('#mobile-one-year').prop('checked', true)){
+        //     $('#mobile-duration-months').prop('disabled', 'disabled');
+        //   }
+        // });
+        // Radio button functionality
+        $('#mobile-one-year').click(function(){
+          $('#mobile-duration-months').prop('disabled', 'disabled').removeClass('success');
+        });
+        // $('#mobile-monthly').change(function(){
+        //   if($(this).prop('checked', true)){
+        //     $('#mobile-duration-months').prop('disabled', false);
+        //   }
+        // });
+        $('#mobile-monthly').click(function(){
+          $('#mobile-duration-months').prop('disabled', false);
+          $('#mobile-duration-months').focus();
+        });
       
-    // Non mobile
-
-      // Price calculator
-      var nonmobileDevices = Number($('#nonmobile-devices').val());
-      var nonmobileBandwidth = Number($('#nonmobile-bandwidth').val());
-      var nonmobileDuration = Number($('.active .value').val());
-      var nonmobileTotal = (nonmobileDevices += nonmobileBandwidth += nonmobileDuration);
-      console.log(Total);
-      $('#total').text(nonmobileTotal).hide().fadeIn();
-
-      $('#nonmobile select').change(function(){
-        var nonmobileDevices = Number($('#nonmobile-devices').val());
-        var nonmobileBandwidth = Number($('#nonmobile-bandwidth').val());
-        var nonmobileDuration = Number($('.active .value').val());
-        var nonmobileTotal = (nonmobileDevices += nonmobileBandwidth += nonmobileDuration);
-        console.log(nonmobileTotal);
-        $('#total').text(nonmobileTotal).hide().fadeIn();
-
-      });
-
-      // If they click the one year checkbox
-      $('#nonmobile-one-year').change(function(){
-        if(this.checked){
-          $('#nonmobile .checkbox').parent().parent().addClass('active');
-          $('#nonmobile-duration-months').parent().parent().removeClass('active');
-        } else {
-          $('#nonmobile .checkbox').parent().parent().removeClass('active');
-          $('#nonmobile-duration-months').parent().parent().addClass('active');
-        }
-        // Update the price
-        var nonmobileDevices = Number($('#nonmobile-devices').val());
-        var nonmobileBandwidth = Number($('#nonmobile-bandwidth').val());
-        var nonmobileDuration = Number($('.active .value').val());
-        var nonmobileTotal = (nonmobileDevices += nonmobileBandwidth += nonmobileDuration);
-        console.log(nonmobileTotal);
-        $('#total').text(nonmobileTotal).hide().fadeIn();
-      });
-
-      // If they switch to months after choosing one year
-      $('#nonmobile-duration-months').click(function(){
-        $('#nonmobile .checkbox').parent().parent().removeClass('active');
-        $('#nonmobile-duration-months').parent().parent().addClass('active');
-        var nonmobileDevices = Number($('#nonmobile-devices').val());
-        var nonmobileBandwidth = Number($('#nonmobile-bandwidth').val());
-        var nonmobileDuration = Number($('.active .value').val());
-        var nonmobileTotal = (nonmobileDevices += nonmobileBandwidth += nonmobileDuration);
-        console.log(nonmobileTotal);
-        $('#nonmobile-one-year').prop('checked', false)
-        $('#total').text(nonmobileTotal).hide().fadeIn();
-      });
-
-    // Mobile
-
-      // Price calculator
-      var Devices = Number($('#mobile-devices').val());
-      var Bandwidth = Number($('#mobile-bandwidth').val());
-      var Duration = Number($('#mobile .active .value').val());
-      var Total = (Devices += Bandwidth += Duration);
-      console.log(Total);
-      $('#price').text(Total).hide().fadeIn();
-
-      $('#mobile select').change(function(){
-        var Devices = Number($('#mobile-devices').val());
-        var Bandwidth = Number($('#mobile-bandwidth').val());
-        var Duration = Number($('#mobile .active .value').val());
-        var Total = (Devices += Bandwidth += Duration);
-        console.log(Total);
-        $('#price').text(Total).hide().fadeIn();
-
-      });
-
-      // If they click the one year checkbox
-      $('#mobile-one-year').click(function(){
-        if(this.checked){
-          $('.checkbox').parent().parent().addClass('active');
-          $('#mobile-duration-months').parent().parent().removeClass('active');
-        } else {
-          $('.checkbox').parent().parent().removeClass('active');
-          $('#mobile-duration-months').parent().parent().addClass('active');
-        }
-        // Update the price
-        var Devices = Number($('#mobile-devices').val());
-        var Bandwidth = Number($('#mobile-bandwidth').val());
-        var Duration = Number($('#mobile .active .value').val());
-        var Total = (Devices += Bandwidth += Duration);
-        console.log(Total);
-        $('#price').text(Total).hide().fadeIn();
-
-      });
-
-      // If they switch to months after choosing one year
-      $('#mobile-duration-months').change(function(){
-        $('.checkbox').parent().parent().removeClass('active');
-        $('#mobile-duration-months').parent().parent().addClass('active');
-        var Devices = Number($('#mobile-devices').val());
-        var Bandwidth = Number($('#mobile-bandwidth').val());
-        var Duration = Number($('#mobile .active .value').val());
-        var Total = (Devices += Bandwidth += Duration);
-        console.log(Total);
-        $('#mobile-one-year').prop('checked', false)
-        $('#price').text(Total).hide().fadeIn();
-      });
-
-
-      $('#mobile-customizer').validate({
-        submitHandler: function(form) {
-          var Devices = Number($('#nonmobile-devices').val());
-          var Bandwidth = Number($('#nonmobile-bandwidth').val());
-          var Duration = Number($('#nonmobile .active .value').val());
-          var Total = (Devices += Bandwidth += Duration);
-          
-          window.location = 'create-account.html?plan=monthly&total='+Total;
-        }
-      });
+        // MOBILE FORM VALIDATION
+        $('#mobile-customizer').validate({
+          validClass: "success",
+          errorPlacement: function(error, element) {
+            if (element.attr("name") == "monthly-plan") {
+              error.insertAfter(".duration-headline");
+            }
+          },
+          submitHandler: function(form) {
+            window.location = 'create-account.html?total=';
+          }
+        });
 
     });
     </script>

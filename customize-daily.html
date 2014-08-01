@@ -90,7 +90,7 @@
                           <!-- <span>or</span> -->
                           <div class="checkbox offset-left">
                             <label>
-                              <input type="radio" id="nonmobile-one-week" value="oneweek" class="value" name="daily-plan"> 1 week 
+                              <input type="radio" id="nonmobile-one-week" value="oneweek" class="value" name="daily-plan"> 1 week
                               <div class="pricepoint">£7.99 <em class="savings">Save 43%</em></div>
                             </label>
                           </div>
@@ -278,6 +278,8 @@
 
         // NONMOBILE FORM VALIDATION
         $('#nonmobile-customizer').validate({
+          validClass: "success",
+
           submitHandler: function(form) {
 
             window.location = 'create-account.html?total=';
@@ -306,6 +308,7 @@
       
         // MOBILE FORM VALIDATION
         $('#mobile-customizer').validate({
+          validClass: "success",
           submitHandler: function(form) {
             
             

@@ -197,7 +197,7 @@ section#nonmobile {
     margin-bottom: 10px;
     width: 75%;
     display: inline-block; }
-  section#nonmobile .daily .checkbox {
+  section#nonmobile .daily .checkbox, section#nonmobile .monthly .checkbox {
     margin-bottom: 10px; }
   section#nonmobile .checkbox {
     margin: 8px 0 0 0;
@@ -234,6 +234,8 @@ section#nonmobile {
 
 form .form-control[disabled], .form-horizontal .form-control[disabled] {
   color: #cccccc; }
+form .success, .form-horizontal .success {
+  border: 1px solid #6fae23; }
 form legend, .form-horizontal legend {
   text-align: center;
   border: none;
@@ -539,9 +541,9 @@ footer {
       font-size: 14px; }
     section#customizer .duration {
       padding-bottom: 0;
-      border-bottom: 1px dotted #d9d9d9; }
+      border-bottom: 1px dotted #aaaaaa; }
     section#customizer .devices {
-      border-bottom: 1px dotted #d9d9d9; }
+      border-bottom: 1px dotted #aaaaaa; }
     section#customizer .bandwidth {
       background: white; }
 
@@ -570,7 +572,7 @@ footer {
       text-transform: uppercase;
       font-weight: bold;
       color: #cccccc;
-      font-size: 20px !important; }
+      font-size: 18px !important; }
     form .expiry {
       margin-bottom: 5px; }
       form .expiry .row {

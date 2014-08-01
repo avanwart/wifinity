@@ -231,7 +231,7 @@ section#nonmobile
 		margin-bottom: 10px
 		width: 75%
 		display: inline-block
-	.daily
+	.daily, .monthly
 		.checkbox
 			margin-bottom: 10px
 	.checkbox
@@ -276,6 +276,8 @@ form, .form-horizontal
 	// 		box-shadow: none
 	.form-control[disabled]
 		color: #ccc
+	.success
+		border: 1px solid $green
 	legend
 		text-align: center
 		border: none
@@ -645,9 +647,9 @@ footer
 				font-size: 14px
 		.duration
 			padding-bottom: 0
-			border-bottom: 1px dotted #d9d9d9
+			border-bottom: 1px dotted #aaa
 		.devices
-			border-bottom: 1px dotted #d9d9d9
+			border-bottom: 1px dotted #aaa
 		.bandwidth
 			background: white
 
@@ -680,7 +682,7 @@ footer
 			text-transform: uppercase
 			font-weight: bold
 			color: #ccc
-			font-size: 20px!important
+			font-size: 18px!important
 		.expiry
 			margin-bottom: 5px
 			.row
