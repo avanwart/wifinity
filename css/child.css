@@ -232,6 +232,8 @@ section#nonmobile {
       margin-top: 10px;
       margin-bottom: 10px; }
 
+form .form-control[disabled], .form-horizontal .form-control[disabled] {
+  color: #cccccc; }
 form legend, .form-horizontal legend {
   text-align: center;
   border: none;
