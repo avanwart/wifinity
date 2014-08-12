@@ -43,7 +43,11 @@ a
 	i
 		font-size: .9em
 		top: 1px
-
+.tooltip
+	cursor: pointer
+	.tooltip-inner
+		padding: 8px
+		font-size: 13px
 .thumbnail
 	border: 1px solid #ccc
 	border-radius: 0
@@ -115,6 +119,9 @@ header
 				color: $blue
 				&:hover
 					text-decoration: underline
+			&.login
+				form
+					margin-top: 20px
 
 section
 	padding: 2em 0 1em
@@ -181,6 +188,9 @@ section
 			padding: 0 0 10px
 			border-bottom: 1px solid #efefef
 			font-size: 22px
+			i
+				font-size: .8em
+				margin-right: 6px
 			small
 				float: right
 				color: $black
@@ -443,7 +453,7 @@ footer
 	section
 		.card
 			h3
-				font-size: 18px
+				font-size: 16px
 		&.light
 			ul
 				li
@@ -476,6 +486,15 @@ footer
 						line-height: 1em
 						padding: 0
 						font-size: 15px
+	section
+		.card
+			h3
+				em
+					font-size: 11px
+					color: #666
+					font-weight: normal
+					display: inline!important
+					text-transform: uppercase
 	#hero
 		padding: 20px 0
 		h1
