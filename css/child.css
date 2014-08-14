@@ -49,9 +49,6 @@ a {
 .ashy {
   background: #efefef; }
 
-header {
-  overflow-x: hidden; }
-
 .navbar {
   background: white;
   border: none;
@@ -112,6 +109,28 @@ header {
       text-decoration: underline; }
   .navbar .navbar-nav li.login form {
     margin-top: 20px; }
+  .navbar .navbar-nav li.login .logged-in {
+    font-size: 14px;
+    padding-top: 24px; }
+    .navbar .navbar-nav li.login .logged-in .glyphicon-user {
+      font-size: 85%; }
+    .navbar .navbar-nav li.login .logged-in .btn-default {
+      padding: 0;
+      border: none; }
+      .navbar .navbar-nav li.login .logged-in .btn-default:hover {
+        background: transparent; }
+    .navbar .navbar-nav li.login .logged-in .dropdown-menu {
+      left: auto;
+      right: 0;
+      z-index: 2; }
+      .navbar .navbar-nav li.login .logged-in .dropdown-menu li {
+        text-align: left; }
+        .navbar .navbar-nav li.login .logged-in .dropdown-menu li a {
+          padding: 8px 16px;
+          display: block;
+          line-height: 1.6; }
+          .navbar .navbar-nav li.login .logged-in .dropdown-menu li a:hover {
+            text-decoration: none; }
 
 section {
   padding: 2em 0 1em; }
@@ -177,7 +196,8 @@ section {
     border-radius: 2px;
     border: none;
     font-size: 15px;
-    padding: 8px 32px;
+    padding: 8px 32px; }
+  section .alert-success {
     background: #eef9e1;
     color: #335110; }
   section.light {
@@ -194,51 +214,51 @@ section {
         margin-bottom: 15px;
         white-space: nowrap; }
 
-section#nonmobile {
+section.nonmobile {
   font-size: 15px; }
-  section#nonmobile h1 {
+  section.nonmobile h1 {
     font-size: 36px; }
-  section#nonmobile .inner {
+  section.nonmobile .inner {
     padding: 0 15px; }
-  section#nonmobile h2 {
+  section.nonmobile h2 {
     letter-spacing: 0;
     font-weight: bold;
     margin-bottom: 15px; }
-  section#nonmobile select {
+  section.nonmobile select {
     margin-bottom: 10px;
     width: 75%;
     display: inline-block; }
-  section#nonmobile .daily .checkbox, section#nonmobile .monthly .checkbox {
+  section.nonmobile .daily .checkbox, section.nonmobile .monthly .checkbox {
     margin-bottom: 10px; }
-  section#nonmobile .checkbox {
+  section.nonmobile .checkbox {
     margin: 8px 0 0 0;
     font-size: 17px;
     display: inline-block; }
-  section#nonmobile .pricepoint {
+  section.nonmobile .pricepoint {
     margin-top: 10px;
     font-size: 15px; }
-  section#nonmobile .clear {
+  section.nonmobile .clear {
     display: block;
     margin-bottom: 20px; }
-  section#nonmobile .border-right {
+  section.nonmobile .border-right {
     border-right: 1px solid #efefef; }
-  section#nonmobile .offset-left {
+  section.nonmobile .offset-left {
     margin-left: -60px; }
-  section#nonmobile .weekly span {
+  section.nonmobile .weekly span {
     position: absolute;
     left: -8px;
     top: 5px;
     color: #999999; }
-  section#nonmobile .weekly em {
+  section.nonmobile .weekly em {
     color: #6fae23;
     font-style: normal;
     font-weight: bold; }
-  section#nonmobile .checkout {
+  section.nonmobile .checkout {
     padding-top: 20px;
     font-weight: bold; }
-    section#nonmobile .checkout #total {
+    section.nonmobile .checkout #total {
       margin-bottom: 10px; }
-    section#nonmobile .checkout .btn-primary {
+    section.nonmobile .checkout .btn-primary {
       width: 100%;
       margin-top: 10px;
       margin-bottom: 10px; }
@@ -301,41 +321,41 @@ form .disclaimer, .form-horizontal .disclaimer {
     padding: 0;
     letter-spacing: 0; }
 
-#create {
+.create {
   text-align: center;
   min-height: 440px; }
-  #create h1 {
+  .create h1 {
     font-size: 36px; }
-  #create h2 {
+  .create h2 {
     font-size: 18px;
     margin-bottom: 60px; }
-  #create form {
+  .create form {
     display: inline-block;
     width: 360px; }
-  #create .text-left {
+  .create .text-left {
     text-align: left; }
 
-#payment {
+.payment {
   text-align: center; }
-  #payment h1 {
+  .payment h1 {
     font-size: 36px; }
-  #payment form {
+  .payment form {
     margin-top: 10px;
     display: inline-block;
     width: 360px; }
-  #payment h3 {
+  .payment h3 {
     margin: 10px 0 20px; }
-  #payment #redeem-voucher {
+  .payment .redeem-voucher {
     display: inline-block;
     margin-top: 30px;
     font-weight: normal; }
 
-#nonmobile-confirmation form {
+.nonmobile-confirmation form {
   width: 75%;
   display: inline-block; }
-  #nonmobile-confirmation form .email {
+  .nonmobile-confirmation form .email {
     margin-bottom: 0; }
-    #nonmobile-confirmation form .email small a {
+    .nonmobile-confirmation form .email small a {
       font-size: 13px;
       font-weight: normal; }
 
@@ -407,16 +427,16 @@ footer {
     display: inline !important;
     text-transform: uppercase; }
 
-  #hero {
+  .hero {
     padding: 20px 0; }
-    #hero h1 {
+    .hero h1 {
       font-size: 20px;
       letter-spacing: 0; }
-    #hero h2 {
+    .hero h2 {
       font-size: 16px;
       line-height: 1.4;
       letter-spacing: 0; }
-    #hero .card {
+    .hero .card {
       margin-bottom: 10px; }
 
   section.light ul li {
@@ -515,54 +535,54 @@ footer {
     .modal .modal-dialog .modal-footer {
       text-align: center; }
 
-  section#total {
+  section.total {
     text-align: center;
     padding: 10px 0; }
 
-  section#customizer {
+  section.customize {
     background: white;
     padding: 0; }
-    section#customizer .row {
+    section.customize .row {
       padding: 8px 0; }
-    section#customizer h2 {
+    section.customize h2 {
       font-size: 16px;
       letter-spacing: 0;
       margin-bottom: 10px;
       font-weight: bold;
       text-align: left; }
-    section#customizer hr {
+    section.customize hr {
       margin: 10px 0; }
-    section#customizer .choice .inner {
+    section.customize .choice .inner {
       margin-bottom: 0; }
-      section#customizer .choice .inner .checkbox {
+      section.customize .choice .inner .checkbox {
         margin-bottom: 0; }
-    section#customizer .choice .weekly, section#customizer .choice .yearly {
+    section.customize .choice .weekly, section.customize .choice .yearly {
       text-align: center; }
-    section#customizer .duration, section#customizer .devices, section#customizer .bandwidth {
+    section.customize .duration, section.customize .devices, section.customize .bandwidth {
       text-align: center; }
-    section#customizer .duration span {
+    section.customize .duration span {
       position: absolute;
       left: -6px;
       top: 5px;
       font-size: 14px;
       color: #777777; }
-    section#customizer .duration small {
+    section.customize .duration small {
       margin-left: -20px; }
-    section#customizer .duration em {
+    section.customize .duration em {
       font-size: 13px;
       font-weight: bold;
       color: #466e16; }
-    section#customizer .duration select {
+    section.customize .duration select {
       margin-bottom: 15px; }
-    section#customizer .duration p {
+    section.customize .duration p {
       margin: 0;
       font-size: 14px; }
-    section#customizer .duration {
+    section.customize .duration {
       padding-bottom: 0;
       border-bottom: 1px dotted #aaaaaa; }
-    section#customizer .devices {
+    section.customize .devices {
       border-bottom: 1px dotted #aaaaaa; }
-    section#customizer .bandwidth {
+    section.customize .bandwidth {
       background: white; }
 
   form {
@@ -595,7 +615,7 @@ footer {
       margin-bottom: 5px; }
       form .expiry .row {
         padding: 0 !important; }
-      form .expiry #expirydatemonth {
+      form .expiry .expirydatemonth {
         margin-bottom: 10px; }
     form .disclaimer {
       white-space: normal; }
@@ -603,9 +623,9 @@ footer {
       position: absolute;
       left: 160px;
       top: 36px; }
-    form #securitycode-mobile {
+    form .securitycode-mobile {
       margin-bottom: 10px; }
-    form #mobile-redeem-voucher {
+    form .mobile-redeem-voucher {
       font-weight: normal;
       font-size: 14px; }
     form label.error {
@@ -622,17 +642,19 @@ footer {
         display: none; }
     form h4.modal-title {
       font-size: 17px; }
-    form #redeem-voucher-mobile {
+    form .expirydateyear {
+      margin-bottom: 15px; }
+    form .redeem-voucher-mobile {
       display: inline-block;
       margin-top: 30px;
       font-weight: normal; }
 
-  #mobile-confirmation {
+  .mobile-confirmation {
     padding: 0; }
-    #mobile-confirmation form {
+    .mobile-confirmation form {
       margin-top: 0; }
-      #mobile-confirmation form .email {
+      .mobile-confirmation form .email {
         margin-bottom: 0; }
-        #mobile-confirmation form .email small a {
+        .mobile-confirmation form .email small a {
           font-size: 12px;
           font-weight: normal; } }

@@ -44,21 +44,35 @@
 												<input type="email" class="form-control" id="login_email" placeholder="Enter email">
 											</div>
 											<div class="form-group">
-										    <label class="sr-only" for="login_password">Password</label>
-										    <input type="password" class="form-control" id="login_password" placeholder="Password">
-										  </div>
-										  <button type="submit" class="btn btn-default">Sign in</button>
+												<label class="sr-only" for="login_password">Password</label>
+												<input type="password" class="form-control" id="login_password" placeholder="Password">
+											</div>
+											<button type="submit" class="btn btn-default">Sign in</button>
 										</form>
 									</div>
-									<div id="logged-in"></div>
+									<div id="logged-in" class="logged-in" style="display: none">
+										<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+											<i class="glyphicon glyphicon-user"></i> mark@billforward.net 
+											<span class="caret"></span>
+											<span class="sr-only">Toggle Dropdown</span>
+										</button>
+										<ul class="dropdown-menu" role="menu">
+							        <li><a href="#">Account settings</a></li>
+							        <li><a href="#">Dashboard</a></li>
+							        <li><a href="#">Something else here</a></li>
+							        <li class="divider"></li>
+							        <li><a href="#">Separated link</a></li>
+							      </ul>
+									</div>
 								</li>
 							</ul>	
 						</div>							
 					</div>
 				</div> 
 			</nav>
+			<div style="clear: both"></div>
 		</header>
-		<section id="hero" class="ashy">
+		<section id="hero" class="ashy hero">
 			<div class="container" id="truecontent">
 				<div class="capsule">
 					<div class="row">
@@ -72,21 +86,21 @@
 							<div class="row">
 								<div class="col-sm-4">
 									<div class="card">
-										<h3><i class="glyphicon glyphicon-refresh hidden-xs" data-toggle="tooltip" data-placement="top" title="This is a recurring payment"></i>15 minutes <em class="visible-xs">(Recurring fee)</em><small>Free</small></h3>
+										<h3><!-- <i class="glyphicon glyphicon-refresh hidden-xs" data-toggle="tooltip" data-placement="top" title="This is a recurring payment"></i> -->15 minutes <em class="visible-xs">(Recurring fee)</em><small>Free</small></h3>
 										<p>Get 15 minutes of free WiFi access</p>
 										<a href="create-account.html?plan=free&total=0.00" class="btn btn-primary btn-block">Sign up now <i class="glyphicon glyphicon-chevron-right"></i></a>
 									</div>
 								</div>
 								<div class="col-sm-4">
 									<div class="card">
-										<h3><i class="glyphicon glyphicon-refresh hidden-xs" data-toggle="tooltip" data-placement="top" title="This is a recurring payment"></i>Daily <em class="visible-xs">(Recurring fee)</em><small>£1.99</small> </h3>
+										<h3><!-- <i class="glyphicon glyphicon-refresh hidden-xs" data-toggle="tooltip" data-placement="top" title="This is a recurring payment"></i> -->Daily <em class="visible-xs">(Recurring fee)</em><small>£1.99</small> </h3>
 										<p>Or 7 days for only £7.99/mo</p>
 										<a href="customize-daily.html" class="btn btn-primary btn-block">Buy now <i class="glyphicon glyphicon-chevron-right"></i></a>
 									</div>
 								</div>
 								<div class="col-sm-4">
 									<div class="card">
-										<h3><i class="glyphicon glyphicon-refresh hidden-xs" data-toggle="tooltip" data-placement="top" title="This is a recurring payment"></i>Monthly <em class="visible-xs">(Recurring fee)</em><small>£13.25/mo</small></h3>
+										<h3><!-- <i class="glyphicon glyphicon-refresh hidden-xs" data-toggle="tooltip" data-placement="top" title="This is a recurring payment"></i> -->Monthly <em class="visible-xs">(Recurring fee)</em><small>£13.25/mo</small></h3>
 										<p>Or 12 months for only £8.75/mo</p>
 										<a href="customize-monthly.html" class="btn btn-primary btn-block">Buy now <i class="glyphicon glyphicon-chevron-right"></i></a>
 									</div>
@@ -136,10 +150,18 @@
 			// Initialize Tooltips
 			$('.card h3 i').tooltip();
 			
+			// FadeIn login form when login button clicked
 			$('#login-btn').click(function(){
 				$('#logged-out').hide();
 				$('#login-form').fadeIn();
 				$('#login_email').focus();
+			});
+
+			// Simulate logged in mode when sign in button clicked
+			$('.login .btn-default').click(function(e){
+				e.preventDefault();
+				$('#login-form').hide();
+				$('#logged-in').fadeIn();
 			});
 		});
 		</script>

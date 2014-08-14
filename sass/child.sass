@@ -56,8 +56,6 @@ a
 .ashy
 	background: $ash
 
-header
-	overflow-x: hidden
 .navbar
 	background: white
 	border: none
@@ -122,6 +120,28 @@ header
 			&.login
 				form
 					margin-top: 20px
+				.logged-in
+					font-size: 14px
+					padding-top: 24px
+					.glyphicon-user
+						font-size: 85%
+					.btn-default
+						padding: 0
+						border: none
+						&:hover
+							background: transparent
+					.dropdown-menu
+						left: auto
+						right: 0
+						z-index: 2
+						li
+							text-align: left
+							a
+								padding: 8px 16px
+								display: block
+								line-height: 1.6
+								&:hover
+									text-decoration: none
 
 section
 	padding: 2em 0 1em
@@ -211,6 +231,7 @@ section
 		border: none
 		font-size: 15px
 		padding: 8px 32px
+	.alert-success
 		background: lighten($green, 52%)
 		color: darken($green, 22%)
 
@@ -227,7 +248,7 @@ section
 				font-size: 19px
 				margin-bottom: 15px
 				white-space: nowrap
-section#nonmobile
+section.nonmobile
 	font-size: 15px
 	h1
 		font-size: 36px
@@ -363,7 +384,7 @@ form, .form-horizontal
 		padding: 0
 		letter-spacing: 0
 
-#create
+.create
 	text-align: center
 	min-height: 440px
 	h1
@@ -378,7 +399,7 @@ form, .form-horizontal
 		text-align: left
 
 
-#payment
+.payment
 	text-align: center
 	h1
 		font-size: 36px
@@ -388,12 +409,12 @@ form, .form-horizontal
 		width: 360px
 	h3
 		margin: 10px 0 20px
-	#redeem-voucher
+	.redeem-voucher
 		display: inline-block
 		margin-top: 30px
 		font-weight: normal
 
-#nonmobile-confirmation
+.nonmobile-confirmation
 	form
 		width: 75%
 		display: inline-block
@@ -495,7 +516,7 @@ footer
 					font-weight: normal
 					display: inline!important
 					text-transform: uppercase
-	#hero
+	.hero
 		padding: 20px 0
 		h1
 			font-size: 20px
@@ -616,7 +637,7 @@ footer
 			width: auto
 			.modal-footer
 				text-align: center
-	section#total
+	section.total
 		text-align: center
 		padding: 10px 0
 		// position: fixed
@@ -624,7 +645,7 @@ footer
 		// top: 71px
 		// left: 0
 		// right: 0
-	section#customizer
+	section.customize
 		background: white
 		padding: 0
 		.row
@@ -706,7 +727,7 @@ footer
 			margin-bottom: 5px
 			.row
 				padding: 0!important
-			#expirydatemonth
+			.expirydatemonth
 				margin-bottom: 10px
 		.disclaimer
 			white-space: normal
@@ -715,9 +736,9 @@ footer
 				position: absolute
 				left: 160px
 				top: 36px
-		#securitycode-mobile
+		.securitycode-mobile
 			margin-bottom: 10px
-		#mobile-redeem-voucher
+		.mobile-redeem-voucher
 			font-weight: normal
 			font-size: 14px
 		label.error
@@ -734,12 +755,14 @@ footer
 				display: none
 		h4.modal-title
 			font-size: 17px
-		#redeem-voucher-mobile
+		.expirydateyear
+			margin-bottom: 15px
+		.redeem-voucher-mobile
 			display: inline-block
 			margin-top: 30px
 			font-weight: normal
 
-	#mobile-confirmation
+	.mobile-confirmation
 		padding: 0
 		form
 			margin-top: 0

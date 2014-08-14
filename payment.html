@@ -58,7 +58,7 @@
 			</nav>
 		</header>
 		<!-- Nonmobile -->
-    <section id="payment" class="ashy hidden-xs">
+    <section id="payment" class="ashy hidden-xs payment">
     	<div class="container">
         <div class="row">
           <div class="col-sm-12">
@@ -159,7 +159,7 @@
 											</div><!-- /.modal -->
 										</div>
 										<div class="col-sm-6">
-											<a href="#" id="redeem-voucher">Redeem Voucher</a>
+											<a href="#" id="redeem-voucher" class="redeem-voucher">Redeem Voucher</a>
 											<div style="display: none" id="voucher-field">
 												<label for="voucher">Voucher code</label>
 												<input type="text" id="voucher" name="voucher" class="form-control"> 
@@ -183,7 +183,7 @@
     </section>
     <!-- Mobile -->
     <div id="mobile" class="visible-xs">
-      <section id="total" class="ashy">
+      <section class="ashy total">
       	<div class="container">
   	    	<div class="row">
             <div class="col-sm-12">
@@ -228,7 +228,7 @@
 							</div>
 							<div class="row">
 								<div class="col-sm-6">
-									<select id="expirydatemonth" name="expirydatemonth" class="form-control" required>
+									<select id="expirydatemonth" name="expirydatemonth" class="form-control expirydatemonth" required>
 										<option value="">Select Month</option>
 										<option value="01">01</option>
 								    <option value="02">02</option>
@@ -245,7 +245,7 @@
 								  </select>
 								</div>
 								<div class="col-sm-6">
-									<select id="expirydateyear" name="expirydateyear" class="form-control" required style="margin: 0">
+									<select id="expirydateyear" name="expirydateyear" class="form-control expirydateyear" required>
 										<option value="">Select Year</option>
 										<option value="2014">2014</option>
 								    <option value="2015">2015</option>
@@ -262,9 +262,9 @@
 						</div>
 						<div class="form-group text-left security">
 							<div class="row">
-								<div class="col-xs-12">
+								<div class="col-xs-6">
 									<label for="issuenumber">Security code</label>
-									<input type="text" id="securitycode-mobile" name="securitycode" class="form-control" style="width: 130px; display: inline-block; margin-right: 10px" required maxlength="4"> 
+									<input type="text" id="securitycode-mobile" name="securitycode" class="form-control securitycode-mobile" style="width: 130px; display: inline-block; margin-right: 10px" required maxlength="4"> 
 									<a href="#security-code-modal-mobile" data-toggle="modal" data-target="#security-code-modal-mobile"><i class="glyphicon glyphicon-question-sign"></i></a>
 									<div class="modal" id="security-code-modal-mobile">
 										<div class="modal-dialog">
@@ -283,8 +283,8 @@
 										</div><!-- /.modal-dialog -->
 									</div><!-- /.modal -->
 								</div>
-								<div class="col-xs-12">
-									<a href="#" id="mobile-redeem-voucher">Redeem Voucher</a>
+								<div class="col-xs-6">
+									<a href="#" id="mobile-redeem-voucher" class="redeem-voucher-mobile">Redeem Voucher</a>
 									<div style="display: none" id="mobile-voucher-field">
 										<label for="voucher">Voucher code</label>
 										<input type="text" id="voucher-mobile" name="voucher" class="form-control"> 
