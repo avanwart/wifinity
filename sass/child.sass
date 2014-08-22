@@ -222,7 +222,7 @@ section
 		.daily, .monthly
 			p
 				margin-bottom: 0
-	.alert
+	.alert.price
 		position: absolute
 		left: 0
 		right: 0
@@ -413,8 +413,41 @@ form, .form-horizontal
 		display: inline-block
 		margin-top: 30px
 		font-weight: normal
+	.alert-info
+		background: lighten($blue, 40%)
+		border-color: lighten($blue, 30%)
+		&:hover
+			color: #31708f!important
+	.prev-card
+		vertical-align: middle
+		font-size: 14px
+		padding: 8px
+		margin: 0 0 5px
+		&:hover
+			color: $blue
+	.credit-card
+		vertical-align: middle
+		display: inline-block
+		width: 32px
+		height: 22px
+		margin-right: 10px
+		background-size: 192px 22px
+		background-repeat: no-repeat
+		background-image: url('../img/credit-card-icons.jpg')
+		&.visa
+			background-position: -96px
+		&.visa-debit
+			background-position: -64px 0
+		&.mastercard
+			background-position: 0 0
+		&.maestro
+			background-position: -32px 0
+		&.discover
+			background-position: -128px 0
+		&.amex
+			background-position: -160px
 
-.nonmobile-confirmation
+.inonmobile-confirmation
 	form
 		width: 75%
 		display: inline-block

@@ -188,7 +188,7 @@ section {
       font-size: 15px; }
     section .card .daily p, section .card .monthly p {
       margin-bottom: 0; }
-  section .alert {
+  section .alert.price {
     position: absolute;
     left: 0;
     right: 0;
@@ -349,13 +349,46 @@ form .disclaimer, .form-horizontal .disclaimer {
     display: inline-block;
     margin-top: 30px;
     font-weight: normal; }
+  .payment .alert-info {
+    background: #e1f2fc;
+    border-color: #b2def8; }
+    .payment .alert-info:hover {
+      color: #31708f !important; }
+  .payment .prev-card {
+    vertical-align: middle;
+    font-size: 14px;
+    padding: 8px;
+    margin: 0 0 5px; }
+    .payment .prev-card:hover {
+      color: #27a3ea; }
+  .payment .credit-card {
+    vertical-align: middle;
+    display: inline-block;
+    width: 32px;
+    height: 22px;
+    margin-right: 10px;
+    background-size: 192px 22px;
+    background-repeat: no-repeat;
+    background-image: url("../img/credit-card-icons.jpg"); }
+    .payment .credit-card.visa {
+      background-position: -96px; }
+    .payment .credit-card.visa-debit {
+      background-position: -64px 0; }
+    .payment .credit-card.mastercard {
+      background-position: 0 0; }
+    .payment .credit-card.maestro {
+      background-position: -32px 0; }
+    .payment .credit-card.discover {
+      background-position: -128px 0; }
+    .payment .credit-card.amex {
+      background-position: -160px; }
 
-.nonmobile-confirmation form {
+.inonmobile-confirmation form {
   width: 75%;
   display: inline-block; }
-  .nonmobile-confirmation form .email {
+  .inonmobile-confirmation form .email {
     margin-bottom: 0; }
-    .nonmobile-confirmation form .email small a {
+    .inonmobile-confirmation form .email small a {
       font-size: 13px;
       font-weight: normal; }
 

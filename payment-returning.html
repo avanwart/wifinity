@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <title>Wifinity</title>
+		<meta name="robots" content="noindex, nofollow">
+    <link rel="icon" href="favicon.png">
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/child.css">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
+    <link href="css/creditCardTypeDetector.css" rel="stylesheet" type="text/css" />
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 8]>
+    <link href="/css/bootstrap-ie7.css" rel="stylesheet">
+<![endif]-->
+<!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+      <link rel="stylesheet" type="text/css" href="css/ie8-and-down.css" />
+    <![endif]-->
+  </head>
+  <body>
+  	<header class="header" role="banner">
+			<nav role="navigation">
+				<div class="navbar navbar-default">
+					<div class="container">
+						<div class="navbar-header">
+							<a class="navbar-brand" href="/wifinity" title="Wifinity Inc." rel="homepage">
+								<img src="img/wifinity-logo-2x.jpg" alt="Wifinity Inc.">
+							</a>
+              <!-- Nonmobile progress bar -->
+              <ul class="status hidden-xs">
+                <li class="step-1 fill"><i>1</i><br/>Customize</li>
+                <li class="step-2 fill"><i>2</i><br/>Create account</li>
+                <li class="step-3 partial"><i>3</i><br/>Payment</li>
+                <li class="step-4"><i>4</i><br/>All done</li>
+              </ul>
+              <!-- Mobile progress bar -->
+              <div class="row menubar">
+                <div class="col-sm-12">
+                  <ul class="mobile-status visible-xs">
+                    <li class="step-1 fill"><a href="#">1.</a></li>
+                    <li class="step-2 fill"><a href="#">2.</a></li>
+                    <li class="step-3 fill"><a href="#">3. Payment</a></li>
+                    <li class="step-4"><a href="#">4.</a></li>
+                  </ul>
+                </div>
+              </div>
+						</div>							
+					</div>
+				</div> 
+			</nav>
+		</header>
+		<!-- Nonmobile -->
+    <section id="payment" class="ashy hidden-xs payment">
+    	<div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+            <h1>Enter Payment Info</h1>
+          </div>
+          <div class="row">
+            <div class="col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3 col-sm-12 card">
+					    <div class="alert alert-success price fade in" role="alert" id="plan-total">
+					      Your total: <br class="visible-xs"/><strong>£<span id="plan-price" style="display: none"></span></strong>
+					    </div>
+							<form action="" class="" id="nonmobile-payments">
+								<legend>To complete your purchase please enter your card details below</legend>
+								<div class="form-group used-cards">
+									<div class="radio alert alert-info prev-card">
+								    <label>
+								      <input type="radio" name="prev-card" checked> <span class="credit-card mastercard"></span>Mastercard ending in <strong>1234</strong>
+								    </label>
+								  </div>
+								  <div class="radio alert prev-card">
+								    <label>
+								      <input type="radio" name="prev-card"> <span class="credit-card maestro"></span>Maestro card ending in <strong>1234</strong>
+								    </label>
+								  </div>
+								  <div class="radio alert prev-card">
+								    <label>
+								      <input type="radio" name="prev-card"> <span class="credit-card visa-debit"></span>Visa Debit card ending in <strong>1234</strong>
+								    </label>
+								  </div>
+								  <div class="radio alert prev-card">
+								    <label>
+								      <input type="radio" name="prev-card"> <span class="credit-card visa"></span>Visa card ending in <strong>1234</strong>
+								    </label>
+								  </div>
+								  <div class="radio alert prev-card">
+								    <label>
+								      <input type="radio" name="prev-card"> <span class="credit-card discover"></span>Discover card ending in <strong>1234</strong>
+								    </label>
+								  </div>
+								  <div class="radio alert prev-card">
+								    <label>
+								      <input type="radio" name="prev-card"> <span class="credit-card amex"></span>American Express card ending in <strong>1234</strong>
+								    </label>
+								  </div>
+								  <hr/>
+								  <p class="add-new-card text-left">
+										<a href="#"><i class="glyphicon glyphicon-plus"></i> Add a new credit card</a>
+									</p>
+								</div>
+								<div class="new-card" style="display: none">
+									<div class="form-group">
+										<label for="cardname">Name on card</label>
+										<input type="text" id="cardname" name="cardname" class="form-control" required>
+									</div>
+									<div class="form-group">
+										<label for="cardnumber">Card number</label>
+										<input type="text" id="nonmobile-cardnumber" size="20" name="cardnumber" pattern="[0-9]*" autocomplete="off" class="form-control stripe_card_number" required="required" minlength="12">
+										<ul class="card_logos" style="display: none">
+											<li class="card_visa">Visa</li>
+											<li class="card_mastercard">Mastercard</li>
+											<li class="card_amex">American Express</li>
+											<li class="card_discover">Discover</li>
+											<li class="card_jcb">JCB</li>
+											<li class="card_diners">Diners Club</li>
+										</ul>
+									</div>
+									<div class="form-group expiry">
+										<div class="row">
+											<label for="expirydatemonth" class="col-sm-12">Expiry date</label>
+										</div>
+										<div class="row">
+											<div class="col-sm-6">
+												<select id="expirydatemonth" name="expirydatemonth" class="form-control" required>
+													<option value="">Select Month</option>
+													<option value="01">01</option>
+											    <option value="02">02</option>
+											    <option value="03">03</option>
+											    <option value="04">04</option>
+											    <option value="05">05</option>
+											    <option value="06">06</option>
+											    <option value="07">07</option>
+											    <option value="08">08</option>
+											    <option value="09">09</option>
+											    <option value="10">10</option>
+											    <option value="11">11</option>
+											    <option value="12">12</option>
+											  </select>
+											</div>
+											<div class="col-sm-6">
+												<select id="expirydateyear" name="expirydateyear" class="form-control" required>
+													<option value="">Select Year</option>
+													<option value="2014">2014</option>
+											    <option value="2015">2015</option>
+											    <option value="2016">2016</option>
+											    <option value="2017">2017</option>
+											    <option value="2018">2018</option>
+											    <option value="2019">2019</option>
+											    <option value="2020">2020</option>
+											    <option value="2021">2021</option>
+											    <option value="2022">2022</option>
+											  </select>
+											</div>
+										</div>
+									</div>
+									<div class="form-group text-left security">
+										<div class="row vouch">
+											<div class="col-sm-6">
+												<label for="issuenumber">Security code</label>
+												<input type="text" id="securitycode" name="securitycode" class="form-control" style="width: 130px; display: inline-block; margin-right: 10px" required maxlength="4"> 
+												<a href="#security-code-modal" data-toggle="modal" data-target="#security-code-modal"><i class="glyphicon glyphicon-question-sign"></i></a>
+												<div class="modal" id="security-code-modal">
+													<div class="modal-dialog">
+														<div class="modal-content">
+															<div class="modal-header">
+																<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+																<h4 class="modal-title">How to find your security code</h4>
+															</div>
+															<div class="modal-body text-center">
+																<img src="img/security_code_sample.jpg" alt="" class="img-responsive" style="display: inline-block">
+															</div>
+															<div class="modal-footer text-center">
+																<button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+															</div>
+														</div><!-- /.modal-content -->
+													</div><!-- /.modal-dialog -->
+												</div><!-- /.modal -->
+											</div>
+											<div class="col-sm-6">
+												<a href="#" id="redeem-voucher" class="redeem-voucher">Redeem Voucher</a>
+												<div style="display: none" id="voucher-field">
+													<label for="voucher">Voucher code</label>
+													<input type="text" id="voucher" name="voucher" class="form-control"> 
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="form-group text-center accept">
+									<div class="checkbox">
+								    <label class="disclaimer">
+								      <input type="checkbox" id="accept" name="accept" required> <span id="accept-text">I accept Wifinity's <a href="#terms" data-toggle="modal" data-target="#terms">Terms of Use</a></span>
+								    </label>
+								  </div>
+									<button type="submit" class="btn btn-primary">Next <i class="glyphicon glyphicon-chevron-right"></i></button>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+    </section>
+    <!-- Mobile -->
+    <div id="mobile" class="visible-xs">
+      <section class="ashy total">
+      	<div class="container">
+  	    	<div class="row">
+            <div class="col-sm-12">
+              <strong>Total: £<span id="plan-price-mobile" style="display: none">1.99</span></strong>
+            </div>  
+          </div>
+      	</div>
+      </section>
+      <section id="customizer">
+        <div class="container">
+          <form action="" class="" id="mobile-payments">
+						<legend>To complete your purchase please enter your card details below</legend>
+						<div class="form-group">
+							<label for="cardname">Name on card</label>
+							<input type="text" id="mobile-cardname" name="cardname" class="form-control" required>
+						</div>
+						<div class="form-group">
+							<span class="credit-card mastercard">Last 4 digits <strong>1234</strong></span>
+							<span class="credit-card maestro">Last 4 digits <strong>3450</strong></span>
+							<span class="credit-card visa-debit">Last 4 digits <strong>2048</strong></span>
+							<span class="credit-card visa">Last 4 digits <strong>2367</strong></span>
+							<span class="credit-card discover">Last 4 digits <strong>9531</strong></span>
+							<span class="credit-card amex">Last 4 digits <strong>7365</strong></span>
+							
+							<label for="cardnumber">Card number</label>
+							<input type="text" id="mobile-cardnumber" size="20" name="cardnumber" pattern="[0-9]*" autocomplete="off" class="form-control stripe_card_number" required="required" minlength="12">
+							<ul class="card_logos" style="display: none">
+								<li class="card_visa">Visa</li>
+								<li class="card_mastercard">Mastercard</li>
+								<li class="card_amex">American Express</li>
+								<li class="card_discover">Discover</li>
+								<li class="card_jcb">JCB</li>
+								<li class="card_diners">Diners Club</li>
+							</ul>
+						</div>
+						<div class="form-group expiry">
+							<div class="row">
+								<label for="expirydatemonth" class="col-sm-12">Expiry date</label>
+							</div>
+							<div class="row">
+								<div class="col-sm-6">
+									<select id="expirydatemonth" name="expirydatemonth" class="form-control expirydatemonth" required>
+										<option value="">Select Month</option>
+										<option value="01">01</option>
+								    <option value="02">02</option>
+								    <option value="03">03</option>
+								    <option value="04">04</option>
+								    <option value="05">05</option>
+								    <option value="06">06</option>
+								    <option value="07">07</option>
+								    <option value="08">08</option>
+								    <option value="09">09</option>
+								    <option value="10">10</option>
+								    <option value="11">11</option>
+								    <option value="12">12</option>
+								  </select>
+								</div>
+								<div class="col-sm-6">
+									<select id="expirydateyear" name="expirydateyear" class="form-control expirydateyear" required>
+										<option value="">Select Year</option>
+										<option value="2014">2014</option>
+								    <option value="2015">2015</option>
+								    <option value="2016">2016</option>
+								    <option value="2017">2017</option>
+								    <option value="2018">2018</option>
+								    <option value="2019">2019</option>
+								    <option value="2020">2020</option>
+								    <option value="2021">2021</option>
+								    <option value="2022">2022</option>
+								  </select>
+								</div>
+							</div>
+						</div>
+						<div class="form-group text-left security">
+							<div class="row">
+								<div class="col-xs-6">
+									<label for="issuenumber">Security code</label>
+									<input type="text" id="securitycode-mobile" name="securitycode" class="form-control securitycode-mobile" style="width: 130px; display: inline-block; margin-right: 10px" required maxlength="4"> 
+									<a href="#security-code-modal-mobile" data-toggle="modal" data-target="#security-code-modal-mobile"><i class="glyphicon glyphicon-question-sign"></i></a>
+									<div class="modal" id="security-code-modal-mobile">
+										<div class="modal-dialog">
+											<div class="modal-content">
+												<div class="modal-header">
+													<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+													<h4 class="modal-title">How to find your security code</h4>
+												</div>
+												<div class="modal-body text-center">
+													<img src="img/security_code_sample.jpg" alt="" class="img-responsive" style="display: inline-block">
+												</div>
+												<div class="modal-footer text-center">
+													<button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+												</div>
+											</div><!-- /.modal-content -->
+										</div><!-- /.modal-dialog -->
+									</div><!-- /.modal -->
+								</div>
+								<div class="col-xs-6">
+									<a href="#" id="mobile-redeem-voucher" class="redeem-voucher-mobile">Redeem Voucher</a>
+									<div style="display: none" id="mobile-voucher-field">
+										<label for="voucher">Voucher code</label>
+										<input type="text" id="voucher-mobile" name="voucher" class="form-control"> 
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="form-group text-left accept">
+							<div class="checkbox">
+						    <label class="disclaimer">
+						      <input type="checkbox" id="accept" name="accept" required> <span id="accept-text">I accept Wifinity's <a href="#terms" data-toggle="modal" data-target="#terms">Terms of Use</a></span>
+						    </label>
+						  </div>
+							<button type="submit" class="btn btn-primary">Next <i class="glyphicon glyphicon-chevron-right"></i></button>
+						</div>
+					</form>
+        </div>
+      </section>
+    </div>
+    <!-- Terms Modal -->
+    <div class="modal text-left" id="terms">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h4 class="modal-title">Terms and Conditions</h4>
+					</div>
+					<div class="modal-body">
+						<p>Please read the following Terms and Conditions carefully before using the
+						Internet Access Service provided by Wifinity Limited as it is legally binding
+						on any user of Wifinity services.</p>
+						<p>By purchasing a subscription or using the Wifinity Service you agree to be
+						bound by these Terms and Conditions. Please feel free to contact us by
+						telephone on UK +(0)208 090 1290 or by email at cc@wifinity.co.uk Terms and Conditions</p>
+						<p>These Terms and Conditions apply to the supply of Internet Connectivity 
+						Services ('Services'') by Wifinity Limited ('Wifinity') to the purchaser 
+						of a subscription to Services ('Customer'). Customer agrees to abide by 
+						these Terms and conditions and any variation posted on the Wifinity website.</p>
+						<h2>Services</h2>
+						<p>Wifinity undertakes to provide Internet Connectivity Services to Customer 
+						during the period of a valid subscription. Wifinity accepts no liability for 
+						the non-availability of individual internet websites or other services 
+						provided by third parties.</p>
+						<h2>Term</h2>
+						<p>Wifinity's obligations will commence when Wifinity receives payment for a 
+						subscription and Customer is given access to the Services. It will terminate 
+						when the subscription purchased by Customer lapses or earlier if Termination occurs.</p>
+						<h2>Fixed Term Subscriptions</h2>
+						<p>Where Customer has chosen a fixed term subscription for a predefined period number of months, 
+						Wifinity will take payment from the Customer each month on the same date 
+						as the subscription was started until the end of the fixed term.</p>
+						<h2>Access to Service</h2>
+						<p>Upon registration Customer will receive a username and password which will 
+						provide access to Services. Usernames and passwords are Wifinity's property 
+						and may be changed by Wifinity at any time without notice.</p>
+						<h2>Consent to using Cookies and Privacy</h2>
+						<p>The system uses essential cookies for the purposes of completing any transaction 
+						and allowing quicker login on future visits. By using the service you consent to 
+						these cookies being stored.</p>
+						<p>The Customer agrees that Wifinity shall be entitled to retain any data relating to 
+						the Customer’s use of the Services. The data shall include but not be limited to,
+						information relating to the device used to access the Service, the application,
+						IMEI, build number of the device, local storage, cookies and other anonymous
+						identifiers. Under no circumstances will Wifinity use any personal data
+						identifying the Customer outside of its own business operation in order to
+						provide the Services. Wifinity reserves the right itself or through any third party
+						authorised by it to exclusively market to the End Users and in doing so Wifinity
+						shall provide End Users with a home page and it shall utilise any advertising
+						space in the browser sessions. </p>
+						<h2>Coverage and Pricing</h2>
+						<p>Current prices for Services and the locations where such Services are available 
+						are posted on each registered Customer’s “Dashboard” and are specific to each site. 
+						Wifinity reserves the right to change prices and availability of Service at any time.</p>
+						<h2>Customer's Obligations</h2>
+						<p>In order to receive Services, Customer will: (i)Pay for Service in advance by purchasing 
+						and registering a pre-pay voucher or by completed payment online using Paypal or a debit 
+						or credit card. No access to the Service will be provided if a payment is not completed. 
+						i (ii)Undertake not to resell or share Services with others. (iii)Provide Wifinity with 
+						accurate and complete billing information including legal name, address, telephone number, 
+						and credit card/billing information (iv)Communicate to Wifinity by email any change to the 
+						information in (ii) within 30 days of the change.</p>
+						<h2>Login Details</h2>
+						<p>As part of the registration process Customer will select a username and password for access 
+						to the Service and to the Customer portal. Customer agrees to hold these details securely and 
+						not to share them with any other person. Wifinity accepts no liability for any loss occurring 
+						resulting from the sharing of login details.</p>
+						<h2>Charges</h2>
+						<p>All charges made by Wifinity are considered valid unless disputed by Customer 
+						in writing within 30 days of the billing date. For daily and monthly Services 
+						the applicable charge is billed once. In the case of monthly Service a renewal charge 
+						is automatically made at the end of each subscription period until cancelled by 
+						the subscriber. Wifinity is not responsible for any charges or expenses levied by 
+						third parties (e.g., for, exceeding credit card limits, etc.) resulting from charges billed 
+						by Wifinity. Unpaid Wifinity accounts may be suspended or cancelled at Wifinity's sole discretion. 
+						Charges will continue to accrue until the Wifinity account is cancelled and 
+						collection of all outstanding amounts has been completed. Late payment and 
+						administration fees may be added.</p>
+						<h2>Refunds Policy</h2>
+						<p>In the event that Customer has experienced a loss of service or has not been 
+						able to connect to the Internet as a result of a general network failure not 
+						specific to the personal equipment of the Customer, for a period of not less than 20% of 
+						the time covered by a payment period (a day, week or month), Wifinity 
+						will refund the full amount of the subscription for the period covered by the payment.</p>
+						<h2>Fair Use Policy</h2>
+						<p>Service is provided subject to the Wifinity Fair Use Policy</p>
+						<p>If the volume of data downloaded or uploaded by a Customer is considered by 
+						Wifinity to unfairly affect other Customers' use of the service that Customer 
+						will be deemed to have breached the Fair Usage Policy. Wifinity may:</p>
+						<p>
+						(i) Actively manage the bandwidth available to that Customer. <br/>
+						(ii) Terminate the Customer's subscription<br/></p>
+						<h2>ACCEPTABLE USE POLICY</h2>
+						<p>Service is provided subject to the Wifinity Acceptable use policy. 
+						Customer agrees not to use the Services to:<br/>
+						1. Transmit any material (by uploading, posting, email or otherwise) that is 
+						unlawful, threatening, abusive, harassing, defamatory, obscene, libellous, 
+						invasive of another's privacy, hateful or racially, ethnically or otherwise 
+						objectionable;<br/>
+						2. Transmit (by uploading, posting, email or otherwise) any unsolicited or 
+						unauthorized advertising, promotional materials, "junk mail," "spam," "chain letters," 
+						"pyramid schemes," or any other form of solicitation;<br/>
+						3. Transmit any material (by uploading, posting, email or otherwise) that 
+						contains software viruses or any other computer code, files or programs 
+						designed to interrupt, destroy or limit the functionality of any computer 
+						software or hardware or telecommunications equipment;<br/>
+						4. Interfere with or disrupt the Service or servers or networks connected to 
+						the Service, or disobey any requirements, procedures, policies or regulations 
+						of networks connected to the Service; <br/>
+						5. Resell the Services without Wifinity's permission given in writing;<br/>
+						6. Use the Services for high volume data transfers, especially sustained high 
+						volume data transfers, hosting a web server, IRC server, or any other server.<br/>
+						7. Not to provide his username and password to any third party and only use 
+						it for his/her own benefit.<br/></p>
+						<p>Under normal circumstance Wifinity does not actively monitor the use of the 
+						Services for compliance with this Acceptable Use Policy. Nor does Wifinity 
+						exercise editorial control or review over the content of any website, 
+						electronic mail transmission, newsgroup, or other material created or 
+						accessible over or through the Services.</p>
+						<p>Wifinity may take any one or more of the following actions or other actions 
+						not listed at Wifinity's sole discretion in response to a violation 
+						of the Acceptable Use Policy:</p>
+						<p>(i) remove, block, filter, or restrict by any other means any materials<br/>
+						(ii) issue warnings, written or oral;<br/>
+						(iii) suspend the customer's Wifinity subscription;  <br/>
+						(iv) terminate the customer's Wifinity subscription; <br/>
+						(v) bill the customer or user for administrative costs, <br/>
+						(vi) bring legal action to enjoin violations and/or to collect damages, if any, caused by violations.<br/>
+						(vii) report Customer's activity to Military, Police or other Authorities<br/>
+						</p><h2>Limitation of Liability</h2>
+						<p>Services are provided by Wifinity on an "as is" and "as available" basis. 
+						Wifinity offers no expressed implied or statutory warranties. 
+						Customer agrees that no warranties are given including but not limited to the following: </p>
+						<p>(i)That the services will be uninterrupted, error-free, or free of viruses or other harmful components. <br/>
+						(ii)For security, privacy and confidentiality risks inherent in wireless communications and technology <br/>
+						(iii)For advice given by Wifinity or its representatives or employees <br/>
+						(iv)For any costs or damages arising directly or indirectly from Customer use of the Services or the internet,
+						including any indirect, incidental, exemplary, multiple, special, punitive, or consequential damages <br/>
+						(v)For negligence by Wifinity or its employees In any event, Wifinity's cumulative liability to any Customer 
+						for any and all claims for loss and consequential loss relating to use of the Service and/or licensed 
+						programs will not exceed the total amount of service fees paid by that Customer to Wifinity during one year preceding the claim.</p>
+						<h2>Termination</h2>
+						<p>Customer may terminate a Wifinity subscription at any time and for any reason. 
+						Notice may be provided by email to Wifinity Customer Care - cc@wifinity.co.uk. 
+						Termination will be complete upon receipt by Customer of emailed confirmation of 
+						cancellation from Wifinity. Wifinity may terminate Services for any reason if 
+						Wifinity in its sole discretion believes Customer has violated these Terms and Conditions 
+						or any of the policies applicable to Customer or if Customer fails to pay any charges 
+						when due or if the Customer no longer wishes for Wifinity to make use of its non-personal data/ information. 
+						Wifinity may provide notice of Termination to Customer by email to the address Customer provided when subscribing to Service.</p>
+						<p>All notices to Customer will be deemed effective immediately.</p>
+						<h2>Law</h2>
+						<p>These Terms and Conditions constitute the entire agreement between Customer 
+						and Wifinity with respect to Customer's use of the Service. Wifinity may 
+						revise, amend, or modify these Terms and Conditions and any other Customer 
+						policies at any time and in any manner. Alterations will be posted on the Wifinity website.</p>
+					</div>
+					<div class="modal-footer text-center">
+						<button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+					</div>
+				</div><!-- /.modal-content -->
+			</div><!-- /.modal-dialog -->
+		</div><!-- /.modal -->
+    <footer>
+    	<div class="container">
+    		<div class="row">
+    			<div class="col-sm-12">
+    				<p class="copyright text-center">&copy; Copyright 2014 WiFinity | All rights reserved</p>
+    			</div>
+    		</div>
+    	</div>
+    </footer>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.validate.min.js"></script>
+    <script src="js/jquery.creditCardTypeDetector.js"></script>
+    <script>
+   	$(document).ready(function(){
+
+   		$('.prev-card').click(function(){
+   			$('.prev-card').removeClass('alert-info');
+   			$(this).addClass('alert-info');
+   		});
+
+   		$('.add-new-card a').click(function(e){
+   			e.preventDefault();
+   			$(this).hide();
+   			$('.new-card').fadeIn();
+   		});
+
+   		// Detect credit card type
+   		$('#mobile-cardnumber').creditCardTypeDetector({ 'credit_card_logos' : '.card_logos' });
+
+    	// Query Parameter Functionality
+    	var vars = [], hash;
+	    var q = document.URL.split('?')[1];
+	    if(q != undefined){
+        q = q.split('&');
+        for(var i = 0; i < q.length; i++){
+          hash = q[i].split('=');
+          vars.push(hash[1]);
+          vars[hash[0]] = hash[1];
+        }
+			}
+			var myPlan = vars['plan'];
+			var myTotal = vars['total'];
+			console.log(vars);
+
+			$('#plan-price').text(myTotal);
+			$('#plan-price').fadeIn();
+			$('#plan-price-mobile').text(myTotal);
+			$('#plan-price-mobile').fadeIn();
+
+			if(myPlan == "free"){
+				$('legend').text('We just need your payment info in case you exceed 15 minutes.')
+			}
+
+   	// Nonmobile Functionality
+
+   		// Detect credit card type
+   		$('#nonmobile-cardnumber').creditCardTypeDetector({ 'credit_card_logos' : '.card_logos' });	
+
+   		// Form Validation
+ 			$('#nonmobile-payments').validate({
+ 				messages: {
+ 					accept: 'Please accept Privacy Policy and Terms of Use.'
+ 				},
+ 				errorPlacement: function(error, element) {
+			    if (element.attr("name") == "accept" ) {
+			      error.insertAfter("#accept-text");
+			    } else if (element.attr("name") == "securitycode" ) {
+			      error.insertAfter(".vouch");
+			    } else {
+			      error.insertAfter(element);
+			    }
+			  },
+    		submitHandler: function(form) {
+    			window.location = 'confirmation.html?plan='+myPlan+'&total='+myTotal;
+    		}
+    	});
+
+ 			// Security Code Question Mark Popover
+ 			$('.glyphicon-question-sign').popover({
+ 				html: true
+ 			});
+
+
+ 			$('#redeem-voucher').click(function(e){
+ 				e.preventDefault();
+ 				$(this).hide();
+ 				$('#voucher-field').fadeIn();
+ 			});
+
+ 		
+ 		// Mobile Functionality
+
+ 			// Form validation
+ 			$('#mobile-payments').validate({
+ 				messages: {
+ 					accept: 'Please accept Privacy Policy and Terms of Use.'
+ 				},
+ 				errorPlacement: function(error, element) {
+			    if (element.attr("name") == "accept" || element.attr("name") == "lname" ) {
+			      error.insertAfter("#redeem-voucher");
+			    } else {
+			      error.insertAfter(element);
+			    }
+			  },
+    		submitHandler: function(form) {
+    			window.location = 'confirmation.html?plan='+myPlan+'&total='+myTotal;
+    		}
+    	});
+ 			$('#mobile-redeem-voucher').click(function(e){
+ 				e.preventDefault();
+ 				$(this).hide();
+ 				$('#mobile-voucher-field').fadeIn();
+ 			});
+    });
+    </script>
+  </body>
+</html>
