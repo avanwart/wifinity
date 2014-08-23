@@ -72,12 +72,12 @@ a {
         .navbar .navbar-header ul.status li.fill {
           color: #212121; }
           .navbar .navbar-header ul.status li.fill i {
-            background: #653287;
-            color: white; }
+            background: #efefef;
+            color: #878787; }
         .navbar .navbar-header ul.status li.partial {
           color: #212121; }
           .navbar .navbar-header ul.status li.partial i {
-            background: #dfccec;
+            background: #444444;
             color: white; }
         .navbar .navbar-header ul.status li i {
           width: 30px;
@@ -361,6 +361,8 @@ form .disclaimer, .form-horizontal .disclaimer {
     margin: 0 0 5px; }
     .payment .prev-card:hover {
       color: #27a3ea; }
+  .payment .add-new-card i {
+    font-size: 0.8em; }
   .payment .credit-card {
     vertical-align: middle;
     display: inline-block;

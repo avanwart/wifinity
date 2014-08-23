@@ -511,15 +511,18 @@
     <script>
    	$(document).ready(function(){
 
-   		$('.prev-card').click(function(){
-   			$('.prev-card').removeClass('alert-info');
-   			$(this).addClass('alert-info');
+   		// Credit Card Picker Functionality
+   		$('.prev-card label, .prev-card input').click(function(){
+   			$('.prev-card label, .prev-card input').parent('.prev-card').removeClass('alert-info');
+   			$(this).parent('.prev-card').addClass('alert-info');
    		});
 
    		$('.add-new-card a').click(function(e){
    			e.preventDefault();
    			$(this).hide();
    			$('.new-card').fadeIn();
+   			$('.prev-card').removeClass('alert-info');
+   			$('.prev-card input[type="radio"]').prop('checked', false);
    		});
 
    		// Detect credit card type
