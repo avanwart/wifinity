@@ -502,7 +502,8 @@ footer {
     .navbar .navbar-header .menubar {
       background: url("../img/menubar-bg.gif") 50% 50% no-repeat;
       background-size: cover;
-      height: 24px; }
+      height: 24px;
+      max-width: 100%; }
       .navbar .navbar-header .menubar.last {
         background: #333333; }
     .navbar .navbar-header ul.mobile-status {
