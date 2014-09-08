@@ -100,6 +100,8 @@ a {
     .navbar .navbar-brand img {
       width: 158px;
       height: 38px; }
+  .navbar .navbar-nav li .open > a {
+    background: rgba(0, 0, 0, 0.02); }
   .navbar .navbar-nav li a {
     display: inline-block;
     line-height: 72px;
@@ -107,30 +109,40 @@ a {
     color: #27a3ea; }
     .navbar .navbar-nav li a:hover {
       text-decoration: underline; }
-  .navbar .navbar-nav li.login form {
-    margin-top: 20px; }
-  .navbar .navbar-nav li.login .logged-in {
+    .navbar .navbar-nav li a:focus, .navbar .navbar-nav li a:active {
+      background: white; }
+  .navbar .navbar-nav li.login a {
     font-size: 14px;
-    padding-top: 24px; }
-    .navbar .navbar-nav li.login .logged-in .glyphicon-user {
-      font-size: 85%; }
-    .navbar .navbar-nav li.login .logged-in .btn-default {
-      padding: 0;
-      border: none; }
-      .navbar .navbar-nav li.login .logged-in .btn-default:hover {
-        background: transparent; }
-    .navbar .navbar-nav li.login .logged-in .dropdown-menu {
-      left: auto;
-      right: 0;
-      z-index: 2; }
-      .navbar .navbar-nav li.login .logged-in .dropdown-menu li {
-        text-align: left; }
-        .navbar .navbar-nav li.login .logged-in .dropdown-menu li a {
-          padding: 8px 16px;
+    font-weight: normal;
+    cursor: pointer; }
+  .navbar .navbar-nav li.login .dropdown-menu {
+    left: auto;
+    right: 0;
+    z-index: 2;
+    min-width: 200px;
+    border-radius: 0 0 4px 4px;
+    margin: 0;
+    border-color: #cccccc;
+    border-top-color: #dddddd; }
+    .navbar .navbar-nav li.login .dropdown-menu li {
+      text-align: left; }
+      .navbar .navbar-nav li.login .dropdown-menu li span {
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        user-select: none;
+        cursor: default; }
+      .navbar .navbar-nav li.login .dropdown-menu li a, .navbar .navbar-nav li.login .dropdown-menu li span {
+        padding: 4px 10px;
+        display: block;
+        line-height: 1.6; }
+        .navbar .navbar-nav li.login .dropdown-menu li a em, .navbar .navbar-nav li.login .dropdown-menu li span em {
+          text-transform: uppercase;
+          font-size: 11px;
           display: block;
-          line-height: 1.6; }
-          .navbar .navbar-nav li.login .logged-in .dropdown-menu li a:hover {
-            text-decoration: none; }
+          font-style: normal;
+          color: #777777; }
+        .navbar .navbar-nav li.login .dropdown-menu li a:hover, .navbar .navbar-nav li.login .dropdown-menu li span:hover {
+          text-decoration: none; }
 
 section {
   padding: 2em 0 1em; }

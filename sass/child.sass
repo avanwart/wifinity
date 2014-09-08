@@ -110,6 +110,8 @@ a
 			height: 38px
 	.navbar-nav
 		li
+			.open > a
+				background: rgba(0, 0, 0, .02)
 			a
 				display: inline-block
 				line-height: $navbarHeight
@@ -117,31 +119,41 @@ a
 				color: $blue
 				&:hover
 					text-decoration: underline
+				&:focus, &:active
+					background: white
 			&.login
-				form
-					margin-top: 20px
-				.logged-in
+				a
 					font-size: 14px
-					padding-top: 24px
-					.glyphicon-user
-						font-size: 85%
-					.btn-default
-						padding: 0
-						border: none
-						&:hover
-							background: transparent
-					.dropdown-menu
-						left: auto
-						right: 0
-						z-index: 2
-						li
-							text-align: left
-							a
-								padding: 8px 16px
+					font-weight: normal
+					cursor: pointer
+				.dropdown-menu
+					left: auto
+					right: 0
+					z-index: 2
+					min-width: 200px
+					border-radius: 0 0 4px 4px
+					margin: 0
+					border-color: #ccc
+					border-top-color: #ddd
+					li
+						text-align: left
+						span
+							-moz-user-select: none
+							-webkit-user-select: none
+							user-select: none
+							cursor: default
+						a, span
+							padding: 4px 10px
+							display: block
+							line-height: 1.6
+							em
+								text-transform: uppercase
+								font-size: 11px
 								display: block
-								line-height: 1.6
-								&:hover
-									text-decoration: none
+								font-style: normal
+								color: #777
+							&:hover
+								text-decoration: none
 
 section
 	padding: 2em 0 1em

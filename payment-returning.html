@@ -34,28 +34,32 @@
 							<a class="navbar-brand" href="/wifinity" title="Wifinity Inc." rel="homepage">
 								<img src="img/wifinity-logo-2x.jpg" alt="Wifinity Inc.">
 							</a>
-              <!-- Nonmobile progress bar -->
-              <ul class="status hidden-xs">
-                <li class="step-1 fill"><i>1</i><br/>Customize</li>
-                <li class="step-2 fill"><i>2</i><br/>Create account</li>
-                <li class="step-3 partial"><i>3</i><br/>Payment</li>
-                <li class="step-4"><i>4</i><br/>All done</li>
-              </ul>
-              <!-- Mobile progress bar -->
-              <div class="row menubar">
-                <div class="col-sm-12">
-                  <ul class="mobile-status visible-xs">
-                    <li class="step-1 fill"><a href="#">1.</a></li>
-                    <li class="step-2 fill"><a href="#">2.</a></li>
-                    <li class="step-3 fill"><a href="#">3. Payment</a></li>
-                    <li class="step-4"><a href="#">4.</a></li>
-                  </ul>
-                </div>
-              </div>
+							<ul id="menu-top-nav" class="nav navbar-nav pull-right">
+								<li class="login">
+									<div id="logged-out" class="hide">Already have an account?  <a href="#" id="login-btn">Login now &raquo;</a></div>
+									<div id="logged-in" class="logged-in">
+										<a class="dropdown-toggle" data-toggle="dropdown">
+											<!-- <i class="glyphicon glyphicon-user"></i>  -->mark@billforward.net 
+											<span class="caret"></span>
+											<span class="sr-only">Toggle Dropdown</span>
+										</a>
+										<ul class="dropdown-menu" role="menu">
+							        <li><a href="#">Upgrade Wifi</a></li>
+							        <li><a href="#">My Package</a></li>
+							        <li><a href="#">Manage Devices</a></li>
+							        <li><a href="#">My Details</a></li>
+							        <li class="divider"></li>
+							        <li><span><em>Current Site:</em> Allenby Barracks</span></li>
+							        <li><span><em>Home Site:</em> Allenby Barracks</span></li>
+							      </ul>
+									</div>
+								</li>
+							</ul>	
 						</div>							
 					</div>
 				</div> 
 			</nav>
+			<div style="clear: both"></div>
 		</header>
 		<!-- Nonmobile -->
     <section id="payment" class="ashy hidden-xs payment">
