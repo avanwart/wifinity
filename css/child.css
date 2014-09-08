@@ -441,6 +441,8 @@ footer {
   .navbar {
     position: relative;
     margin: 0; }
+    .navbar .container {
+      overflow-x: hidden; }
     .navbar .navbar-header {
       text-align: center; }
       .navbar .navbar-header .navbar-brand {
