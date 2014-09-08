@@ -667,7 +667,12 @@ footer {
       form .expiry .expirydatemonth {
         margin-bottom: 10px; }
     form .disclaimer {
-      white-space: normal; }
+      white-space: normal;
+      padding-left: 30px; }
+      form .disclaimer input[type="checkbox"] {
+        margin: 0 0 0 -30px;
+        width: 22px;
+        height: 22px; }
     form .security i {
       position: absolute;
       left: 150px;
