@@ -371,6 +371,12 @@ form .disclaimer, .form-horizontal .disclaimer {
     width: 360px; }
   .payment h3 {
     margin: 10px 0 20px; }
+  .payment .voucher {
+    text-align: left; }
+    .payment .voucher .redeem-voucher {
+      margin: 0;
+      position: relative;
+      font-size: 14px; }
   .payment .redeem-voucher {
     display: inline-block;
     margin-top: 30px;
@@ -687,6 +693,8 @@ footer {
       font-size: 17px; }
     form .expirydateyear {
       margin-bottom: 15px; }
+    form .voucher .redeem-voucher-mobile {
+      margin: 0; }
     form .redeem-voucher-mobile {
       display: inline-block;
       margin-top: 36px;

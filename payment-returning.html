@@ -186,14 +186,14 @@
 													</div><!-- /.modal-dialog -->
 												</div><!-- /.modal -->
 											</div>
-											<div class="col-sm-6">
-												<a href="#" id="redeem-voucher" class="redeem-voucher">Redeem Voucher</a>
-												<div style="display: none" id="voucher-field">
-													<label for="voucher">Voucher code</label>
-													<input type="text" id="voucher" name="voucher" class="form-control"> 
-												</div>
-											</div>
 										</div>
+									</div>
+								</div>
+								<div class="form-group voucher">
+									<a href="#" id="redeem-voucher" class="redeem-voucher">Redeem Voucher</a>
+									<div style="display: none" id="voucher-field">
+										<label for="voucher">Voucher code</label>
+										<input type="text" id="voucher" name="voucher" class="form-control"> 
 									</div>
 								</div>
 								<div class="form-group text-center accept">
@@ -339,14 +339,14 @@
 											</div><!-- /.modal-dialog -->
 										</div><!-- /.modal -->
 									</div>
-									<div class="col-xs-6">
-										<a href="#" id="mobile-redeem-voucher" class="redeem-voucher-mobile">Redeem Voucher</a>
-										<div style="display: none" id="mobile-voucher-field">
-											<label for="voucher">Voucher code</label>
-											<input type="text" id="voucher-mobile" name="voucher" class="form-control"> 
-										</div>
-									</div>
 								</div>
+							</div>
+						</div>
+						<div class="form-group voucher text-left">
+							<a href="#" id="mobile-redeem-voucher" class="redeem-voucher-mobile">Redeem Voucher</a>
+							<div style="display: none" id="mobile-voucher-field">
+								<label for="voucher">Voucher code</label>
+								<input type="text" id="voucher-mobile" name="voucher" class="form-control"> 
 							</div>
 						</div>
 						<div class="form-group text-left accept">
@@ -557,6 +557,12 @@
    			$('.prev-card input[type="radio"]').prop('checked', false);
    		});
 
+   		$('.new-card input').focus(function(){
+   			console.log('focus');
+   			$('.prev-card').removeClass('alert-info');
+   			$('.prev-card input[type="radio"]').prop('checked', false);
+   		});
+
    		// Detect credit card type
    		$('#mobile-cardnumber').creditCardTypeDetector({ 'credit_card_logos' : '.card_logos' });
 
@@ -630,7 +636,7 @@
  				},
  				errorPlacement: function(error, element) {
 			    if (element.attr("name") == "accept" || element.attr("name") == "lname" ) {
-			      error.insertAfter("#redeem-voucher");
+			      // error.insertAfter("#redeem-voucher");
 			    } else {
 			      error.insertAfter(element);
 			    }
