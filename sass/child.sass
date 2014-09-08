@@ -305,6 +305,8 @@ form, .form-horizontal
 	// 		border-color: #66afe9
 	// 		outline: 0
 	// 		box-shadow: none
+	input[type="radio"]
+		outline: none!important
 	.form-control[disabled]
 		color: #ccc
 	.success
@@ -357,6 +359,8 @@ form, .form-horizontal
 	.btn-primary
 		margin-bottom: 10px
 		width: 200px
+	.btn-block
+		width: 100%
 	.disclaimer
 		font-size: 13px
 
@@ -398,6 +402,27 @@ form, .form-horizontal
 	.text-left
 		text-align: left
 
+.credit-card
+	vertical-align: middle
+	display: inline-block
+	width: 32px
+	height: 22px
+	margin-right: 10px
+	background-size: 192px 22px
+	background-repeat: no-repeat
+	background-image: url('../img/credit-card-icons.jpg')
+	&.visa
+		background-position: -96px
+	&.visa-debit
+		background-position: -64px 0
+	&.mastercard
+		background-position: 0 0
+	&.maestro
+		background-position: -32px 0
+	&.discover
+		background-position: -128px 0
+	&.amex
+		background-position: -160px
 
 .payment
 	text-align: center
@@ -428,27 +453,6 @@ form, .form-horizontal
 	.add-new-card
 		i
 			font-size: .8em
-	.credit-card
-		vertical-align: middle
-		display: inline-block
-		width: 32px
-		height: 22px
-		margin-right: 10px
-		background-size: 192px 22px
-		background-repeat: no-repeat
-		background-image: url('../img/credit-card-icons.jpg')
-		&.visa
-			background-position: -96px
-		&.visa-debit
-			background-position: -64px 0
-		&.mastercard
-			background-position: 0 0
-		&.maestro
-			background-position: -32px 0
-		&.discover
-			background-position: -128px 0
-		&.amex
-			background-position: -160px
 
 .inonmobile-confirmation
 	form
@@ -770,7 +774,7 @@ footer
 		.security
 			i
 				position: absolute
-				left: 160px
+				left: 150px
 				top: 36px
 		.securitycode-mobile
 			margin-bottom: 10px
@@ -795,9 +799,21 @@ footer
 			margin-bottom: 15px
 		.redeem-voucher-mobile
 			display: inline-block
-			margin-top: 30px
+			margin-top: 36px
 			font-weight: normal
-
+			font-size: 14px
+		.prev-card
+			padding: 10px 5px
+			label
+				font-size: 13px
+		.btn-block
+			padding: 8px
+			border-radius: 5px
+			border: 1px solid #dadada
+			font-size: 14px
+			text-align: center
+			i
+				font-size: .85em
 	.mobile-confirmation
 		padding: 0
 		form

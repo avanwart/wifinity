@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui, user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<title>Wifinity | Login</title>
+		<meta name="robots" content="noindex, nofollow">
+		<link rel="icon" href="favicon.png">
+
+		<!-- Bootstrap -->
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link rel="stylesheet" href="css/child.css">
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
+
+		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 8]>
+			<link href="css/bootstrap-ie7.css" rel="stylesheet">
+		<![endif]-->
+		<!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+			<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+			<link rel="stylesheet" type="text/css" href="css/ie8-and-down.css" />
+		<![endif]-->
+	</head>
+	<body>
+		<header class="header" role="banner">
+			<nav role="navigation">
+				<div class="navbar navbar-default">
+					<div class="container">
+						<div class="navbar-header">
+							<a class="navbar-brand" href="/wifinity" title="Wifinity Inc." rel="homepage">
+								<img src="img/wifinity-logo-2x.jpg" alt="Wifinity Inc.">
+							</a>
+							<ul id="menu-top-nav" class="nav navbar-nav pull-right hide">
+								<li class="login">
+									<div id="logged-out">Already have an account?  <a href="#" id="login-btn">Login now &raquo;</a></div>
+									<div id="login-form" style="display: none">
+										<form action="" class="form form-inline" role="form">
+											<div class="form-group">
+												<label class="sr-only" for="login_email">Email address</label>
+												<input type="email" class="form-control" id="login_email" placeholder="Enter email">
+											</div>
+											<div class="form-group">
+												<label class="sr-only" for="login_password">Password</label>
+												<input type="password" class="form-control" id="login_password" placeholder="Password">
+											</div>
+											<button type="submit" class="btn btn-default">Sign in</button>
+										</form>
+									</div>
+									<div id="logged-in" class="logged-in" style="display: none">
+										<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+											<i class="glyphicon glyphicon-user"></i> mark@billforward.net 
+											<span class="caret"></span>
+											<span class="sr-only">Toggle Dropdown</span>
+										</button>
+										<ul class="dropdown-menu" role="menu">
+							        <li><a href="#">Account settings</a></li>
+							        <li><a href="#">Dashboard</a></li>
+							        <li><a href="#">Something else here</a></li>
+							        <li class="divider"></li>
+							        <li><a href="#">Separated link</a></li>
+							      </ul>
+									</div>
+								</li>
+							</ul>	
+						</div>							
+					</div>
+				</div> 
+			</nav>
+			<div style="clear: both"></div>
+		</header>
+		<section id="hero" class="ashy hero">
+			<div class="container" id="truecontent">
+				<div class="row">
+					<div class="col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 col-lg-4 col-lg-offset-4 card">
+						<div class="row">
+							<div class="col-sm-12 col-md-10 col-md-offset-1">
+								<h3>Log in</h3>
+								<form action="">
+									<div class="form-group">
+										<label for="email">Email address</label>
+										<input type="text" id="email" name="email" class="form-control input-lg" required="">
+									</div>
+									<div class="form-group">
+										<label for="password">Password</label>
+										<input type="password" id="password" name="password" class="form-control input-lg" required="">
+									</div>
+									<div class="form-group">
+										<div class="row">
+											<div class="col-sm-12"><a href="" class="btn btn-lg btn-primary btn-block">Login</a></div>
+										</div>
+										<div class="row">
+											<div class="col-sm-6"><small><a href="">Refresh location</a></small></div>
+											<div class="col-sm-6"><small><a href="">Reset password</a></small></div>
+										</div>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<footer>
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-12">
+						<p class="copyright text-center">&copy; Copyright 2014 WiFinity | All rights reserved</p>
+					</div>
+				</div>
+			</div>
+		</footer>
+
+		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+		<!-- Include all compiled plugins (below), or include individual files as needed -->
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/jquery.validate.min.js"></script>
+		<script>
+		$(document).ready(function(){
+			// Initialize Tooltips
+			$('.card h3 i').tooltip();
+			
+			// FadeIn login form when login button clicked
+			$('#login-btn').click(function(){
+				$('#logged-out').hide();
+				$('#login-form').fadeIn();
+				$('#login_email').focus();
+			});
+
+			// Simulate logged in mode when sign in button clicked
+			$('.login .btn-default').click(function(e){
+				e.preventDefault();
+				$('#login-form').hide();
+				$('#logged-in').fadeIn();
+			});
+		});
+		</script>
+	</body>
+</html>

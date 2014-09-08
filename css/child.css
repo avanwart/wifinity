@@ -263,6 +263,8 @@ section.nonmobile {
       margin-top: 10px;
       margin-bottom: 10px; }
 
+form input[type="radio"], .form-horizontal input[type="radio"] {
+  outline: none !important; }
 form .form-control[disabled], .form-horizontal .form-control[disabled] {
   color: #cccccc; }
 form .success, .form-horizontal .success {
@@ -295,6 +297,8 @@ form .checkbox, .form-horizontal .checkbox {
 form .btn-primary, .form-horizontal .btn-primary {
   margin-bottom: 10px;
   width: 200px; }
+form .btn-block, .form-horizontal .btn-block {
+  width: 100%; }
 form .disclaimer, .form-horizontal .disclaimer {
   font-size: 13px; }
 
@@ -335,6 +339,28 @@ form .disclaimer, .form-horizontal .disclaimer {
   .create .text-left {
     text-align: left; }
 
+.credit-card {
+  vertical-align: middle;
+  display: inline-block;
+  width: 32px;
+  height: 22px;
+  margin-right: 10px;
+  background-size: 192px 22px;
+  background-repeat: no-repeat;
+  background-image: url("../img/credit-card-icons.jpg"); }
+  .credit-card.visa {
+    background-position: -96px; }
+  .credit-card.visa-debit {
+    background-position: -64px 0; }
+  .credit-card.mastercard {
+    background-position: 0 0; }
+  .credit-card.maestro {
+    background-position: -32px 0; }
+  .credit-card.discover {
+    background-position: -128px 0; }
+  .credit-card.amex {
+    background-position: -160px; }
+
 .payment {
   text-align: center; }
   .payment h1 {
@@ -363,27 +389,6 @@ form .disclaimer, .form-horizontal .disclaimer {
       color: #27a3ea; }
   .payment .add-new-card i {
     font-size: 0.8em; }
-  .payment .credit-card {
-    vertical-align: middle;
-    display: inline-block;
-    width: 32px;
-    height: 22px;
-    margin-right: 10px;
-    background-size: 192px 22px;
-    background-repeat: no-repeat;
-    background-image: url("../img/credit-card-icons.jpg"); }
-    .payment .credit-card.visa {
-      background-position: -96px; }
-    .payment .credit-card.visa-debit {
-      background-position: -64px 0; }
-    .payment .credit-card.mastercard {
-      background-position: 0 0; }
-    .payment .credit-card.maestro {
-      background-position: -32px 0; }
-    .payment .credit-card.discover {
-      background-position: -128px 0; }
-    .payment .credit-card.amex {
-      background-position: -160px; }
 
 .inonmobile-confirmation form {
   width: 75%;
@@ -656,7 +661,7 @@ footer {
       white-space: normal; }
     form .security i {
       position: absolute;
-      left: 160px;
+      left: 150px;
       top: 36px; }
     form .securitycode-mobile {
       margin-bottom: 10px; }
@@ -681,8 +686,21 @@ footer {
       margin-bottom: 15px; }
     form .redeem-voucher-mobile {
       display: inline-block;
-      margin-top: 30px;
-      font-weight: normal; }
+      margin-top: 36px;
+      font-weight: normal;
+      font-size: 14px; }
+    form .prev-card {
+      padding: 10px 5px; }
+      form .prev-card label {
+        font-size: 13px; }
+    form .btn-block {
+      padding: 8px;
+      border-radius: 5px;
+      border: 1px solid #dadada;
+      font-size: 14px;
+      text-align: center; }
+      form .btn-block i {
+        font-size: 0.85em; }
 
   .mobile-confirmation {
     padding: 0; }

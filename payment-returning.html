@@ -71,6 +71,7 @@
 					    </div>
 							<form action="" class="" id="nonmobile-payments">
 								<legend>To complete your purchase please enter your card details below</legend>
+								<!-- Previously Used Cards -->
 								<div class="form-group used-cards">
 									<div class="radio alert alert-info prev-card">
 								    <label>
@@ -220,99 +221,130 @@
           </div>
       	</div>
       </section>
-      <section id="customizer">
+      <div id="customizer">
         <div class="container">
           <form action="" class="" id="mobile-payments">
 						<legend>To complete your purchase please enter your card details below</legend>
-						<div class="form-group">
-							<label for="cardname">Name on card</label>
-							<input type="text" id="mobile-cardname" name="cardname" class="form-control" required>
+						<!-- Previously Used Cards -->
+						<div class="form-group used-cards">
+							<div class="radio alert alert-info prev-card">
+						    <label>
+						      <input type="radio" name="prev-card" checked> <span class="credit-card mastercard"></span>Mastercard ending in <strong>1234</strong>
+						    </label>
+						  </div>
+						  <div class="radio alert prev-card">
+						    <label>
+						      <input type="radio" name="prev-card"> <span class="credit-card maestro"></span>Maestro card ending in <strong>1234</strong>
+						    </label>
+						  </div>
+						  <div class="radio alert prev-card">
+						    <label>
+						      <input type="radio" name="prev-card"> <span class="credit-card visa-debit"></span>Visa Debit card ending in <strong>1234</strong>
+						    </label>
+						  </div>
+						  <div class="radio alert prev-card">
+						    <label>
+						      <input type="radio" name="prev-card"> <span class="credit-card visa"></span>Visa card ending in <strong>1234</strong>
+						    </label>
+						  </div>
+						  <div class="radio alert prev-card">
+						    <label>
+						      <input type="radio" name="prev-card"> <span class="credit-card discover"></span>Discover card ending in <strong>1234</strong>
+						    </label>
+						  </div>
+						  <div class="radio alert prev-card">
+						    <label>
+						      <input type="radio" name="prev-card"> <span class="credit-card amex"></span>American Express ending in <strong>1234</strong>
+						    </label>
+						  </div>
+						  <p class="add-new-card text-left">
+								<a href="#" class="btn-block btn-default"><i class="glyphicon glyphicon-plus"></i> Add a new credit card</a>
+							</p>
 						</div>
-						<div class="form-group">
-							<span class="credit-card mastercard">Last 4 digits <strong>1234</strong></span>
-							<span class="credit-card maestro">Last 4 digits <strong>3450</strong></span>
-							<span class="credit-card visa-debit">Last 4 digits <strong>2048</strong></span>
-							<span class="credit-card visa">Last 4 digits <strong>2367</strong></span>
-							<span class="credit-card discover">Last 4 digits <strong>9531</strong></span>
-							<span class="credit-card amex">Last 4 digits <strong>7365</strong></span>
-							
-							<label for="cardnumber">Card number</label>
-							<input type="text" id="mobile-cardnumber" size="20" name="cardnumber" pattern="[0-9]*" autocomplete="off" class="form-control stripe_card_number" required="required" minlength="12">
-							<ul class="card_logos" style="display: none">
-								<li class="card_visa">Visa</li>
-								<li class="card_mastercard">Mastercard</li>
-								<li class="card_amex">American Express</li>
-								<li class="card_discover">Discover</li>
-								<li class="card_jcb">JCB</li>
-								<li class="card_diners">Diners Club</li>
-							</ul>
-						</div>
-						<div class="form-group expiry">
-							<div class="row">
-								<label for="expirydatemonth" class="col-sm-12">Expiry date</label>
+						<div class="new-card" style="display: none">
+							<div class="form-group">
+								<label for="cardname">Name on card</label>
+								<input type="text" id="mobile-cardname" name="cardname" class="form-control" required>
 							</div>
-							<div class="row">
-								<div class="col-sm-6">
-									<select id="expirydatemonth" name="expirydatemonth" class="form-control expirydatemonth" required>
-										<option value="">Select Month</option>
-										<option value="01">01</option>
-								    <option value="02">02</option>
-								    <option value="03">03</option>
-								    <option value="04">04</option>
-								    <option value="05">05</option>
-								    <option value="06">06</option>
-								    <option value="07">07</option>
-								    <option value="08">08</option>
-								    <option value="09">09</option>
-								    <option value="10">10</option>
-								    <option value="11">11</option>
-								    <option value="12">12</option>
-								  </select>
+							<div class="form-group">
+								<label for="cardnumber">Card number</label>
+								<input type="text" id="mobile-cardnumber" size="20" name="cardnumber" pattern="[0-9]*" autocomplete="off" class="form-control stripe_card_number" required="required" minlength="12">
+								<ul class="card_logos" style="display: none">
+									<li class="card_visa">Visa</li>
+									<li class="card_mastercard">Mastercard</li>
+									<li class="card_amex">American Express</li>
+									<li class="card_discover">Discover</li>
+									<li class="card_jcb">JCB</li>
+									<li class="card_diners">Diners Club</li>
+								</ul>
+							</div>
+							<div class="form-group expiry">
+								<div class="row">
+									<label for="expirydatemonth" class="col-sm-12">Expiry date</label>
 								</div>
-								<div class="col-sm-6">
-									<select id="expirydateyear" name="expirydateyear" class="form-control expirydateyear" required>
-										<option value="">Select Year</option>
-										<option value="2014">2014</option>
-								    <option value="2015">2015</option>
-								    <option value="2016">2016</option>
-								    <option value="2017">2017</option>
-								    <option value="2018">2018</option>
-								    <option value="2019">2019</option>
-								    <option value="2020">2020</option>
-								    <option value="2021">2021</option>
-								    <option value="2022">2022</option>
-								  </select>
+								<div class="row">
+									<div class="col-sm-6">
+										<select id="expirydatemonth" name="expirydatemonth" class="form-control expirydatemonth" required>
+											<option value="">Select Month</option>
+											<option value="01">01</option>
+									    <option value="02">02</option>
+									    <option value="03">03</option>
+									    <option value="04">04</option>
+									    <option value="05">05</option>
+									    <option value="06">06</option>
+									    <option value="07">07</option>
+									    <option value="08">08</option>
+									    <option value="09">09</option>
+									    <option value="10">10</option>
+									    <option value="11">11</option>
+									    <option value="12">12</option>
+									  </select>
+									</div>
+									<div class="col-sm-6">
+										<select id="expirydateyear" name="expirydateyear" class="form-control expirydateyear" required>
+											<option value="">Select Year</option>
+											<option value="2014">2014</option>
+									    <option value="2015">2015</option>
+									    <option value="2016">2016</option>
+									    <option value="2017">2017</option>
+									    <option value="2018">2018</option>
+									    <option value="2019">2019</option>
+									    <option value="2020">2020</option>
+									    <option value="2021">2021</option>
+									    <option value="2022">2022</option>
+									  </select>
+									</div>
 								</div>
 							</div>
-						</div>
-						<div class="form-group text-left security">
-							<div class="row">
-								<div class="col-xs-6">
-									<label for="issuenumber">Security code</label>
-									<input type="text" id="securitycode-mobile" name="securitycode" class="form-control securitycode-mobile" style="width: 130px; display: inline-block; margin-right: 10px" required maxlength="4"> 
-									<a href="#security-code-modal-mobile" data-toggle="modal" data-target="#security-code-modal-mobile"><i class="glyphicon glyphicon-question-sign"></i></a>
-									<div class="modal" id="security-code-modal-mobile">
-										<div class="modal-dialog">
-											<div class="modal-content">
-												<div class="modal-header">
-													<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-													<h4 class="modal-title">How to find your security code</h4>
-												</div>
-												<div class="modal-body text-center">
-													<img src="img/security_code_sample.jpg" alt="" class="img-responsive" style="display: inline-block">
-												</div>
-												<div class="modal-footer text-center">
-													<button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-												</div>
-											</div><!-- /.modal-content -->
-										</div><!-- /.modal-dialog -->
-									</div><!-- /.modal -->
-								</div>
-								<div class="col-xs-6">
-									<a href="#" id="mobile-redeem-voucher" class="redeem-voucher-mobile">Redeem Voucher</a>
-									<div style="display: none" id="mobile-voucher-field">
-										<label for="voucher">Voucher code</label>
-										<input type="text" id="voucher-mobile" name="voucher" class="form-control"> 
+							<div class="form-group text-left security">
+								<div class="row">
+									<div class="col-xs-6">
+										<label for="issuenumber">Security code</label>
+										<input type="text" id="securitycode-mobile" name="securitycode" class="form-control securitycode-mobile" style="width: 130px; display: inline-block; margin-right: 10px" required maxlength="4"> 
+										<a href="#security-code-modal-mobile" data-toggle="modal" data-target="#security-code-modal-mobile"><i class="glyphicon glyphicon-question-sign"></i></a>
+										<div class="modal" id="security-code-modal-mobile">
+											<div class="modal-dialog">
+												<div class="modal-content">
+													<div class="modal-header">
+														<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+														<h4 class="modal-title">How to find your security code</h4>
+													</div>
+													<div class="modal-body text-center">
+														<img src="img/security_code_sample.jpg" alt="" class="img-responsive" style="display: inline-block">
+													</div>
+													<div class="modal-footer text-center">
+														<button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+													</div>
+												</div><!-- /.modal-content -->
+											</div><!-- /.modal-dialog -->
+										</div><!-- /.modal -->
+									</div>
+									<div class="col-xs-6">
+										<a href="#" id="mobile-redeem-voucher" class="redeem-voucher-mobile">Redeem Voucher</a>
+										<div style="display: none" id="mobile-voucher-field">
+											<label for="voucher">Voucher code</label>
+											<input type="text" id="voucher-mobile" name="voucher" class="form-control"> 
+										</div>
 									</div>
 								</div>
 							</div>
@@ -327,7 +359,7 @@
 						</div>
 					</form>
         </div>
-      </section>
+      </div>
     </div>
     <!-- Terms Modal -->
     <div class="modal text-left" id="terms">
