@@ -1,7 +1,7 @@
-$navbarHeight: 72px
+$navbarHeight: 52px
 $lightGrey: #efefef
 $ash: #efefef
-$blue: #27a3ea
+$blue: darken(#27a3ea, 5%)
 $black: #212121
 $green: #6fae23
 $purple: #653287
@@ -60,6 +60,8 @@ a
 	background: white
 	border: none
 	margin: 0
+	border-radius: 0
+	border-bottom: 1px solid #e6e6e6
 	.navbar-header
 		float: none
 		display: block
@@ -102,12 +104,12 @@ a
 	.navbar-brand
 		padding: 0 15px
 		height: $navbarHeight
-		line-height: $navbarHeight
+		line-height: 48px
 		font-size: 1.5em
 		color: white
 		img
-			width: 158px
-			height: 38px
+			width: 122px
+			height: 30px
 	.navbar-nav
 		li
 			.open > a

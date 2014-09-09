@@ -5,7 +5,7 @@ body {
   -webkit-font-smoothing: antialiased; }
 
 a {
-  color: #27a3ea;
+  color: #1697e2;
   font-weight: bold; }
   a:hover {
     text-decoration: underline; }
@@ -52,7 +52,9 @@ a {
 .navbar {
   background: white;
   border: none;
-  margin: 0; }
+  margin: 0;
+  border-radius: 0;
+  border-bottom: 1px solid #e6e6e6; }
   .navbar .navbar-header {
     float: none;
     display: block; }
@@ -93,20 +95,20 @@ a {
           margin-bottom: 5px; }
   .navbar .navbar-brand {
     padding: 0 15px;
-    height: 72px;
-    line-height: 72px;
+    height: 52px;
+    line-height: 48px;
     font-size: 1.5em;
     color: white; }
     .navbar .navbar-brand img {
-      width: 158px;
-      height: 38px; }
+      width: 122px;
+      height: 30px; }
   .navbar .navbar-nav li .open > a {
     background: rgba(0, 0, 0, 0.02); }
   .navbar .navbar-nav li a {
     display: inline-block;
-    line-height: 72px;
+    line-height: 52px;
     padding: 0 15px;
-    color: #27a3ea; }
+    color: #1697e2; }
     .navbar .navbar-nav li a:hover {
       text-decoration: underline; }
     .navbar .navbar-nav li a:focus, .navbar .navbar-nav li a:active {
@@ -394,8 +396,8 @@ form .disclaimer, .form-horizontal .disclaimer {
     margin-top: 30px;
     font-weight: normal; }
   .payment .alert-info {
-    background: #e1f2fc;
-    border-color: #b2def8; }
+    background: #cae8fa;
+    border-color: #9bd4f5; }
     .payment .alert-info:hover {
       color: #31708f !important; }
   .payment .prev-card {
@@ -404,7 +406,7 @@ form .disclaimer, .form-horizontal .disclaimer {
     padding: 8px;
     margin: 0 0 5px; }
     .payment .prev-card:hover {
-      color: #27a3ea; }
+      color: #1697e2; }
   .payment .add-new-card i {
     font-size: 0.8em; }
 
